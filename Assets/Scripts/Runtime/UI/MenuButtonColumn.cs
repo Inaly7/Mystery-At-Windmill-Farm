@@ -275,19 +275,18 @@ namespace EggRescue
         static void ApplyWidth(RectTransform rt, float width, bool alignLeft)
         {
             var pos = rt.anchoredPosition;
+            var pivot = rt.pivot;
             var height = rt.sizeDelta.y;
             if (alignLeft)
             {
-                var left = pos.x - rt.sizeDelta.x * rt.pivot.x;
-                rt.pivot = new Vector2(0f, 0.5f);
+                var left = pos.x - rt.sizeDelta.x * pivot.x;
                 rt.sizeDelta = new Vector2(width, height);
-                rt.anchoredPosition = new Vector2(left, pos.y);
+                rt.anchoredPosition = new Vector2(left + width * pivot.x, pos.y);
                 return;
             }
-            var center = pos.x + (0.5f - rt.pivot.x) * rt.sizeDelta.x;
-            rt.pivot = new Vector2(0.5f, rt.pivot.y);
+            var center = pos.x + (0.5f - pivot.x) * rt.sizeDelta.x;
             rt.sizeDelta = new Vector2(width, height);
-            rt.anchoredPosition = new Vector2(center, pos.y);
+            rt.anchoredPosition = new Vector2(center - (0.5f - pivot.x) * width, pos.y);
         }
 
         public static void FitToLabel(Button button, bool alignLeft, float pad)
@@ -305,20 +304,7 @@ namespace EggRescue
             var textWidth = label.GetPreferredValues(label.text).x;
             if (textWidth < 8f) return;
             var width = Mathf.Ceil(textWidth) + pad * 2f;
-            var pos = rt.anchoredPosition;
-            var height = rt.sizeDelta.y;
-            if (alignLeft)
-            {
-                var left = pos.x - rt.sizeDelta.x * rt.pivot.x;
-                rt.pivot = new Vector2(0f, 0.5f);
-                rt.sizeDelta = new Vector2(width, height);
-                rt.anchoredPosition = new Vector2(left, pos.y);
-            }
-            else
-            {
-                rt.pivot = new Vector2(0.5f, rt.pivot.y);
-                rt.sizeDelta = new Vector2(width, height);
-            }
+            ApplyWidth(rt, width, alignLeft);
         }
     }
 }
