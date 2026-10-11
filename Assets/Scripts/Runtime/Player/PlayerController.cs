@@ -15,8 +15,13 @@ namespace EggRescue
         [SerializeField] Transform cameraPivot;
 
         CharacterController _cc;
+        Animator _animator;
         Vector3 _velocity;
         bool _grounded;
+        float _jumpAnimLock;
+        static readonly int SpeedId = Animator.StringToHash("Speed");
+        static readonly int GroundedId = Animator.StringToHash("Grounded");
+        static readonly int JumpId = Animator.StringToHash("Jump");
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         const float DebugMoveMultiplier = 3f;
         static bool _debugMoveEnabled = true;
@@ -51,6 +56,7 @@ namespace EggRescue
         {
             Instance = this;
             _cc = GetComponent<CharacterController>();
+            _animator = GetComponentInChildren<Animator>();
             if (cameraPivot == null)
             {
                 var pivot = new GameObject("CameraPivot");
@@ -79,6 +85,8 @@ namespace EggRescue
                 _velocity.z = 0f;
                 ApplyGravity();
                 _cc.Move(_velocity * Time.deltaTime);
+                _grounded = _cc.isGrounded;
+                UpdateAnimator();
                 return;
             }
 
@@ -113,12 +121,27 @@ namespace EggRescue
             }
 
             if (_grounded && Input.GetButtonDown("Jump"))
+            {
                 _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                _jumpAnimLock = 0.12f;
+                if (_animator != null) _animator.SetTrigger(JumpId);
+            }
 
             _velocity.x = planar.x;
             _velocity.z = planar.z;
             ApplyGravity();
             _cc.Move(_velocity * Time.deltaTime);
+            _grounded = _cc.isGrounded;
+            UpdateAnimator();
+        }
+
+        void UpdateAnimator()
+        {
+            if (_animator == null) return;
+            if (_jumpAnimLock > 0f) _jumpAnimLock -= Time.deltaTime;
+            var speed = new Vector2(_velocity.x, _velocity.z).magnitude;
+            _animator.SetFloat(SpeedId, speed);
+            _animator.SetBool(GroundedId, _grounded && _jumpAnimLock <= 0f);
         }
 
         float CurrentMoveMultiplier()

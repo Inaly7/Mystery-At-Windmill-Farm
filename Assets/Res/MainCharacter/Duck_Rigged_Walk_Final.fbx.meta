@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: Xn8Ytn77Wi14EbGlVFFupPYINhOXLZ3mvPXUP+m126R+uefKXUd9Wpo=
+guid: WyhMtS6uAH614inGhvr2m6Il5OIzLQp4y3uZnXydwlNPCTVwvsF04d0=
 ModelImporter:
   serializedVersion: 22361
   internalIDToNameTable: []
@@ -35,41 +35,35 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
-    - serializedVersion: 18
-      name: Scene
+    - serializedVersion: 16
+      name: walk
       takeName: Scene
       internalID: -623603649343465320
       firstFrame: 1
-      lastFrame: 33
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      lockToRoot: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
+      keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      intervals: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
-      additiveType: 0
-      basePoseType: 0
-      additiveSelectedAnimation: {instanceID: 0}
-      additiveSelectedAnimationFrameIndex: 0
+      additiveReferencePoseFrame: 0
     isReadable: 0
     tuanjieGIEnable: 0
     tuanjieGIGenSDFFactor: 1
@@ -80,8 +74,8 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    totalVerticesCount: 5793
-    totalTrianglesCount: 10558
+    totalVerticesCount: 24613
+    totalTrianglesCount: 46768
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
@@ -128,71 +122,31 @@ ModelImporter:
       isPossibleOverflow: 0
       hasBoneData: 0
       isBoneCountOverflow: 0
-    virtualGeometryPlatformSettings:
-    - serializedVersion: 0
-      overridden: 0
-      ignorePlatformSupport: 0
-      buildTarget: DefaultVirtualGeometryPlatform
-      positionPrecision: -2147483648
-      normalPrecision: -2147483648
-      tangentPrecision: -2147483648
-      boneWeightPrecision: -2147483648
-      detailedTriangleCount: 0
-      detailedVertexCount: 0
-      rootPageSize: 0
-      streamablePageSize: 0
-      reserveTrianglePercent: 100
-      reserveDetailLevel: 0
-    - serializedVersion: 0
-      overridden: 0
-      ignorePlatformSupport: 0
-      buildTarget: Standalone
-      positionPrecision: -2147483648
-      normalPrecision: -2147483648
-      tangentPrecision: -2147483648
-      boneWeightPrecision: -2147483648
-      detailedTriangleCount: 0
-      detailedVertexCount: 0
-      rootPageSize: 0
-      streamablePageSize: 0
-      reserveTrianglePercent: 100
-      reserveDetailLevel: 0
-    - serializedVersion: 0
-      overridden: 0
-      ignorePlatformSupport: 0
-      buildTarget: iPhone
-      positionPrecision: -2147483648
-      normalPrecision: -2147483648
-      tangentPrecision: -2147483648
-      boneWeightPrecision: -2147483648
-      detailedTriangleCount: 0
-      detailedVertexCount: 0
-      rootPageSize: 0
-      streamablePageSize: 0
-      reserveTrianglePercent: 100
-      reserveDetailLevel: 0
-    - serializedVersion: 0
-      overridden: 0
-      ignorePlatformSupport: 0
-      buildTarget: Android
-      positionPrecision: -2147483648
-      normalPrecision: -2147483648
-      tangentPrecision: -2147483648
-      boneWeightPrecision: -2147483648
-      detailedTriangleCount: 0
-      detailedVertexCount: 0
-      rootPageSize: 0
-      streamablePageSize: 0
-      reserveTrianglePercent: 100
-      reserveDetailLevel: 0
+    virtualGeometryPlatformSettings: []
     selectedVGMeshes:
     - index: 0
-      meshName: Duck
+      meshName: Duck_Body
+      lodLevel: 0
+      meshGeometryBuffer: 0
+    - index: 1
+      meshName: Duck_Wing.L
+      lodLevel: 0
+      meshGeometryBuffer: 0
+    - index: 2
+      meshName: Duck_Wing.R
       lodLevel: 0
       meshGeometryBuffer: 0
     supportVGMeshes:
     - index: 0
-      meshName: Duck
+      meshName: Duck_Body
+      lodLevel: 0
+      meshGeometryBuffer: 0
+    - index: 1
+      meshName: Duck_Wing.L
+      lodLevel: 0
+      meshGeometryBuffer: 0
+    - index: 2
+      meshName: Duck_Wing.R
       lodLevel: 0
       meshGeometryBuffer: 0
   tangentSpace:

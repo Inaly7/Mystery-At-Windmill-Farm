@@ -7,17 +7,16 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Robot Kyle Color 1
+  m_Name: DuckWing
   m_Shader: {fileID: 4800000, guid: bee44b4a58655ee4cbff107302a3e131, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - DR_CEL_EXTRA_ON
-  - DR_OUTLINE_ON
-  - DR_RIM_ON
+  - DR_SPECULAR_ON
   - _DETAILMAPBLENDINGMODE_MULTIPLY
   - _GRADIENTSPACE_WORLD
-  - _OUTLINESPACE_OBJECT
+  - _OUTLINESPACE_SCREEN
   - _TEXTUREBLENDINGMODE_MULTIPLY
   m_InvalidKeywords:
   - _CELPRIMARYMODE_NONE
@@ -35,7 +34,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 3d0a19a71c778ea43a76aa9c61284c76, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -80,7 +79,7 @@ Material:
     - _FlatRimLightAlign: 0.404
     - _FlatRimSize: 0.847
     - _FlatSpecularEdgeSmoothness: 0
-    - _FlatSpecularSize: 0.1
+    - _FlatSpecularSize: 0.542
     - _Flatness: 1
     - _FlatnessExtra: 1
     - _GradientAngle: 0
@@ -93,19 +92,19 @@ Material:
     - _LightFalloffSize: 0
     - _LightmapDirectionPitch: 0
     - _LightmapDirectionYaw: 0
-    - _OutlineDepthOffset: 0.751
-    - _OutlineEnabled: 1
+    - _OutlineDepthOffset: 0.432
+    - _OutlineEnabled: 0
     - _OutlineScale: 50.93
-    - _OutlineSpace: 1
+    - _OutlineSpace: 0
     - _OutlineWidth: 15.29
     - _OverrideLightmapDir: 0
     - _QueueOffset: 0
-    - _RimEnabled: 1
+    - _RimEnabled: 0
     - _SelfShadingSize: 0.5
-    - _SelfShadingSizeExtra: 0.6
+    - _SelfShadingSizeExtra: 0.685
     - _ShadowEdgeSize: 0.05
-    - _ShadowEdgeSizeExtra: 0.05
-    - _SpecularEnabled: 0
+    - _ShadowEdgeSizeExtra: 0
+    - _SpecularEnabled: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _TextureBlendingMode: 0
@@ -122,13 +121,13 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorDim: {r: 1, g: 1, b: 1, a: 1}
     - _ColorDimCurve: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
-    - _ColorDimExtra: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorDimExtra: {r: 0.78616345, g: 0.78616345, b: 0.78616345, a: 1}
     - _ColorDimSteps: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _ColorGradient: {r: 1, g: 1, b: 1, a: 1}
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _FlatRimColor: {r: 1, g: 0, b: 0, a: 1}
-    - _FlatSpecularColor: {r: 1, g: 0, b: 0.27100372, a: 1}
+    - _FlatSpecularColor: {r: 2, g: 2, b: 2, a: 1}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0.00812006, b: 1, a: 1}
     - _UnityShadowColor: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
