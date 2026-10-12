@@ -15,6 +15,7 @@ namespace EggRescue
         AudioClip _originalBgm;
         bool _adoptedSceneBgm;
         readonly Dictionary<string, AudioClip> _byName = new Dictionary<string, AudioClip>();
+        readonly Dictionary<string, ParticleSystem> _spawnedParticles = new Dictionary<string, ParticleSystem>();
 
         void Awake()
         {
@@ -175,17 +176,67 @@ namespace EggRescue
 
         public static void PlayParticle(string name, Vector3 position)
         {
-            if (Instance == null || Instance.particleSystems == null) return;
-            for (var i = 0; i < Instance.particleSystems.Length; i++)
+            if (Instance == null || string.IsNullOrEmpty(name)) return;
+            var ps = Instance.ResolveParticle(name, position);
+            if (ps == null) return;
+            ps.transform.position = position;
+            ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            ps.Play(true);
+        }
+
+        ParticleSystem ResolveParticle(string name, Vector3 position)
+        {
+            ParticleSystem found;
+            if (_spawnedParticles.TryGetValue(name, out found) && found != null)
+                return found;
+
+            if (particleSystems != null)
             {
-                var ps = Instance.particleSystems[i];
-                if (ps == null || ps.name != name) continue;
-                ps.transform.position = position;
-                ps.Stop();
-                ps.Clear();
-                ps.Play();
-                return;
+                for (var i = 0; i < particleSystems.Length; i++)
+                {
+                    var ps = particleSystems[i];
+                    if (ps == null || ps.name != name) continue;
+                    _spawnedParticles[name] = ps;
+                    return ps;
+                }
             }
+
+            var prefab = LoadParticlePrefab(name);
+            if (prefab == null)
+            {
+                Debug.LogWarning("[AudioDirector] missing particle " + name);
+                return null;
+            }
+
+            var go = Instantiate(prefab, position, Quaternion.identity, transform);
+            go.name = name;
+            var spawned = go.GetComponent<ParticleSystem>();
+            if (spawned == null) spawned = go.GetComponentInChildren<ParticleSystem>(true);
+            if (spawned == null)
+            {
+                Debug.LogWarning("[AudioDirector] particle prefab has no ParticleSystem " + name);
+                return null;
+            }
+            _spawnedParticles[name] = spawned;
+            return spawned;
+        }
+
+        static GameObject LoadParticlePrefab(string name)
+        {
+            var catalog = Resources.Load<VfxCatalog>("VfxCatalog");
+            if (catalog != null && catalog.Prefabs != null)
+            {
+                for (var i = 0; i < catalog.Prefabs.Length; i++)
+                {
+                    var prefab = catalog.Prefabs[i];
+                    if (prefab != null && prefab.name == name) return prefab;
+                }
+            }
+#if UNITY_EDITOR
+            return UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Res/vfx/prefabs/" + name + ".prefab");
+#else
+            return null;
+#endif
         }
 
         void PlayOneShot(string name)

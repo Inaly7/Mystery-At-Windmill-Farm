@@ -12,13 +12,17 @@ namespace EggRescue
     /// </summary>
     public sealed class StartMenuController : MonoBehaviour
     {
-        static readonly Color Paper = new Color(0.95f, 0.91f, 0.82f, 1f);
-        static readonly Color Ink = new Color(0.14f, 0.23f, 0.16f, 1f);
-        static readonly Color InkSoft = new Color(0.35f, 0.40f, 0.31f, 1f);
-        static readonly Color Cream = new Color(0.965f, 0.945f, 0.894f, 1f);
-        static readonly Color ButtonNormal = new Color(0.18f, 0.33f, 0.22f, 1f);
-        static readonly Color ButtonHighlight = new Color(0.26f, 0.45f, 0.30f, 1f);
-        static readonly Color ButtonPressed = new Color(0.12f, 0.22f, 0.15f, 1f);
+        // 明亮的农场插画配色：奶油白、鼠尾草绿、暖橙色。
+        static readonly Color Paper = new Color(1f, 0.974f, 0.91f, 1f);
+        static readonly Color PaperEdge = new Color(0.84f, 0.75f, 0.57f, 1f);
+        static readonly Color Plate = new Color(0.89f, 0.93f, 0.82f, 1f);
+        static readonly Color Ink = new Color(0.18f, 0.29f, 0.22f, 1f);
+        static readonly Color InkSoft = new Color(0.38f, 0.46f, 0.36f, 1f);
+        static readonly Color Cream = Color.white;
+        static readonly Color ButtonNormal = new Color(0.78f, 0.50f, 0.39f, 1f);
+        static readonly Color ButtonHighlight = new Color(0.88f, 0.63f, 0.49f, 1f);
+        static readonly Color ButtonPressed = new Color(0.67f, 0.40f, 0.31f, 1f);
+        static readonly Color ButtonDisabled = new Color(0.75f, 0.72f, 0.67f, 0.68f);
 
         static Sprite _white;
         static Sprite _panelSprite;
@@ -313,7 +317,7 @@ namespace EggRescue
             go.transform.SetParent(transform, false);
             Stretch(go.GetComponent<RectTransform>());
             var image = go.GetComponent<Image>();
-            image.color = new Color(0.05f, 0.08f, 0.06f, 0.62f);
+            image.color = new Color(0.075f, 0.13f, 0.14f, 0.48f);
             image.sprite = WhiteSprite();
             image.type = Image.Type.Simple;
             go.SetActive(false);
@@ -332,6 +336,10 @@ namespace EggRescue
             image.color = Paper;
             if (solid) ApplySolid(image);
             else ApplyPanelSprite(image);
+            var outline = go.AddComponent<Outline>();
+            outline.effectColor = PaperEdge;
+            outline.effectDistance = new Vector2(2f, -2f);
+            outline.useGraphicAlpha = true;
             return rt;
         }
 
@@ -345,9 +353,12 @@ namespace EggRescue
             rt.anchoredPosition = pos;
             rt.sizeDelta = size;
             var image = go.GetComponent<Image>();
-            image.color = new Color(0.90f, 0.85f, 0.74f, 1f);
+            image.color = Plate;
             image.raycastTarget = false;
             ApplySolid(image);
+            var outline = go.AddComponent<Outline>();
+            outline.effectColor = new Color(PaperEdge.r, PaperEdge.g, PaperEdge.b, 0.34f);
+            outline.effectDistance = new Vector2(2f, -2f);
             return rt;
         }
 
@@ -386,14 +397,6 @@ namespace EggRescue
             if (solid) ApplySolid(image);
             else ApplyPanelSprite(image);
             var button = go.GetComponent<Button>();
-            var colors = button.colors;
-            colors.normalColor = ButtonNormal;
-            colors.highlightedColor = ButtonHighlight;
-            colors.pressedColor = ButtonPressed;
-            colors.selectedColor = ButtonHighlight;
-            colors.fadeDuration = 0.08f;
-            button.colors = colors;
-            button.targetGraphic = image;
             button.gameObject.AddComponent<MenuButtonMotion>();
             var labelGo = new GameObject("Text", typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
             labelGo.transform.SetParent(go.transform, false);
@@ -406,7 +409,41 @@ namespace EggRescue
             if (font != null) label.font = font;
             Bind(label, key);
             label.ForceMeshUpdate();
+            StyleButton(button, label);
             return button;
+        }
+
+        static void StyleButton(Button button, TMP_Text label = null)
+        {
+            if (button == null) return;
+            var image = button.targetGraphic as Image;
+            if (image == null) image = button.GetComponent<Image>();
+            if (image != null)
+            {
+                image.color = Color.white;
+                var buttonSprite = UiFontCatalog.LoadButtonSprite();
+                if (buttonSprite != null)
+                {
+                    image.sprite = buttonSprite;
+                    image.type = Image.Type.Sliced;
+                }
+                button.targetGraphic = image;
+            }
+            var colors = button.colors;
+            colors.normalColor = ButtonNormal;
+            colors.highlightedColor = ButtonHighlight;
+            colors.pressedColor = ButtonPressed;
+            colors.selectedColor = ButtonHighlight;
+            colors.disabledColor = ButtonDisabled;
+            colors.colorMultiplier = 1f;
+            colors.fadeDuration = 0.1f;
+            button.colors = colors;
+
+            if (label == null) label = button.GetComponentInChildren<TMP_Text>();
+            if (label != null)
+            {
+                label.color = Cream;
+            }
         }
 
         void Bind(TMP_Text label, string key)
@@ -458,7 +495,7 @@ namespace EggRescue
             rt.anchoredPosition = pos;
             rt.sizeDelta = new Vector2(600f, 28f);
 
-            var background = CreateImage(go.transform, "Background", new Color(0.75f, 0.70f, 0.58f, 1f), true);
+            var background = CreateImage(go.transform, "Background", new Color(0.76f, 0.80f, 0.69f, 1f), true);
             Stretch(background.rectTransform);
 
             var fillArea = new GameObject("Fill Area", typeof(RectTransform));
@@ -476,7 +513,7 @@ namespace EggRescue
             Stretch(handleAreaRt);
             handleAreaRt.offsetMin = new Vector2(10f, 0f);
             handleAreaRt.offsetMax = new Vector2(-10f, 0f);
-            var handle = CreateImage(handleArea.transform, "Handle", Cream, true);
+            var handle = CreateImage(handleArea.transform, "Handle", ButtonNormal, true);
             handle.rectTransform.sizeDelta = new Vector2(22f, 36f);
 
             var slider = go.AddComponent<Slider>();

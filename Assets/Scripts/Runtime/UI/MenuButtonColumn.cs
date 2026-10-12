@@ -187,6 +187,9 @@ namespace EggRescue
                 var motion = button.GetComponent<MenuButtonMotion>();
                 if (motion == null) motion = button.gameObject.AddComponent<MenuButtonMotion>();
                 motion.SetColumn(this);
+                var label = button.GetComponentInChildren<TMP_Text>();
+                if (label != null)
+                    label.alignment = alignLeft ? TextAlignmentOptions.MidlineLeft : TextAlignmentOptions.Center;
                 var rt = button.transform as RectTransform;
                 var height = rt != null ? rt.sizeDelta.y : 64f;
                 if (height < 1f && rt != null) height = rt.rect.height;
@@ -253,6 +256,11 @@ namespace EggRescue
             var currentWidth = Measure(label, label.text);
             label.ForceMeshUpdate();
             if (currentWidth < 1f) return;
+            if (alignLeft)
+            {
+                ApplyWidth(rt, Mathf.Ceil(currentWidth) + labelPad * 2f, true);
+                return;
+            }
             var width = Mathf.Abs(currentWidth - authored.ReferenceWidth) < 0.75f
                 ? authored.Width
                 : authored.Width + (currentWidth - authored.ReferenceWidth);

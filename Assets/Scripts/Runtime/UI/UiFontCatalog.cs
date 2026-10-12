@@ -9,6 +9,7 @@ namespace EggRescue
     public sealed class UiFontCatalog : ScriptableObject
     {
         public TMP_FontAsset Font;
+        public Sprite ButtonSprite;
 
         public static TMP_FontAsset Load()
         {
@@ -27,6 +28,12 @@ namespace EggRescue
                     return texts[i].font;
             }
             return TMP_Settings.defaultFontAsset;
+        }
+
+        public static Sprite LoadButtonSprite()
+        {
+            var catalog = Resources.Load<UiFontCatalog>("UiFont");
+            return catalog != null ? catalog.ButtonSprite : null;
         }
     }
 }

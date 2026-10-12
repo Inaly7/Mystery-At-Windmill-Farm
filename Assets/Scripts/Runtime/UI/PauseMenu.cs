@@ -13,13 +13,14 @@ namespace EggRescue
     /// </summary>
     public sealed class PauseMenu : MonoBehaviour
     {
-        static readonly Color Paper = new Color(0.95f, 0.91f, 0.82f, 1f);
-        static readonly Color Ink = new Color(0.14f, 0.23f, 0.16f, 1f);
-        static readonly Color InkSoft = new Color(0.35f, 0.40f, 0.31f, 1f);
-        static readonly Color Cream = new Color(0.965f, 0.945f, 0.894f, 1f);
-        static readonly Color ButtonNormal = new Color(0.18f, 0.33f, 0.22f, 1f);
-        static readonly Color ButtonHighlight = new Color(0.26f, 0.45f, 0.30f, 1f);
-        static readonly Color ButtonPressed = new Color(0.12f, 0.22f, 0.15f, 1f);
+        static readonly Color Paper = new Color(1f, 0.974f, 0.91f, 1f);
+        static readonly Color PaperEdge = new Color(0.84f, 0.75f, 0.57f, 1f);
+        static readonly Color Ink = new Color(0.18f, 0.29f, 0.22f, 1f);
+        static readonly Color InkSoft = new Color(0.38f, 0.46f, 0.36f, 1f);
+        static readonly Color ButtonNormal = new Color(0.78f, 0.50f, 0.39f, 1f);
+        static readonly Color ButtonHighlight = new Color(0.88f, 0.63f, 0.49f, 1f);
+        static readonly Color ButtonPressed = new Color(0.67f, 0.40f, 0.31f, 1f);
+        static readonly Color ButtonDisabled = new Color(0.75f, 0.72f, 0.67f, 0.68f);
 
         static Sprite _white;
 
@@ -114,7 +115,7 @@ namespace EggRescue
             _root.transform.SetParent(canvasGo.transform, false);
             Stretch(_root.GetComponent<RectTransform>());
             var dim = _root.GetComponent<Image>();
-            dim.color = new Color(0.05f, 0.08f, 0.06f, 0.62f);
+            dim.color = new Color(0.075f, 0.13f, 0.14f, 0.48f);
             dim.sprite = WhiteSprite();
             dim.raycastTarget = true;
 
@@ -128,6 +129,9 @@ namespace EggRescue
             cardImage.color = Paper;
             cardImage.sprite = WhiteSprite();
             cardImage.raycastTarget = true;
+            var cardOutline = card.AddComponent<Outline>();
+            cardOutline.effectColor = PaperEdge;
+            cardOutline.effectDistance = new Vector2(2f, -2f);
 
             AddLabel(cardRt, "pause.title", new Vector2(0f, 180f), new Vector2(480f, 64f), 42, Ink, font);
             if (!MountButtonColumn(cardRt, font))
@@ -219,19 +223,44 @@ namespace EggRescue
             image.color = Color.white;
             image.sprite = WhiteSprite();
             var button = go.GetComponent<Button>();
+            var motion = go.AddComponent<MenuButtonMotion>();
+            button.onClick.AddListener(() => motion.Play(onClick));
+            var label = AddLabel(rt, key, Vector2.zero, new Vector2(400f, 64f), 28f, Color.white, font);
+            Stretch(label.rectTransform);
+            StyleButton(button, label);
+            return button;
+        }
+
+        static void StyleButton(Button button, TMP_Text label)
+        {
+            if (button == null) return;
+            var image = button.targetGraphic as Image;
+            if (image == null) image = button.GetComponent<Image>();
+            if (image != null)
+            {
+                image.color = Color.white;
+                var buttonSprite = UiFontCatalog.LoadButtonSprite();
+                if (buttonSprite != null)
+                {
+                    image.sprite = buttonSprite;
+                    image.type = Image.Type.Sliced;
+                }
+                button.targetGraphic = image;
+            }
             var colors = button.colors;
             colors.normalColor = ButtonNormal;
             colors.highlightedColor = ButtonHighlight;
             colors.pressedColor = ButtonPressed;
             colors.selectedColor = ButtonHighlight;
-            colors.fadeDuration = 0.08f;
+            colors.disabledColor = ButtonDisabled;
+            colors.colorMultiplier = 1f;
+            colors.fadeDuration = 0.1f;
             button.colors = colors;
-            button.targetGraphic = image;
-            var motion = go.AddComponent<MenuButtonMotion>();
-            button.onClick.AddListener(() => motion.Play(onClick));
-            var label = AddLabel(rt, key, Vector2.zero, new Vector2(400f, 64f), 28f, Cream, font);
-            Stretch(label.rectTransform);
-            return button;
+
+            if (label != null)
+            {
+                label.color = Color.white;
+            }
         }
 
         void SetStatus(string key)

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 100002}
   - component: {fileID: 100003}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: PauseMenuColumn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,6 +58,7 @@ MonoBehaviour:
   - {fileID: 130005}
   alignLeft: 0
   hoverScale: 1.72
+  clickPop: 1.3
   extraGap: 14
   wobbleDegrees: 1.6
   wobblePixels: 2.2
@@ -78,6 +80,7 @@ GameObject:
   - component: {fileID: 110005}
   - component: {fileID: 110006}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +135,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 253c2e24ca565294eba9643769e48587, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -163,13 +166,13 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.18, g: 0.33, b: 0.22, a: 1}
-    m_HighlightedColor: {r: 0.26, g: 0.45, b: 0.3, a: 1}
-    m_PressedColor: {r: 0.12, g: 0.22, b: 0.15, a: 1}
-    m_SelectedColor: {r: 0.26, g: 0.45, b: 0.3, a: 1}
-    m_DisabledColor: {r: 0.18, g: 0.33, b: 0.22, a: 0.35}
+    m_NormalColor: {r: 0.78, g: 0.5, b: 0.39, a: 1}
+    m_HighlightedColor: {r: 0.88, g: 0.63, b: 0.49, a: 1}
+    m_PressedColor: {r: 0.67, g: 0.4, b: 0.31, a: 1}
+    m_SelectedColor: {r: 0.88, g: 0.63, b: 0.49, a: 1}
+    m_DisabledColor: {r: 0.75, g: 0.72, b: 0.67, a: 0.68}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.08
+    m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -210,6 +213,7 @@ GameObject:
   - component: {fileID: 110013}
   - component: {fileID: 110014}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +278,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4293194230
-  m_fontColor: {r: 0.9647059, g: 0.94509804, b: 0.89411765, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -347,6 +351,7 @@ GameObject:
   - component: {fileID: 120005}
   - component: {fileID: 120006}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: SaveButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 253c2e24ca565294eba9643769e48587, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -432,13 +437,13 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.18, g: 0.33, b: 0.22, a: 1}
-    m_HighlightedColor: {r: 0.26, g: 0.45, b: 0.3, a: 1}
-    m_PressedColor: {r: 0.12, g: 0.22, b: 0.15, a: 1}
-    m_SelectedColor: {r: 0.26, g: 0.45, b: 0.3, a: 1}
-    m_DisabledColor: {r: 0.18, g: 0.33, b: 0.22, a: 0.35}
+    m_NormalColor: {r: 0.78, g: 0.5, b: 0.39, a: 1}
+    m_HighlightedColor: {r: 0.88, g: 0.63, b: 0.49, a: 1}
+    m_PressedColor: {r: 0.67, g: 0.4, b: 0.31, a: 1}
+    m_SelectedColor: {r: 0.88, g: 0.63, b: 0.49, a: 1}
+    m_DisabledColor: {r: 0.75, g: 0.72, b: 0.67, a: 0.68}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.08
+    m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -479,6 +484,7 @@ GameObject:
   - component: {fileID: 120013}
   - component: {fileID: 120014}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +549,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4293194230
-  m_fontColor: {r: 0.9647059, g: 0.94509804, b: 0.89411765, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -616,6 +622,7 @@ GameObject:
   - component: {fileID: 130005}
   - component: {fileID: 130006}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 253c2e24ca565294eba9643769e48587, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -701,13 +708,13 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.18, g: 0.33, b: 0.22, a: 1}
-    m_HighlightedColor: {r: 0.26, g: 0.45, b: 0.3, a: 1}
-    m_PressedColor: {r: 0.12, g: 0.22, b: 0.15, a: 1}
-    m_SelectedColor: {r: 0.26, g: 0.45, b: 0.3, a: 1}
-    m_DisabledColor: {r: 0.18, g: 0.33, b: 0.22, a: 0.35}
+    m_NormalColor: {r: 0.78, g: 0.5, b: 0.39, a: 1}
+    m_HighlightedColor: {r: 0.88, g: 0.63, b: 0.49, a: 1}
+    m_PressedColor: {r: 0.67, g: 0.4, b: 0.31, a: 1}
+    m_SelectedColor: {r: 0.88, g: 0.63, b: 0.49, a: 1}
+    m_DisabledColor: {r: 0.75, g: 0.72, b: 0.67, a: 0.68}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.08
+    m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -748,6 +755,7 @@ GameObject:
   - component: {fileID: 130013}
   - component: {fileID: 130014}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -812,7 +820,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4293194230
-  m_fontColor: {r: 0.9647059, g: 0.94509804, b: 0.89411765, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

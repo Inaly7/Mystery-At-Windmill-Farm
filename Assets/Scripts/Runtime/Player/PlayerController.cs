@@ -65,6 +65,8 @@ namespace EggRescue
                 cameraPivot = pivot.transform;
             }
             gameObject.tag = "Player";
+            if (GetComponent<PlayerWalkDust>() == null)
+                gameObject.AddComponent<PlayerWalkDust>();
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
             EnsureDebugLabel();
 #endif
