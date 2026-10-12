@@ -8,7 +8,7 @@ using UnityEngine.UI;
 namespace EggRescue
 {
     /// <summary>
-    /// 主菜单：开始新游戏、继续存档、音量与鼠标灵敏度、退出。进入 Mechanics_Code。
+    /// 主菜单：开始新游戏、继续存档、音量、灵敏度、分辨率与窗口/全屏、退出。进入 Mechanics_Code。
     /// </summary>
     public sealed class StartMenuController : MonoBehaviour
     {
@@ -28,6 +28,12 @@ namespace EggRescue
         static Sprite _panelSprite;
         static bool _panelSliced;
 
+        // 文件名含中文，用码点避免源文件编码把路径读坏。
+        public const string TitleChinesePath =
+            "Assets/Res/Sprites/StartUi/title_" + "\u4e2d\u6587" + "_" + "\u7b80\u6d01\u7248" + ".png";
+        public const string TitleEnglishPath =
+            "Assets/Res/Sprites/StartUi/title_" + "\u82f1\u6587" + "_" + "\u7b80\u6d01\u7248" + ".png";
+
         Button _start;
         Button _load;
         Button _settings;
@@ -35,6 +41,14 @@ namespace EggRescue
         Button _quit;
         Button _langZh;
         Button _langEn;
+        Button _windowed;
+        Button _fullscreen;
+        Button _resolutionPrev;
+        Button _resolutionNext;
+        TMP_Text _resolutionValue;
+        Image _titleImage;
+        [SerializeField] Sprite _titleChinese;
+        [SerializeField] Sprite _titleEnglish;
         GameObject _settingsRoot;
         GameObject _creditsRoot;
         GameObject _confirmRoot;
@@ -76,6 +90,7 @@ namespace EggRescue
             BuildCredits(font);
             BuildConfirm(font);
             Wire();
+            BindTitle();
             RefreshSaveState();
         }
 
@@ -221,6 +236,7 @@ namespace EggRescue
             if (_volumeSlider != null) _volumeSlider.SetValueWithoutNotify(GameSettings.MasterVolume);
             if (_sensitivitySlider != null) _sensitivitySlider.SetValueWithoutNotify(GameSettings.MouseSensitivity);
             RefreshSettingLabels();
+            RefreshDisplayButtons();
             SetOpen(_settingsRoot, true);
         }
 
@@ -236,18 +252,23 @@ namespace EggRescue
         void BuildSettings(TMP_FontAsset font)
         {
             _settingsRoot = CreateOverlay("SettingsOverlay");
-            var card = CreatePaper(_settingsRoot.transform, new Vector2(760f, 700f), true);
-            AddLabel(card, "menu.settings_title", new Vector2(0f, 286f), new Vector2(640f, 72f), 44f, Ink, font);
-            AddPlate(card, new Vector2(0f, 150f), new Vector2(660f, 132f));
-            AddPlate(card, new Vector2(0f, -10f), new Vector2(660f, 132f));
-            AddPlate(card, new Vector2(0f, -176f), new Vector2(660f, 148f));
-            AddLabel(card, "menu.volume", new Vector2(-210f, 188f), new Vector2(300f, 40f), 26f, Ink, font, TextAlignmentOptions.Left);
-            AddLabel(card, "menu.sensitivity", new Vector2(-210f, 28f), new Vector2(300f, 40f), 26f, Ink, font, TextAlignmentOptions.Left);
-            AddLabel(card, "menu.language", new Vector2(-210f, -128f), new Vector2(300f, 40f), 26f, Ink, font, TextAlignmentOptions.Left);
-            _volumeValue = AddLabel(card, null, new Vector2(250f, 188f), new Vector2(120f, 40f), 26f, InkSoft, font, TextAlignmentOptions.Right);
-            _sensitivityValue = AddLabel(card, null, new Vector2(250f, 28f), new Vector2(120f, 40f), 26f, InkSoft, font, TextAlignmentOptions.Right);
-            _volumeSlider = CreateSlider(card, new Vector2(0f, 118f), 0f, 1f, GameSettings.MasterVolume);
-            _sensitivitySlider = CreateSlider(card, new Vector2(0f, -42f), 0.6f, 5f, GameSettings.MouseSensitivity);
+            var card = CreatePaper(_settingsRoot.transform, new Vector2(760f, 820f), true);
+            AddLabel(card, "menu.settings_title", new Vector2(0f, 360f), new Vector2(640f, 64f), 44f, Ink, font);
+            AddPlate(card, new Vector2(0f, 250f), new Vector2(660f, 108f));
+            AddPlate(card, new Vector2(0f, 132f), new Vector2(660f, 108f));
+            AddPlate(card, new Vector2(0f, 14f), new Vector2(660f, 108f));
+            AddPlate(card, new Vector2(0f, -112f), new Vector2(660f, 118f));
+            AddPlate(card, new Vector2(0f, -250f), new Vector2(660f, 118f));
+            AddLabel(card, "menu.volume", new Vector2(0f, 278f), new Vector2(360f, 36f), 26f, Ink, font);
+            AddLabel(card, "menu.sensitivity", new Vector2(0f, 160f), new Vector2(360f, 36f), 26f, Ink, font);
+            AddLabel(card, "menu.resolution", new Vector2(0f, 42f), new Vector2(360f, 36f), 26f, Ink, font);
+            AddLabel(card, "menu.display", new Vector2(0f, -84f), new Vector2(360f, 36f), 26f, Ink, font);
+            AddLabel(card, "menu.language", new Vector2(0f, -222f), new Vector2(360f, 36f), 26f, Ink, font);
+            _volumeValue = AddLabel(card, null, new Vector2(250f, 278f), new Vector2(120f, 36f), 26f, InkSoft, font, TextAlignmentOptions.Right);
+            _sensitivityValue = AddLabel(card, null, new Vector2(250f, 160f), new Vector2(120f, 36f), 26f, InkSoft, font, TextAlignmentOptions.Right);
+            _resolutionValue = AddLabel(card, null, new Vector2(0f, -16f), new Vector2(280f, 40f), 26f, Ink, font);
+            _volumeSlider = CreateSlider(card, new Vector2(0f, 222f), 0f, 1f, GameSettings.MasterVolume);
+            _sensitivitySlider = CreateSlider(card, new Vector2(0f, 104f), 0.6f, 5f, GameSettings.MouseSensitivity);
             _volumeSlider.onValueChanged.AddListener(value =>
             {
                 GameSettings.SetMasterVolume(value);
@@ -258,14 +279,41 @@ namespace EggRescue
                 GameSettings.SetMouseSensitivity(value);
                 RefreshSettingLabels();
             });
-            _langZh = CreateButton(card, "menu.lang_zh", new Vector2(-110f, -198f), new Vector2(200f, 56f), font, true);
-            _langEn = CreateButton(card, "menu.lang_en", new Vector2(110f, -198f), new Vector2(200f, 56f), font, true);
+            _resolutionPrev = CreateButton(card, "ResolutionPrev", new Vector2(-210f, -16f), new Vector2(64f, 48f), font, true);
+            _resolutionNext = CreateButton(card, "ResolutionNext", new Vector2(210f, -16f), new Vector2(64f, 48f), font, true);
+            SetButtonText(_resolutionPrev, "<", 30f);
+            SetButtonText(_resolutionNext, ">", 30f);
+            Press(_resolutionPrev, () =>
+            {
+                GameSettings.StepResolution(-1);
+                RefreshSettingLabels();
+            });
+            Press(_resolutionNext, () =>
+            {
+                GameSettings.StepResolution(1);
+                RefreshSettingLabels();
+            });
+            _windowed = CreateButton(card, "menu.windowed", new Vector2(-110f, -144f), new Vector2(200f, 52f), font, true);
+            _fullscreen = CreateButton(card, "menu.fullscreen", new Vector2(110f, -144f), new Vector2(200f, 52f), font, true);
+            Press(_windowed, () =>
+            {
+                GameSettings.SetFullScreen(false);
+                RefreshDisplayButtons();
+            });
+            Press(_fullscreen, () =>
+            {
+                GameSettings.SetFullScreen(true);
+                RefreshDisplayButtons();
+            });
+            _langZh = CreateButton(card, "menu.lang_zh", new Vector2(-110f, -282f), new Vector2(200f, 52f), font, true);
+            _langEn = CreateButton(card, "menu.lang_en", new Vector2(110f, -282f), new Vector2(200f, 52f), font, true);
             Press(_langZh, () => GameLocale.Set(GameLocale.Chinese));
             Press(_langEn, () => GameLocale.Set(GameLocale.English));
-            var back = CreateButton(card, "menu.back", new Vector2(0f, -292f), new Vector2(260f, 60f), font, true);
+            var back = CreateButton(card, "menu.back", new Vector2(0f, -372f), new Vector2(260f, 56f), font, true);
             Press(back, () => SetOpen(_settingsRoot, false));
             RefreshSettingLabels();
             RefreshLanguageButtons();
+            RefreshDisplayButtons();
         }
 
         void BuildCredits(TMP_FontAsset font)
@@ -302,6 +350,9 @@ namespace EggRescue
                 _volumeValue.text = Mathf.RoundToInt(GameSettings.MasterVolume * 100f) + "%";
             if (_sensitivityValue != null)
                 _sensitivityValue.text = GameSettings.MouseSensitivity.ToString("0.0");
+            if (_resolutionValue != null)
+                _resolutionValue.text = GameSettings.ResolutionText;
+            RefreshDisplayButtons();
         }
 
         void SetOpen(GameObject panel, bool open)
@@ -407,10 +458,21 @@ namespace EggRescue
             label.alignment = TextAlignmentOptions.Center;
             label.raycastTarget = false;
             if (font != null) label.font = font;
-            Bind(label, key);
+            if (!string.IsNullOrEmpty(key) && key.StartsWith("menu."))
+                Bind(label, key);
             label.ForceMeshUpdate();
             StyleButton(button, label);
             return button;
+        }
+
+        static void SetButtonText(Button button, string text, float fontSize)
+        {
+            if (button == null) return;
+            var label = button.GetComponentInChildren<TMP_Text>();
+            if (label == null) return;
+            label.text = text;
+            label.fontSize = fontSize;
+            label.ForceMeshUpdate();
         }
 
         static void StyleButton(Button button, TMP_Text label = null)
@@ -467,13 +529,49 @@ namespace EggRescue
             }
             RefreshSaveState();
             RefreshLanguageButtons();
+            RefreshDisplayButtons();
+            ApplyTitleSprite();
             FitMenuColumn();
+        }
+
+        void BindTitle()
+        {
+            var title = transform.Find("Title");
+            if (title == null)
+            {
+                var go = GameObject.Find("Title");
+                if (go != null) title = go.transform;
+            }
+            _titleImage = title != null ? title.GetComponent<Image>() : null;
+#if UNITY_EDITOR
+            if (_titleChinese == null)
+                _titleChinese = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(TitleChinesePath);
+            if (_titleEnglish == null)
+                _titleEnglish = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(TitleEnglishPath);
+#endif
+            ApplyTitleSprite();
+        }
+
+        void ApplyTitleSprite()
+        {
+            if (_titleImage == null) return;
+            var sprite = GameLocale.IsEnglish ? _titleEnglish : _titleChinese;
+            if (sprite == null) return;
+            if (_titleImage.sprite != sprite) _titleImage.sprite = sprite;
         }
 
         void RefreshLanguageButtons()
         {
             StyleLanguageButton(_langZh, !GameLocale.IsEnglish);
             StyleLanguageButton(_langEn, GameLocale.IsEnglish);
+        }
+
+        void RefreshDisplayButtons()
+        {
+            StyleLanguageButton(_windowed, !GameSettings.FullScreen);
+            StyleLanguageButton(_fullscreen, GameSettings.FullScreen);
+            if (_resolutionPrev != null) _resolutionPrev.interactable = GameSettings.CanDecreaseResolution;
+            if (_resolutionNext != null) _resolutionNext.interactable = GameSettings.CanIncreaseResolution;
         }
 
         static void StyleLanguageButton(Button button, bool selected)

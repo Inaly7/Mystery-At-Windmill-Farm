@@ -71,6 +71,26 @@
       "en": "Language"
     },
     {
+      "key": "menu.resolution",
+      "zh": "分辨率",
+      "en": "Resolution"
+    },
+    {
+      "key": "menu.display",
+      "zh": "显示模式",
+      "en": "Display"
+    },
+    {
+      "key": "menu.windowed",
+      "zh": "窗口",
+      "en": "Window"
+    },
+    {
+      "key": "menu.fullscreen",
+      "zh": "全屏",
+      "en": "Fullscreen"
+    },
+    {
       "key": "menu.back",
       "zh": "返回",
       "en": "Back"
