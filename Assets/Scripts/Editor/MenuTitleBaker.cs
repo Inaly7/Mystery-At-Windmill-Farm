@@ -30,7 +30,7 @@ namespace EggRescue.Editor
         static void AutoBake()
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) return;
-            var key = "EggRescue.MenuTitle.v1." + Application.dataPath;
+            var key = "EggRescue.MenuTitle.v2." + Application.dataPath;
             if (EditorPrefs.GetBool(key, false)) return;
             if (Bake(true)) EditorPrefs.SetBool(key, true);
         }

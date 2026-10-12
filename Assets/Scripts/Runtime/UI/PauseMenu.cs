@@ -17,8 +17,9 @@ namespace EggRescue
         static readonly Color PaperEdge = new Color(0.84f, 0.75f, 0.57f, 1f);
         static readonly Color Ink = new Color(0.18f, 0.29f, 0.22f, 1f);
         static readonly Color InkSoft = new Color(0.38f, 0.46f, 0.36f, 1f);
-        static readonly Color ButtonNormal = new Color(0.78f, 0.50f, 0.39f, 1f);
-        static readonly Color ButtonHighlight = new Color(0.88f, 0.63f, 0.49f, 1f);
+        static readonly Color ButtonNormal = new Color(0.69803923f, 0.427451f, 0.15686275f, 1f);
+        static readonly Color ButtonHighlight = new Color(0.86f, 0.52f, 0.25f, 1f);
+        static readonly Color ButtonSelected = new Color(0.78f, 0.48f, 0.20f, 1f);
         static readonly Color ButtonPressed = new Color(0.67f, 0.40f, 0.31f, 1f);
         static readonly Color ButtonDisabled = new Color(0.75f, 0.72f, 0.67f, 0.68f);
 
@@ -251,7 +252,7 @@ namespace EggRescue
             colors.normalColor = ButtonNormal;
             colors.highlightedColor = ButtonHighlight;
             colors.pressedColor = ButtonPressed;
-            colors.selectedColor = ButtonHighlight;
+            colors.selectedColor = ButtonSelected;
             colors.disabledColor = ButtonDisabled;
             colors.colorMultiplier = 1f;
             colors.fadeDuration = 0.1f;

@@ -161,10 +161,10 @@ namespace EggRescue.Editor
             {
                 Undo.RecordObject(button, "Light button palette");
                 var colors = button.colors;
-                colors.normalColor = new Color(0.78f, 0.50f, 0.39f, 1f);
-                colors.highlightedColor = new Color(0.88f, 0.63f, 0.49f, 1f);
+                colors.normalColor = new Color(0.69803923f, 0.427451f, 0.15686275f, 1f);
+                colors.highlightedColor = new Color(0.86f, 0.52f, 0.25f, 1f);
                 colors.pressedColor = new Color(0.67f, 0.40f, 0.31f, 1f);
-                colors.selectedColor = colors.highlightedColor;
+                colors.selectedColor = new Color(0.78f, 0.48f, 0.20f, 1f);
                 colors.disabledColor = new Color(0.75f, 0.72f, 0.67f, 0.68f);
                 colors.fadeDuration = 0.1f;
                 button.colors = colors;

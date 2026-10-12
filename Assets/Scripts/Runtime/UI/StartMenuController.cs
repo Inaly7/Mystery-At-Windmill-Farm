@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -19,8 +18,9 @@ namespace EggRescue
         static readonly Color Ink = new Color(0.18f, 0.29f, 0.22f, 1f);
         static readonly Color InkSoft = new Color(0.38f, 0.46f, 0.36f, 1f);
         static readonly Color Cream = Color.white;
-        static readonly Color ButtonNormal = new Color(0.78f, 0.50f, 0.39f, 1f);
-        static readonly Color ButtonHighlight = new Color(0.88f, 0.63f, 0.49f, 1f);
+        static readonly Color ButtonNormal = new Color(0.69803923f, 0.427451f, 0.15686275f, 1f);
+        static readonly Color ButtonHighlight = new Color(0.86f, 0.52f, 0.25f, 1f);
+        static readonly Color ButtonSelected = new Color(0.78f, 0.48f, 0.20f, 1f);
         static readonly Color ButtonPressed = new Color(0.67f, 0.40f, 0.31f, 1f);
         static readonly Color ButtonDisabled = new Color(0.75f, 0.72f, 0.67f, 0.68f);
 
@@ -28,11 +28,8 @@ namespace EggRescue
         static Sprite _panelSprite;
         static bool _panelSliced;
 
-        // 文件名含中文，用码点避免源文件编码把路径读坏。
-        public const string TitleChinesePath =
-            "Assets/Res/Sprites/StartUi/title_" + "\u4e2d\u6587" + "_" + "\u7b80\u6d01\u7248" + ".png";
-        public const string TitleEnglishPath =
-            "Assets/Res/Sprites/StartUi/title_" + "\u82f1\u6587" + "_" + "\u7b80\u6d01\u7248" + ".png";
+        public const string TitleChinesePath = "Assets/Res/Sprites/StartUi/title_final_ch.png";
+        public const string TitleEnglishPath = "Assets/Res/Sprites/StartUi/title_final_en.png";
 
         Button _start;
         Button _load;
@@ -43,9 +40,10 @@ namespace EggRescue
         Button _langEn;
         Button _windowed;
         Button _fullscreen;
-        Button _resolutionPrev;
-        Button _resolutionNext;
+        Button _resolutionButton;
         TMP_Text _resolutionValue;
+        GameObject _resolutionList;
+        readonly List<Button> _resolutionOptions = new List<Button>();
         Image _titleImage;
         [SerializeField] Sprite _titleChinese;
         [SerializeField] Sprite _titleEnglish;
@@ -107,13 +105,22 @@ namespace EggRescue
         void Start()
         {
             FitMenuColumn();
-            if (EventSystem.current != null && _start != null)
-                EventSystem.current.SetSelectedGameObject(_start.gameObject);
         }
 
         void Update()
         {
+            if (_resolutionList != null && _resolutionList.activeSelf && Input.GetMouseButtonDown(0))
+            {
+                var overList = ContainsPointer(_resolutionList.transform as RectTransform);
+                var overButton = ContainsPointer(_resolutionButton != null ? _resolutionButton.transform as RectTransform : null);
+                if (!overList && !overButton) SetResolutionList(false);
+            }
             if (!Input.GetKeyDown(KeyCode.Escape)) return;
+            if (_resolutionList != null && _resolutionList.activeSelf)
+            {
+                SetResolutionList(false);
+                return;
+            }
             if (_confirmRoot != null && _confirmRoot.activeSelf) SetOpen(_confirmRoot, false);
             else if (_creditsRoot != null && _creditsRoot.activeSelf) SetOpen(_creditsRoot, false);
             else if (_settingsRoot != null && _settingsRoot.activeSelf) SetOpen(_settingsRoot, false);
@@ -233,6 +240,7 @@ namespace EggRescue
 
         void OpenSettings()
         {
+            SetResolutionList(false);
             if (_volumeSlider != null) _volumeSlider.SetValueWithoutNotify(GameSettings.MasterVolume);
             if (_sensitivitySlider != null) _sensitivitySlider.SetValueWithoutNotify(GameSettings.MouseSensitivity);
             RefreshSettingLabels();
@@ -266,7 +274,6 @@ namespace EggRescue
             AddLabel(card, "menu.language", new Vector2(0f, -222f), new Vector2(360f, 36f), 26f, Ink, font);
             _volumeValue = AddLabel(card, null, new Vector2(250f, 278f), new Vector2(120f, 36f), 26f, InkSoft, font, TextAlignmentOptions.Right);
             _sensitivityValue = AddLabel(card, null, new Vector2(250f, 160f), new Vector2(120f, 36f), 26f, InkSoft, font, TextAlignmentOptions.Right);
-            _resolutionValue = AddLabel(card, null, new Vector2(0f, -16f), new Vector2(280f, 40f), 26f, Ink, font);
             _volumeSlider = CreateSlider(card, new Vector2(0f, 222f), 0f, 1f, GameSettings.MasterVolume);
             _sensitivitySlider = CreateSlider(card, new Vector2(0f, 104f), 0.6f, 5f, GameSettings.MouseSensitivity);
             _volumeSlider.onValueChanged.AddListener(value =>
@@ -279,20 +286,7 @@ namespace EggRescue
                 GameSettings.SetMouseSensitivity(value);
                 RefreshSettingLabels();
             });
-            _resolutionPrev = CreateButton(card, "ResolutionPrev", new Vector2(-210f, -16f), new Vector2(64f, 48f), font, true);
-            _resolutionNext = CreateButton(card, "ResolutionNext", new Vector2(210f, -16f), new Vector2(64f, 48f), font, true);
-            SetButtonText(_resolutionPrev, "<", 30f);
-            SetButtonText(_resolutionNext, ">", 30f);
-            Press(_resolutionPrev, () =>
-            {
-                GameSettings.StepResolution(-1);
-                RefreshSettingLabels();
-            });
-            Press(_resolutionNext, () =>
-            {
-                GameSettings.StepResolution(1);
-                RefreshSettingLabels();
-            });
+            BuildResolutionMenu(card, font);
             _windowed = CreateButton(card, "menu.windowed", new Vector2(-110f, -144f), new Vector2(200f, 52f), font, true);
             _fullscreen = CreateButton(card, "menu.fullscreen", new Vector2(110f, -144f), new Vector2(200f, 52f), font, true);
             Press(_windowed, () =>
@@ -314,6 +308,77 @@ namespace EggRescue
             RefreshSettingLabels();
             RefreshLanguageButtons();
             RefreshDisplayButtons();
+        }
+
+        void BuildResolutionMenu(RectTransform card, TMP_FontAsset font)
+        {
+            _resolutionButton = CreateButton(card, "ResolutionMenu", new Vector2(0f, -16f), new Vector2(420f, 48f), font, true);
+            _resolutionButton.onClick.AddListener(() => SetResolutionList(_resolutionList == null || !_resolutionList.activeSelf));
+            _resolutionValue = _resolutionButton.GetComponentInChildren<TMP_Text>();
+            if (_resolutionValue != null)
+            {
+                _resolutionValue.fontSize = 24f;
+                var caption = _resolutionValue.rectTransform;
+                caption.offsetMin = new Vector2(18f, 0f);
+                caption.offsetMax = new Vector2(-42f, 0f);
+            }
+            var chevron = AddLabel(_resolutionButton.transform as RectTransform, null, new Vector2(176f, 0f), new Vector2(36f, 36f), 18f, Cream, font);
+            chevron.text = "\u25bc";
+
+            var count = GameSettings.ResolutionCount;
+            var row = 46f;
+            var listHeight = 12f + count * row;
+            var list = new GameObject("ResolutionList", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
+            list.transform.SetParent(card, false);
+            var listRt = list.GetComponent<RectTransform>();
+            listRt.anchorMin = listRt.anchorMax = new Vector2(0.5f, 0.5f);
+            listRt.pivot = new Vector2(0.5f, 0.5f);
+            listRt.sizeDelta = new Vector2(420f, listHeight);
+            listRt.anchoredPosition = new Vector2(0f, -46f - listHeight * 0.5f);
+            var listImage = list.GetComponent<Image>();
+            listImage.color = Paper;
+            ApplySolid(listImage);
+            var outline = list.AddComponent<Outline>();
+            outline.effectColor = PaperEdge;
+            outline.effectDistance = new Vector2(2f, -2f);
+            _resolutionList = list;
+            _resolutionOptions.Clear();
+            for (var i = 0; i < count; i++)
+            {
+                var y = listHeight * 0.5f - 6f - row * 0.5f - i * row;
+                var option = CreateButton(listRt, "ResolutionOption", new Vector2(0f, y), new Vector2(396f, 42f), font, true);
+                SetButtonText(option, GameSettings.FormatResolution(i), 22f);
+                var index = i;
+                option.onClick.AddListener(() =>
+                {
+                    GameSettings.SetResolution(index);
+                    SetResolutionList(false);
+                    RefreshSettingLabels();
+                });
+                _resolutionOptions.Add(option);
+            }
+            list.SetActive(false);
+        }
+
+        void SetResolutionList(bool open)
+        {
+            if (_resolutionList == null) return;
+            _resolutionList.SetActive(open);
+            if (!open) return;
+            _resolutionList.transform.SetAsLastSibling();
+            RefreshResolutionOptions();
+        }
+
+        void RefreshResolutionOptions()
+        {
+            for (var i = 0; i < _resolutionOptions.Count; i++)
+                StyleLanguageButton(_resolutionOptions[i], i == GameSettings.ResolutionIndex);
+        }
+
+        static bool ContainsPointer(RectTransform rect)
+        {
+            if (rect == null || !rect.gameObject.activeInHierarchy) return false;
+            return RectTransformUtility.RectangleContainsScreenPoint(rect, Input.mousePosition, null);
         }
 
         void BuildCredits(TMP_FontAsset font)
@@ -495,7 +560,7 @@ namespace EggRescue
             colors.normalColor = ButtonNormal;
             colors.highlightedColor = ButtonHighlight;
             colors.pressedColor = ButtonPressed;
-            colors.selectedColor = ButtonHighlight;
+            colors.selectedColor = ButtonSelected;
             colors.disabledColor = ButtonDisabled;
             colors.colorMultiplier = 1f;
             colors.fadeDuration = 0.1f;
@@ -570,8 +635,7 @@ namespace EggRescue
         {
             StyleLanguageButton(_windowed, !GameSettings.FullScreen);
             StyleLanguageButton(_fullscreen, GameSettings.FullScreen);
-            if (_resolutionPrev != null) _resolutionPrev.interactable = GameSettings.CanDecreaseResolution;
-            if (_resolutionNext != null) _resolutionNext.interactable = GameSettings.CanIncreaseResolution;
+            RefreshResolutionOptions();
         }
 
         static void StyleLanguageButton(Button button, bool selected)

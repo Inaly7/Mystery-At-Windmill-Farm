@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EggRescue
@@ -15,25 +14,20 @@ namespace EggRescue
         const string FullscreenKey = "egg.fullScreen";
         public const float DefaultSensitivity = 2.2f;
 
-        struct ScreenSize
-        {
-            public int Width;
-            public int Height;
-        }
-
-        static readonly List<ScreenSize> Resolutions = new List<ScreenSize>();
-        static int _resolutionIndex;
+        static readonly int[] ResolutionWidths = { 1280, 1600, 1920, 2560, 3840 };
+        static readonly int[] ResolutionHeights = { 720, 900, 1080, 1440, 2160 };
+        static int _resolutionIndex = 2;
 
         public static float MasterVolume { get; private set; } = 1f;
         public static float MouseSensitivity { get; private set; } = DefaultSensitivity;
         public static int ScreenWidth { get; private set; } = 1920;
         public static int ScreenHeight { get; private set; } = 1080;
         public static bool FullScreen { get; private set; } = true;
-        public static bool CanDecreaseResolution { get { return _resolutionIndex > 0; } }
-        public static bool CanIncreaseResolution { get { return _resolutionIndex < Resolutions.Count - 1; } }
+        public static int ResolutionCount { get { return ResolutionWidths.Length; } }
+        public static int ResolutionIndex { get { return _resolutionIndex; } }
         public static string ResolutionText
         {
-            get { return ScreenWidth + " × " + ScreenHeight; }
+            get { return FormatResolution(_resolutionIndex); }
         }
 
         public static void Load()
@@ -43,7 +37,7 @@ namespace EggRescue
             FullScreen = PlayerPrefs.HasKey(FullscreenKey)
                 ? PlayerPrefs.GetInt(FullscreenKey, 1) == 1
                 : Screen.fullScreen;
-            BuildResolutions();
+            SelectSavedResolution();
             Apply();
         }
 
@@ -63,14 +57,18 @@ namespace EggRescue
             Apply();
         }
 
-        public static void StepResolution(int direction)
+        public static string FormatResolution(int index)
         {
-            if (Resolutions.Count == 0) return;
-            var next = Mathf.Clamp(_resolutionIndex + direction, 0, Resolutions.Count - 1);
-            if (next == _resolutionIndex) return;
-            _resolutionIndex = next;
-            ScreenWidth = Resolutions[_resolutionIndex].Width;
-            ScreenHeight = Resolutions[_resolutionIndex].Height;
+            if (index < 0 || index >= ResolutionWidths.Length) return "";
+            return ResolutionWidths[index] + " × " + ResolutionHeights[index];
+        }
+
+        public static void SetResolution(int index)
+        {
+            if (index < 0 || index >= ResolutionWidths.Length || index == _resolutionIndex) return;
+            _resolutionIndex = index;
+            ScreenWidth = ResolutionWidths[index];
+            ScreenHeight = ResolutionHeights[index];
             SaveDisplay();
         }
 
@@ -111,53 +109,22 @@ namespace EggRescue
 #endif
         }
 
-        static void BuildResolutions()
+        static void SelectSavedResolution()
         {
-            Resolutions.Clear();
-            var seen = new HashSet<long>();
-            var available = Screen.resolutions;
-            for (var i = 0; i < available.Length; i++)
-            {
-                var width = available[i].width;
-                var height = available[i].height;
-                if (width < 1280 || height < 720) continue;
-                AddResolution(seen, width, height);
-            }
-            AddResolution(seen, Screen.width, Screen.height);
-            if (Resolutions.Count == 0)
-            {
-                AddResolution(seen, 1280, 720);
-                AddResolution(seen, 1600, 900);
-                AddResolution(seen, 1920, 1080);
-                AddResolution(seen, 2560, 1440);
-            }
-            Resolutions.Sort((a, b) =>
-            {
-                var width = a.Width.CompareTo(b.Width);
-                return width != 0 ? width : a.Height.CompareTo(b.Height);
-            });
             var savedWidth = PlayerPrefs.GetInt(WidthKey, Screen.width);
             var savedHeight = PlayerPrefs.GetInt(HeightKey, Screen.height);
             _resolutionIndex = FindResolution(savedWidth, savedHeight);
-            ScreenWidth = Resolutions[_resolutionIndex].Width;
-            ScreenHeight = Resolutions[_resolutionIndex].Height;
-        }
-
-        static void AddResolution(HashSet<long> seen, int width, int height)
-        {
-            if (width < 640 || height < 480) return;
-            var key = ((long)width << 32) | (uint)height;
-            if (!seen.Add(key)) return;
-            Resolutions.Add(new ScreenSize { Width = width, Height = height });
+            ScreenWidth = ResolutionWidths[_resolutionIndex];
+            ScreenHeight = ResolutionHeights[_resolutionIndex];
         }
 
         static int FindResolution(int width, int height)
         {
             var best = 0;
             var bestScore = int.MaxValue;
-            for (var i = 0; i < Resolutions.Count; i++)
+            for (var i = 0; i < ResolutionWidths.Length; i++)
             {
-                var score = Mathf.Abs(Resolutions[i].Width - width) + Mathf.Abs(Resolutions[i].Height - height);
+                var score = Mathf.Abs(ResolutionWidths[i] - width) + Mathf.Abs(ResolutionHeights[i] - height);
                 if (score >= bestScore) continue;
                 bestScore = score;
                 best = i;
