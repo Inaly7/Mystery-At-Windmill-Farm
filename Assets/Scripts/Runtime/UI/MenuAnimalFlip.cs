@@ -4,15 +4,14 @@ using UnityEngine.UI;
 namespace EggRescue
 {
     /// <summary>
-    /// 主菜单动物的两帧循环。A/B 图来自 Assets/Res/Sprites/StartUi/animalWalk。
+    /// 主菜单动物的四帧循环。图来自 Assets/Res/Sprites/StartUi/animalWalkFinal。
     /// </summary>
     public sealed class MenuAnimalFlip : MonoBehaviour
     {
-        public const string Folder = "Assets/Res/Sprites/StartUi/animalWalk";
+        public const string Folder = "Assets/Res/Sprites/StartUi/animalWalkFinal";
 
-        [SerializeField] Sprite frameA;
-        [SerializeField] Sprite frameB;
-        [SerializeField] float framesPerSecond = 4f;
+        [SerializeField] Sprite[] frames;
+        [SerializeField] float framesPerSecond = 8f;
         [SerializeField] float phase;
 
         Image _image;
@@ -22,51 +21,65 @@ namespace EggRescue
             _image = GetComponent<Image>();
             if (_image != null) _image.raycastTarget = false;
 #if UNITY_EDITOR
-            if (frameA == null || frameB == null)
+            if (!HasFourFrames())
                 TryAssignFromFolder(transform.GetSiblingIndex());
 #endif
         }
 
         void Update()
         {
-            if (_image == null || frameA == null || frameB == null || framesPerSecond <= 0f) return;
+            if (_image == null || !HasFourFrames() || framesPerSecond <= 0f) return;
             var step = Mathf.FloorToInt((Time.unscaledTime + phase) * framesPerSecond);
-            var sprite = (step & 1) == 0 ? frameA : frameB;
-            if (_image.sprite != sprite) _image.sprite = sprite;
+            var index = step % frames.Length;
+            if (index < 0) index += frames.Length;
+            var sprite = frames[index];
+            if (sprite != null && _image.sprite != sprite) _image.sprite = sprite;
+        }
+
+        bool HasFourFrames()
+        {
+            if (frames == null || frames.Length < 4) return false;
+            for (var i = 0; i < 4; i++)
+            {
+                if (frames[i] == null) return false;
+            }
+            return true;
         }
 
 #if UNITY_EDITOR
         public void TryAssignFromFolder(int fallbackIndex)
         {
-            var image = GetComponent<Image>();
-            if (image == null) return;
             var groups = LoadGroups();
             if (groups.Count == 0) return;
-            var current = image.sprite != null ? image.sprite.name : "";
+            var image = GetComponent<Image>();
+            var current = image != null && image.sprite != null ? image.sprite.name : "";
             var key = GroupKey(current);
-            FramePair pair;
-            if (!groups.TryGetValue(key, out pair) || pair.A == null || pair.B == null)
+            Sprite[] set;
+            if (!groups.TryGetValue(key, out set) || !Complete(set))
             {
                 var keys = new System.Collections.Generic.List<string>(groups.Keys);
                 keys.Sort(System.StringComparer.Ordinal);
                 if (fallbackIndex < 0 || fallbackIndex >= keys.Count) return;
-                pair = groups[keys[fallbackIndex]];
+                set = groups[keys[fallbackIndex]];
             }
-            if (pair.A == null || pair.B == null) return;
-            frameA = pair.A;
-            frameB = pair.B;
+            if (!Complete(set)) return;
+            frames = set;
             UnityEditor.EditorUtility.SetDirty(this);
         }
 
-        struct FramePair
+        static bool Complete(Sprite[] set)
         {
-            public Sprite A;
-            public Sprite B;
+            if (set == null || set.Length < 4) return false;
+            for (var i = 0; i < 4; i++)
+            {
+                if (set[i] == null) return false;
+            }
+            return true;
         }
 
-        static System.Collections.Generic.Dictionary<string, FramePair> LoadGroups()
+        static System.Collections.Generic.Dictionary<string, Sprite[]> LoadGroups()
         {
-            var groups = new System.Collections.Generic.Dictionary<string, FramePair>();
+            var groups = new System.Collections.Generic.Dictionary<string, Sprite[]>();
             var guids = UnityEditor.AssetDatabase.FindAssets("t:Sprite", new[] { Folder });
             for (var i = 0; i < guids.Length; i++)
             {
@@ -74,11 +87,15 @@ namespace EggRescue
                 var sprite = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(path);
                 if (sprite == null) continue;
                 var key = GroupKey(sprite.name);
-                FramePair pair;
-                groups.TryGetValue(key, out pair);
-                if (sprite.name.Contains("_A_")) pair.A = sprite;
-                else if (sprite.name.Contains("_B_")) pair.B = sprite;
-                groups[key] = pair;
+                var frame = FrameIndex(sprite.name);
+                if (frame < 0) continue;
+                Sprite[] set;
+                if (!groups.TryGetValue(key, out set))
+                {
+                    set = new Sprite[4];
+                    groups[key] = set;
+                }
+                set[frame] = sprite;
             }
             return groups;
         }
@@ -86,10 +103,22 @@ namespace EggRescue
         public static string GroupKey(string spriteName)
         {
             if (string.IsNullOrEmpty(spriteName)) return "";
+            var walk = spriteName.IndexOf("_walk_", System.StringComparison.Ordinal);
+            if (walk >= 0) return spriteName.Substring(0, walk);
             var a = spriteName.IndexOf("_A_", System.StringComparison.Ordinal);
             var b = spriteName.IndexOf("_B_", System.StringComparison.Ordinal);
             var cut = a >= 0 && b >= 0 ? Mathf.Min(a, b) : Mathf.Max(a, b);
             return cut >= 0 ? spriteName.Substring(0, cut) : spriteName;
+        }
+
+        static int FrameIndex(string spriteName)
+        {
+            var walk = spriteName.IndexOf("_walk_", System.StringComparison.Ordinal);
+            if (walk < 0) return -1;
+            int number;
+            if (!int.TryParse(spriteName.Substring(walk + 6), out number)) return -1;
+            if (number < 1 || number > 4) return -1;
+            return number - 1;
         }
 #endif
     }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 namespace EggRescue.Editor
 {
     /// <summary>
-    /// 给主菜单 Animals 下的每个动物写入两帧，方便在编辑器里直接看，也让正式包带上贴图引用。
+    /// 给主菜单 Animals 下的每个动物写入四帧，方便在编辑器里直接看，也让正式包带上贴图引用。
     /// </summary>
     [InitializeOnLoad]
     public static class MenuAnimalFlipBaker
@@ -27,16 +27,20 @@ namespace EggRescue.Editor
             var count = Bake(scene);
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene);
-            EditorUtility.DisplayDialog("Egg Rescue UI", "已给 " + count + " 个动物写入两帧循环。", "OK");
+            EditorUtility.DisplayDialog("Egg Rescue UI", "已给 " + count + " 个动物写入四帧循环。", "OK");
         }
 
         static void BakeOpenScene()
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) return;
+            var key = "EggRescue.AnimalWalkFinal.v1." + Application.dataPath;
+            if (EditorPrefs.GetBool(key, false)) return;
             var scene = SceneManager.GetActiveScene();
             if (scene.path != MenuScenePath) return;
             var count = Bake(scene);
-            if (count > 0) EditorSceneManager.MarkSceneDirty(scene);
+            if (count <= 0) return;
+            EditorSceneManager.MarkSceneDirty(scene);
+            EditorPrefs.SetBool(key, true);
         }
 
         static int Bake(Scene scene)
@@ -52,13 +56,13 @@ namespace EggRescue.Editor
                     var child = animals.GetChild(c);
                     var flip = child.GetComponent<MenuAnimalFlip>();
                     if (flip == null) flip = Undo.AddComponent<MenuAnimalFlip>(child.gameObject);
+                    int index;
+                    if (!int.TryParse(child.name, out index) || index < 1) index = c + 1;
+                    flip.TryAssignFromFolder(index - 1);
                     var so = new SerializedObject(flip);
-                    var frameA = so.FindProperty("frameA");
-                    var frameB = so.FindProperty("frameB");
-                    if (frameA.objectReferenceValue != null && frameB.objectReferenceValue != null) continue;
-                    flip.TryAssignFromFolder(c);
                     so.Update();
-                    so.FindProperty("phase").floatValue = c * 0.12f;
+                    so.FindProperty("phase").floatValue = (index - 1) * 0.08f;
+                    so.FindProperty("framesPerSecond").floatValue = 8f;
                     so.ApplyModifiedPropertiesWithoutUndo();
                     EditorUtility.SetDirty(flip);
                     count++;

@@ -17,7 +17,7 @@ namespace EggRescue
         [SerializeField] float radiusY = 400f;
         [SerializeField] float thetaStart = 196f;
         [SerializeField] float thetaEnd = 78f;
-        [SerializeField] float speed = 110f;
+        [SerializeField] float speed = 82.5f;
         [SerializeField] float spacing = 230f;
         [SerializeField, Tooltip("母鸡比别的角色大，和前一只、后一只都多留出这段空档。")]
         float henExtraSpacing = 52f;

@@ -743,7 +743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 275166df37dfae449b96cfbf326b9455, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ed2ff7f5ab20aa4f9a3597a1b751f20, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -773,9 +773,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e9a04b6d24f58a0c3e91d5b27f648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameA: {fileID: 21300000, guid: 275166df37dfae449b96cfbf326b9455, type: 3}
-  frameB: {fileID: 21300000, guid: 898104f3010877d41a9237c2b917d643, type: 3}
-  framesPerSecond: 2
+  frames:
+  - {fileID: 21300000, guid: 0ed2ff7f5ab20aa4f9a3597a1b751f20, type: 3}
+  - {fileID: 21300000, guid: 338fd7377ff16ff4886c88fa7d1ce126, type: 3}
+  - {fileID: 21300000, guid: 810218bff63a2474791bfb234edbd57a, type: 3}
+  - {fileID: 21300000, guid: 0a9055832c591a84a9180ac3d96044e8, type: 3}
+  framesPerSecond: 3
   phase: 0
 --- !u!1 &123748408
 GameObject:
@@ -1111,7 +1114,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c7b50ee9d9bafa249bef1054b150e9f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c58dec8a921b8c4fa8a6238e547e36e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1141,9 +1144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e9a04b6d24f58a0c3e91d5b27f648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameA: {fileID: 21300000, guid: c7b50ee9d9bafa249bef1054b150e9f9, type: 3}
-  frameB: {fileID: 21300000, guid: 52495949096e0dc4590539080c5b8e6d, type: 3}
-  framesPerSecond: 2
+  frames:
+  - {fileID: 21300000, guid: 5c58dec8a921b8c4fa8a6238e547e36e, type: 3}
+  - {fileID: 21300000, guid: 62a88451d2875af4a932a706f5c6702f, type: 3}
+  - {fileID: 21300000, guid: 3fed165e9c6bff04ea13ae6a58503ed5, type: 3}
+  - {fileID: 21300000, guid: c103a2a282a7b8b4fb9dc23a03bc873f, type: 3}
+  framesPerSecond: 3
   phase: 0
 --- !u!1 &316760752
 GameObject:
@@ -1927,7 +1933,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c2c5ef61dba39e44f8463e084d73e699, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46060680a0c4e2243a80cdbbb7e70f7b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1957,9 +1963,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e9a04b6d24f58a0c3e91d5b27f648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameA: {fileID: 21300000, guid: c2c5ef61dba39e44f8463e084d73e699, type: 3}
-  frameB: {fileID: 21300000, guid: e33140706a014584ab8156b6da8beb69, type: 3}
-  framesPerSecond: 2
+  frames:
+  - {fileID: 21300000, guid: 46060680a0c4e2243a80cdbbb7e70f7b, type: 3}
+  - {fileID: 21300000, guid: 43411f4da9ac5384caea534df4b35230, type: 3}
+  - {fileID: 21300000, guid: f66d72495663115478ed893e2e420f67, type: 3}
+  - {fileID: 21300000, guid: a55934c0c7f012a4ab15f0bceb6cfb66, type: 3}
+  framesPerSecond: 3
   phase: 0
 --- !u!1 &829741599
 GameObject:
@@ -2425,7 +2434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c154e3b3d4c9b724b93b24fe9478348c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2a6e8ff96136704c8c71d2710b4cbb9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2455,9 +2464,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e9a04b6d24f58a0c3e91d5b27f648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameA: {fileID: 21300000, guid: c154e3b3d4c9b724b93b24fe9478348c, type: 3}
-  frameB: {fileID: 21300000, guid: 58b5622a832f68744ae5fd9575e459bc, type: 3}
-  framesPerSecond: 2
+  frames:
+  - {fileID: 21300000, guid: a2a6e8ff96136704c8c71d2710b4cbb9, type: 3}
+  - {fileID: 21300000, guid: c5f40d694dd62ed42b1c224fa4bfb933, type: 3}
+  - {fileID: 21300000, guid: 6a6e37a7b9587f74080c8b5d25d6b7ad, type: 3}
+  - {fileID: 21300000, guid: b2e1abbb7321bb64793b523231ea0cca, type: 3}
+  framesPerSecond: 3
   phase: 0
 --- !u!1 &1425745886
 GameObject:
@@ -2670,7 +2682,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e9463ac59cde45f4cbf69bf63b4fb816, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54933d10020aaa0419dcfe38e537f290, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2700,9 +2712,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1e9a04b6d24f58a0c3e91d5b27f648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameA: {fileID: 21300000, guid: e9463ac59cde45f4cbf69bf63b4fb816, type: 3}
-  frameB: {fileID: 21300000, guid: 24d6981d75d053b4384d8b847e7a1e6a, type: 3}
-  framesPerSecond: 2
+  frames:
+  - {fileID: 21300000, guid: 54933d10020aaa0419dcfe38e537f290, type: 3}
+  - {fileID: 21300000, guid: 7449c8223d8d64e4892e44fd2307821f, type: 3}
+  - {fileID: 21300000, guid: 2ce37f256819cc54daff17f2a9bbc5fd, type: 3}
+  - {fileID: 21300000, guid: 66e8771ed03c0eb4c9696ccc66a00749, type: 3}
+  framesPerSecond: 3
   phase: 0
 --- !u!1 &1483190555
 GameObject:
@@ -4533,7 +4548,7 @@ MonoBehaviour:
   radiusY: 400
   thetaStart: 196
   thetaEnd: 78
-  speed: 110
+  speed: 82.5
   spacing: 230
   henExtraSpacing: 52
   startOnPath: 150
