@@ -1,17 +1,18 @@
 %YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
+%TAG !u! tag:yousandi.cn,2023:
 --- !u!1 &3450674837139674840
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6282764343191884622}
   - component: {fileID: 1877422705940779495}
   - component: {fileID: 221603980663936623}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: SM_BirchBush_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,6 +59,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_virtualGeometry: 0
+  m_ShadingRate: 0
+  m_ForceDisableGRD: 0
+  m_ForceDisableSmallMeshCull: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -84,17 +89,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+  m_MaskInteraction: 0
 --- !u!1 &3732195154058552933
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 4071459789604420831}
   - component: {fileID: 9140799479042460590}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: P_BirchBush_01_Summer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,35 +141,38 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.4
+  - screenRelativeHeight: 0.6500821
     fadeTransitionWidth: 0.5
     renderers:
     - renderer: {fileID: 1426166709898095425}
-  - screenRelativeHeight: 0.15
+  - screenRelativeHeight: 0.5011433
     fadeTransitionWidth: 0.5
     renderers:
     - renderer: {fileID: 1073586878126452450}
-  - screenRelativeHeight: 0.05
+  - screenRelativeHeight: 0.3821183
     fadeTransitionWidth: 0.5
     renderers:
     - renderer: {fileID: 221603980663936623}
-  - screenRelativeHeight: 0.02
+  - screenRelativeHeight: 0.28467178
     fadeTransitionWidth: 0.5
     renderers:
     - renderer: {fileID: 684108260105147906}
   m_Enabled: 1
+  m_virtualGeometryAndShadow: 0
+  m_AllMeshesVirtualGeometryDisabled: 1
 --- !u!1 &4082660206740234562
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 5112419568716182966}
   - component: {fileID: 3327718142931966510}
   - component: {fileID: 1426166709898095425}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: SM_BirchBush_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,6 +219,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_virtualGeometry: 0
+  m_ShadingRate: 0
+  m_ForceDisableGRD: 0
+  m_ForceDisableSmallMeshCull: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -235,18 +249,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+  m_MaskInteraction: 0
 --- !u!1 &5141748056467112203
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 645483698435104674}
   - component: {fileID: 511618717737233460}
   - component: {fileID: 684108260105147906}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: SM_BirchBush_01_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,6 +309,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_virtualGeometry: 0
+  m_ShadingRate: 0
+  m_ForceDisableGRD: 0
+  m_ForceDisableSmallMeshCull: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -318,18 +338,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+  m_MaskInteraction: 0
 --- !u!1 &7720849561167092705
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 778168989643909614}
   - component: {fileID: 6073274494480465211}
   - component: {fileID: 1073586878126452450}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: SM_BirchBush_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,6 +398,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_virtualGeometry: 0
+  m_ShadingRate: 0
+  m_ForceDisableGRD: 0
+  m_ForceDisableSmallMeshCull: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -402,3 +428,4 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+  m_MaskInteraction: 0

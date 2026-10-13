@@ -1,17 +1,18 @@
 %YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
+%TAG !u! tag:yousandi.cn,2023:
 --- !u!1 &4437463721592351645
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8169200020262220542}
   - component: {fileID: 4505735920857210381}
   - component: {fileID: 4148530532427583624}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: SM_CoverPlant_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,6 +59,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_virtualGeometry: 0
+  m_ShadingRate: 0
+  m_ForceDisableGRD: 0
+  m_ForceDisableSmallMeshCull: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -83,17 +88,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+  m_MaskInteraction: 0
 --- !u!1 &6329855107119198472
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6670949261279521714}
   - component: {fileID: 1930327537736932547}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: P_CoverPlant_01_Summer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,31 +139,34 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.35
+  - screenRelativeHeight: 0.611711
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 438420398130877801}
-  - screenRelativeHeight: 0.05
+  - screenRelativeHeight: 0.41036743
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 4922234063968185159}
-  - screenRelativeHeight: 0.03
+  - screenRelativeHeight: 0.2755309
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 4148530532427583624}
   m_Enabled: 1
+  m_virtualGeometryAndShadow: 0
+  m_AllMeshesVirtualGeometryDisabled: 1
 --- !u!1 &6612734379860192412
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8410252259823822162}
   - component: {fileID: 5623531226761285407}
   - component: {fileID: 438420398130877801}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: SM_CoverPlant_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,6 +213,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_virtualGeometry: 0
+  m_ShadingRate: 0
+  m_ForceDisableGRD: 0
+  m_ForceDisableSmallMeshCull: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -228,18 +242,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+  m_MaskInteraction: 0
 --- !u!1 &8003842189012160816
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2986483540383943628}
   - component: {fileID: 3726961404232843416}
   - component: {fileID: 4922234063968185159}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: SM_CoverPlant_01_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,6 +302,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_virtualGeometry: 0
+  m_ShadingRate: 0
+  m_ForceDisableGRD: 0
+  m_ForceDisableSmallMeshCull: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -311,3 +331,4 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+  m_MaskInteraction: 0
