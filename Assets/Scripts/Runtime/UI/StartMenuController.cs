@@ -14,7 +14,6 @@ namespace EggRescue
         // 明亮的农场插画配色：奶油白、鼠尾草绿、暖橙色。
         static readonly Color Paper = new Color(1f, 0.974f, 0.91f, 1f);
         static readonly Color PaperEdge = new Color(0.84f, 0.75f, 0.57f, 1f);
-        static readonly Color Plate = new Color(0.89f, 0.93f, 0.82f, 1f);
         static readonly Color Ink = new Color(0.18f, 0.29f, 0.22f, 1f);
         static readonly Color InkSoft = new Color(0.38f, 0.46f, 0.36f, 1f);
         static readonly Color Cream = Color.white;
@@ -36,25 +35,13 @@ namespace EggRescue
         Button _settings;
         Button _credits;
         Button _quit;
-        Button _langZh;
-        Button _langEn;
-        Button _windowed;
-        Button _fullscreen;
-        Button _resolutionButton;
-        TMP_Text _resolutionValue;
-        GameObject _resolutionList;
-        readonly List<Button> _resolutionOptions = new List<Button>();
         Image _titleImage;
         [SerializeField] Sprite _titleChinese;
         [SerializeField] Sprite _titleEnglish;
-        GameObject _settingsRoot;
+        SettingsPanel _settingsPanel;
         GameObject _creditsRoot;
         GameObject _confirmRoot;
         bool _pressLock;
-        Slider _volumeSlider;
-        Slider _sensitivitySlider;
-        TMP_Text _volumeValue;
-        TMP_Text _sensitivityValue;
         bool _entering;
         MenuButtonColumn _column;
         readonly List<BoundLabel> _labels = new List<BoundLabel>();
@@ -84,7 +71,8 @@ namespace EggRescue
             var font = ResolveFont();
             BindSceneButtons();
             FitMenuColumn();
-            BuildSettings(font);
+            _settingsPanel = gameObject.AddComponent<SettingsPanel>();
+            _settingsPanel.Build(transform);
             BuildCredits(font);
             BuildConfirm(font);
             Wire();
@@ -109,21 +97,10 @@ namespace EggRescue
 
         void Update()
         {
-            if (_resolutionList != null && _resolutionList.activeSelf && Input.GetMouseButtonDown(0))
-            {
-                var overList = ContainsPointer(_resolutionList.transform as RectTransform);
-                var overButton = ContainsPointer(_resolutionButton != null ? _resolutionButton.transform as RectTransform : null);
-                if (!overList && !overButton) SetResolutionList(false);
-            }
             if (!Input.GetKeyDown(KeyCode.Escape)) return;
-            if (_resolutionList != null && _resolutionList.activeSelf)
-            {
-                SetResolutionList(false);
-                return;
-            }
+            if (_settingsPanel != null && _settingsPanel.HandleEscape()) return;
             if (_confirmRoot != null && _confirmRoot.activeSelf) SetOpen(_confirmRoot, false);
             else if (_creditsRoot != null && _creditsRoot.activeSelf) SetOpen(_creditsRoot, false);
-            else if (_settingsRoot != null && _settingsRoot.activeSelf) SetOpen(_settingsRoot, false);
         }
 
         void BindSceneButtons()
@@ -170,7 +147,7 @@ namespace EggRescue
         {
             Press(_start, OnStart);
             Press(_load, OnContinue);
-            Press(_settings, OpenSettings);
+            Press(_settings, () => { if (_settingsPanel != null) _settingsPanel.Open(); });
             Press(_credits, OpenCredits);
             Press(_quit, QuitGame);
         }
@@ -238,16 +215,6 @@ namespace EggRescue
             SceneManager.LoadScene(GameSession.GameSceneName);
         }
 
-        void OpenSettings()
-        {
-            SetResolutionList(false);
-            if (_volumeSlider != null) _volumeSlider.SetValueWithoutNotify(GameSettings.MasterVolume);
-            if (_sensitivitySlider != null) _sensitivitySlider.SetValueWithoutNotify(GameSettings.MouseSensitivity);
-            RefreshSettingLabels();
-            RefreshDisplayButtons();
-            SetOpen(_settingsRoot, true);
-        }
-
         void QuitGame()
         {
 #if UNITY_EDITOR
@@ -255,130 +222,6 @@ namespace EggRescue
 #else
             Application.Quit();
 #endif
-        }
-
-        void BuildSettings(TMP_FontAsset font)
-        {
-            _settingsRoot = CreateOverlay("SettingsOverlay");
-            var card = CreatePaper(_settingsRoot.transform, new Vector2(760f, 820f), true);
-            AddLabel(card, "menu.settings_title", new Vector2(0f, 360f), new Vector2(640f, 64f), 44f, Ink, font);
-            AddPlate(card, new Vector2(0f, 250f), new Vector2(660f, 108f));
-            AddPlate(card, new Vector2(0f, 132f), new Vector2(660f, 108f));
-            AddPlate(card, new Vector2(0f, 14f), new Vector2(660f, 108f));
-            AddPlate(card, new Vector2(0f, -112f), new Vector2(660f, 118f));
-            AddPlate(card, new Vector2(0f, -250f), new Vector2(660f, 118f));
-            AddLabel(card, "menu.volume", new Vector2(0f, 278f), new Vector2(360f, 36f), 26f, Ink, font);
-            AddLabel(card, "menu.sensitivity", new Vector2(0f, 160f), new Vector2(360f, 36f), 26f, Ink, font);
-            AddLabel(card, "menu.resolution", new Vector2(0f, 42f), new Vector2(360f, 36f), 26f, Ink, font);
-            AddLabel(card, "menu.display", new Vector2(0f, -84f), new Vector2(360f, 36f), 26f, Ink, font);
-            AddLabel(card, "menu.language", new Vector2(0f, -222f), new Vector2(360f, 36f), 26f, Ink, font);
-            _volumeValue = AddLabel(card, null, new Vector2(250f, 278f), new Vector2(120f, 36f), 26f, InkSoft, font, TextAlignmentOptions.Right);
-            _sensitivityValue = AddLabel(card, null, new Vector2(250f, 160f), new Vector2(120f, 36f), 26f, InkSoft, font, TextAlignmentOptions.Right);
-            _volumeSlider = CreateSlider(card, new Vector2(0f, 222f), 0f, 1f, GameSettings.MasterVolume);
-            _sensitivitySlider = CreateSlider(card, new Vector2(0f, 104f), 0.6f, 5f, GameSettings.MouseSensitivity);
-            _volumeSlider.onValueChanged.AddListener(value =>
-            {
-                GameSettings.SetMasterVolume(value);
-                RefreshSettingLabels();
-            });
-            _sensitivitySlider.onValueChanged.AddListener(value =>
-            {
-                GameSettings.SetMouseSensitivity(value);
-                RefreshSettingLabels();
-            });
-            BuildResolutionMenu(card, font);
-            _windowed = CreateButton(card, "menu.windowed", new Vector2(-110f, -144f), new Vector2(200f, 52f), font, true);
-            _fullscreen = CreateButton(card, "menu.fullscreen", new Vector2(110f, -144f), new Vector2(200f, 52f), font, true);
-            Press(_windowed, () =>
-            {
-                GameSettings.SetFullScreen(false);
-                RefreshDisplayButtons();
-            });
-            Press(_fullscreen, () =>
-            {
-                GameSettings.SetFullScreen(true);
-                RefreshDisplayButtons();
-            });
-            _langZh = CreateButton(card, "menu.lang_zh", new Vector2(-110f, -282f), new Vector2(200f, 52f), font, true);
-            _langEn = CreateButton(card, "menu.lang_en", new Vector2(110f, -282f), new Vector2(200f, 52f), font, true);
-            Press(_langZh, () => GameLocale.Set(GameLocale.Chinese));
-            Press(_langEn, () => GameLocale.Set(GameLocale.English));
-            var back = CreateButton(card, "menu.back", new Vector2(0f, -372f), new Vector2(260f, 56f), font, true);
-            Press(back, () => SetOpen(_settingsRoot, false));
-            RefreshSettingLabels();
-            RefreshLanguageButtons();
-            RefreshDisplayButtons();
-        }
-
-        void BuildResolutionMenu(RectTransform card, TMP_FontAsset font)
-        {
-            _resolutionButton = CreateButton(card, "ResolutionMenu", new Vector2(0f, -16f), new Vector2(420f, 48f), font, true);
-            _resolutionButton.onClick.AddListener(() => SetResolutionList(_resolutionList == null || !_resolutionList.activeSelf));
-            _resolutionValue = _resolutionButton.GetComponentInChildren<TMP_Text>();
-            if (_resolutionValue != null)
-            {
-                _resolutionValue.fontSize = 24f;
-                var caption = _resolutionValue.rectTransform;
-                caption.offsetMin = new Vector2(18f, 0f);
-                caption.offsetMax = new Vector2(-42f, 0f);
-            }
-            var chevron = AddLabel(_resolutionButton.transform as RectTransform, null, new Vector2(176f, 0f), new Vector2(36f, 36f), 18f, Cream, font);
-            chevron.text = "\u25bc";
-
-            var count = GameSettings.ResolutionCount;
-            var row = 46f;
-            var listHeight = 12f + count * row;
-            var list = new GameObject("ResolutionList", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
-            list.transform.SetParent(card, false);
-            var listRt = list.GetComponent<RectTransform>();
-            listRt.anchorMin = listRt.anchorMax = new Vector2(0.5f, 0.5f);
-            listRt.pivot = new Vector2(0.5f, 0.5f);
-            listRt.sizeDelta = new Vector2(420f, listHeight);
-            listRt.anchoredPosition = new Vector2(0f, -46f - listHeight * 0.5f);
-            var listImage = list.GetComponent<Image>();
-            listImage.color = Paper;
-            ApplySolid(listImage);
-            var outline = list.AddComponent<Outline>();
-            outline.effectColor = PaperEdge;
-            outline.effectDistance = new Vector2(2f, -2f);
-            _resolutionList = list;
-            _resolutionOptions.Clear();
-            for (var i = 0; i < count; i++)
-            {
-                var y = listHeight * 0.5f - 6f - row * 0.5f - i * row;
-                var option = CreateButton(listRt, "ResolutionOption", new Vector2(0f, y), new Vector2(396f, 42f), font, true);
-                SetButtonText(option, GameSettings.FormatResolution(i), 22f);
-                var index = i;
-                option.onClick.AddListener(() =>
-                {
-                    GameSettings.SetResolution(index);
-                    SetResolutionList(false);
-                    RefreshSettingLabels();
-                });
-                _resolutionOptions.Add(option);
-            }
-            list.SetActive(false);
-        }
-
-        void SetResolutionList(bool open)
-        {
-            if (_resolutionList == null) return;
-            _resolutionList.SetActive(open);
-            if (!open) return;
-            _resolutionList.transform.SetAsLastSibling();
-            RefreshResolutionOptions();
-        }
-
-        void RefreshResolutionOptions()
-        {
-            for (var i = 0; i < _resolutionOptions.Count; i++)
-                StyleLanguageButton(_resolutionOptions[i], i == GameSettings.ResolutionIndex);
-        }
-
-        static bool ContainsPointer(RectTransform rect)
-        {
-            if (rect == null || !rect.gameObject.activeInHierarchy) return false;
-            return RectTransformUtility.RectangleContainsScreenPoint(rect, Input.mousePosition, null);
         }
 
         void BuildCredits(TMP_FontAsset font)
@@ -407,17 +250,6 @@ namespace EggRescue
             var cancel = CreateButton(card, "menu.confirm_cancel", new Vector2(120f, -100f), new Vector2(180f, 56f), font, true);
             Press(ok, ConfirmNewGame);
             Press(cancel, () => SetOpen(_confirmRoot, false));
-        }
-
-        void RefreshSettingLabels()
-        {
-            if (_volumeValue != null)
-                _volumeValue.text = Mathf.RoundToInt(GameSettings.MasterVolume * 100f) + "%";
-            if (_sensitivityValue != null)
-                _sensitivityValue.text = GameSettings.MouseSensitivity.ToString("0.0");
-            if (_resolutionValue != null)
-                _resolutionValue.text = GameSettings.ResolutionText;
-            RefreshDisplayButtons();
         }
 
         void SetOpen(GameObject panel, bool open)
@@ -456,25 +288,6 @@ namespace EggRescue
             outline.effectColor = PaperEdge;
             outline.effectDistance = new Vector2(2f, -2f);
             outline.useGraphicAlpha = true;
-            return rt;
-        }
-
-        static RectTransform AddPlate(RectTransform parent, Vector2 pos, Vector2 size)
-        {
-            var go = new GameObject("Row", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
-            go.transform.SetParent(parent, false);
-            var rt = go.GetComponent<RectTransform>();
-            rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.5f);
-            rt.pivot = new Vector2(0.5f, 0.5f);
-            rt.anchoredPosition = pos;
-            rt.sizeDelta = size;
-            var image = go.GetComponent<Image>();
-            image.color = Plate;
-            image.raycastTarget = false;
-            ApplySolid(image);
-            var outline = go.AddComponent<Outline>();
-            outline.effectColor = new Color(PaperEdge.r, PaperEdge.g, PaperEdge.b, 0.34f);
-            outline.effectDistance = new Vector2(2f, -2f);
             return rt;
         }
 
@@ -593,8 +406,6 @@ namespace EggRescue
                 }
             }
             RefreshSaveState();
-            RefreshLanguageButtons();
-            RefreshDisplayButtons();
             ApplyTitleSprite();
             FitMenuColumn();
         }
@@ -623,81 +434,6 @@ namespace EggRescue
             var sprite = GameLocale.IsEnglish ? _titleEnglish : _titleChinese;
             if (sprite == null) return;
             if (_titleImage.sprite != sprite) _titleImage.sprite = sprite;
-        }
-
-        void RefreshLanguageButtons()
-        {
-            StyleLanguageButton(_langZh, !GameLocale.IsEnglish);
-            StyleLanguageButton(_langEn, GameLocale.IsEnglish);
-        }
-
-        void RefreshDisplayButtons()
-        {
-            StyleLanguageButton(_windowed, !GameSettings.FullScreen);
-            StyleLanguageButton(_fullscreen, GameSettings.FullScreen);
-            RefreshResolutionOptions();
-        }
-
-        static void StyleLanguageButton(Button button, bool selected)
-        {
-            if (button == null) return;
-            var colors = button.colors;
-            colors.normalColor = selected ? ButtonHighlight : ButtonNormal;
-            colors.selectedColor = colors.normalColor;
-            button.colors = colors;
-        }
-
-        static Slider CreateSlider(RectTransform parent, Vector2 pos, float min, float max, float value)
-        {
-            var go = new GameObject("Slider", typeof(RectTransform));
-            go.transform.SetParent(parent, false);
-            var rt = go.GetComponent<RectTransform>();
-            rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.5f);
-            rt.pivot = new Vector2(0.5f, 0.5f);
-            rt.anchoredPosition = pos;
-            rt.sizeDelta = new Vector2(600f, 28f);
-
-            var background = CreateImage(go.transform, "Background", new Color(0.76f, 0.80f, 0.69f, 1f), true);
-            Stretch(background.rectTransform);
-
-            var fillArea = new GameObject("Fill Area", typeof(RectTransform));
-            fillArea.transform.SetParent(go.transform, false);
-            var fillAreaRt = fillArea.GetComponent<RectTransform>();
-            Stretch(fillAreaRt);
-            fillAreaRt.offsetMin = new Vector2(6f, 5f);
-            fillAreaRt.offsetMax = new Vector2(-6f, -5f);
-            var fill = CreateImage(fillArea.transform, "Fill", ButtonNormal, true);
-            Stretch(fill.rectTransform);
-
-            var handleArea = new GameObject("Handle Slide Area", typeof(RectTransform));
-            handleArea.transform.SetParent(go.transform, false);
-            var handleAreaRt = handleArea.GetComponent<RectTransform>();
-            Stretch(handleAreaRt);
-            handleAreaRt.offsetMin = new Vector2(10f, 0f);
-            handleAreaRt.offsetMax = new Vector2(-10f, 0f);
-            var handle = CreateImage(handleArea.transform, "Handle", ButtonNormal, true);
-            handle.rectTransform.sizeDelta = new Vector2(22f, 36f);
-
-            var slider = go.AddComponent<Slider>();
-            slider.fillRect = fill.rectTransform;
-            slider.handleRect = handle.rectTransform;
-            slider.targetGraphic = handle;
-            slider.direction = Slider.Direction.LeftToRight;
-            slider.minValue = min;
-            slider.maxValue = max;
-            slider.value = value;
-            return slider;
-        }
-
-        static Image CreateImage(Transform parent, string name, Color color, bool solid = false)
-        {
-            var go = new GameObject(name, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
-            go.transform.SetParent(parent, false);
-            var image = go.GetComponent<Image>();
-            image.color = color;
-            if (solid) ApplySolid(image);
-            else ApplyPanelSprite(image);
-            return image;
         }
 
         static void Stretch(RectTransform rt)

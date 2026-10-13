@@ -24,7 +24,15 @@ namespace EggRescue
         bool _over;
         bool _busy;
 
-        public bool WantsHover { get { return _over && !_busy; } }
+        public bool WantsHover
+        {
+            get
+            {
+                if (_busy || !IsInteractable) return false;
+                if (_over && !PointerInside()) _over = false;
+                return _over;
+            }
+        }
         public bool Busy { get { return _busy; } }
         public float ClickPulse { get; private set; }
         public bool IsInteractable { get { return _button == null || _button.interactable; } }
@@ -110,6 +118,14 @@ namespace EggRescue
                 return 1f - (1f - t) * (1f - t);
             }
             return 1f - Mathf.SmoothStep(0f, 1f, (p - peakAt) / (1f - peakAt));
+        }
+
+        bool PointerInside()
+        {
+            if (_rt == null) return false;
+            var canvas = _rt.GetComponentInParent<Canvas>();
+            var camera = canvas == null || canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera;
+            return RectTransformUtility.RectangleContainsScreenPoint(_rt, Input.mousePosition, camera);
         }
 
         void RestoreRest()

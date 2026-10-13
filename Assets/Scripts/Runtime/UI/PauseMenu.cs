@@ -29,9 +29,12 @@ namespace EggRescue
         MenuButtonColumn _buttonColumn;
         Button _resume;
         Button _save;
+        Button _settings;
         Button _mainMenu;
+        SettingsPanel _settingsPanel;
         TMP_Text _status;
         string _statusKey;
+        bool _settingsWasOpen;
         readonly List<BoundLabel> _labels = new List<BoundLabel>();
 
         sealed class BoundLabel
@@ -66,18 +69,29 @@ namespace EggRescue
 
         void Update()
         {
+            var settingsOpen = _settingsPanel != null && _settingsPanel.IsOpen;
+            if (settingsOpen != _settingsWasOpen && GameEvents.Paused)
+                AudioListener.pause = !settingsOpen;
+            _settingsWasOpen = settingsOpen;
             if (!Input.GetKeyDown(KeyCode.Escape)) return;
+            if (_settingsPanel != null && _settingsPanel.HandleEscape()) return;
             if (_root == null) return;
             SetOpen(!_root.activeSelf);
         }
 
         void SetOpen(bool open)
         {
+            if (!open && _settingsPanel != null) _settingsPanel.Close();
             if (_root != null) _root.SetActive(open);
             GameEvents.SetPaused(open);
             Time.timeScale = open ? 0f : 1f;
             AudioListener.pause = open;
             if (open) SetStatus(null);
+        }
+
+        void OpenSettings()
+        {
+            if (_settingsPanel != null) _settingsPanel.Open();
         }
 
         void SaveProgress()
@@ -125,7 +139,7 @@ namespace EggRescue
             var cardRt = card.GetComponent<RectTransform>();
             cardRt.anchorMin = cardRt.anchorMax = new Vector2(0.5f, 0.5f);
             cardRt.pivot = new Vector2(0.5f, 0.5f);
-            cardRt.sizeDelta = new Vector2(560f, 520f);
+            cardRt.sizeDelta = new Vector2(560f, 700f);
             var cardImage = card.GetComponent<Image>();
             cardImage.color = Paper;
             cardImage.sprite = WhiteSprite();
@@ -134,14 +148,17 @@ namespace EggRescue
             cardOutline.effectColor = PaperEdge;
             cardOutline.effectDistance = new Vector2(2f, -2f);
 
-            AddLabel(cardRt, "pause.title", new Vector2(0f, 180f), new Vector2(480f, 64f), 42, Ink, font);
+            AddLabel(cardRt, "pause.title", new Vector2(0f, 270f), new Vector2(480f, 64f), 42, Ink, font);
             if (!MountButtonColumn(cardRt, font))
             {
-                CreateButton(cardRt, "pause.resume", new Vector2(0f, 70f), font, () => SetOpen(false));
-                CreateButton(cardRt, "pause.save", new Vector2(0f, -18f), font, SaveProgress);
-                CreateButton(cardRt, "pause.main_menu", new Vector2(0f, -106f), font, ReturnToMenu);
+                CreateButton(cardRt, "pause.resume", new Vector2(0f, 140f), font, () => SetOpen(false));
+                CreateButton(cardRt, "pause.save", new Vector2(0f, 46f), font, SaveProgress);
+                CreateButton(cardRt, "menu.settings", new Vector2(0f, -48f), font, OpenSettings);
+                CreateButton(cardRt, "pause.main_menu", new Vector2(0f, -142f), font, ReturnToMenu);
             }
-            _status = AddLabel(cardRt, null, new Vector2(0f, -190f), new Vector2(480f, 40f), 22, InkSoft, font);
+            _status = AddLabel(cardRt, null, new Vector2(0f, -280f), new Vector2(480f, 40f), 22, InkSoft, font);
+            _settingsPanel = gameObject.AddComponent<SettingsPanel>();
+            _settingsPanel.Build(canvasGo.transform);
         }
 
         bool MountButtonColumn(RectTransform card, TMP_FontAsset font)
@@ -150,11 +167,47 @@ namespace EggRescue
             if (prefab == null) return false;
             var instance = Instantiate(prefab, card, false);
             _buttonColumn = instance.GetComponent<MenuButtonColumn>();
+            EnsureSettingsButton(instance.transform);
             HookPrefabButton(instance.transform, "ResumeButton", "pause.resume", font, () => SetOpen(false));
             HookPrefabButton(instance.transform, "SaveButton", "pause.save", font, SaveProgress);
+            HookPrefabButton(instance.transform, "SettingsButton", "menu.settings", font, OpenSettings);
             HookPrefabButton(instance.transform, "MainMenuButton", "pause.main_menu", font, ReturnToMenu);
+            if (_buttonColumn != null) _buttonColumn.Include(_settings);
+            PlacePauseButtons();
+            if (_buttonColumn != null) _buttonColumn.Refresh();
             FitPauseButtons();
             return _buttonColumn != null;
+        }
+
+        void EnsureSettingsButton(Transform column)
+        {
+            if (column.Find("SettingsButton") != null) return;
+            var template = column.Find("SaveButton");
+            if (template == null) return;
+            var clone = Instantiate(template.gameObject, column);
+            clone.name = "SettingsButton";
+            var copied = clone.GetComponent<Button>();
+            if (copied != null) copied.onClick.RemoveAllListeners();
+            var main = column.Find("MainMenuButton");
+            if (main != null) clone.transform.SetSiblingIndex(main.GetSiblingIndex());
+        }
+
+        void PlacePauseButtons()
+        {
+            SetButtonY(_resume, 140f);
+            SetButtonY(_save, 46f);
+            SetButtonY(_settings, -48f);
+            SetButtonY(_mainMenu, -142f);
+        }
+
+        static void SetButtonY(Button button, float y)
+        {
+            if (button == null) return;
+            var rt = button.transform as RectTransform;
+            if (rt == null) return;
+            var pos = rt.anchoredPosition;
+            pos.y = y;
+            rt.anchoredPosition = pos;
         }
 
         void HookPrefabButton(Transform root, string name, string key, TMP_FontAsset font, UnityAction action)
@@ -173,6 +226,7 @@ namespace EggRescue
             if (button == null) return;
             if (name == "ResumeButton") _resume = button;
             else if (name == "SaveButton") _save = button;
+            else if (name == "SettingsButton") _settings = button;
             else if (name == "MainMenuButton") _mainMenu = button;
             var motion = button.GetComponent<MenuButtonMotion>();
             if (motion == null) motion = button.gameObject.AddComponent<MenuButtonMotion>();
@@ -293,6 +347,7 @@ namespace EggRescue
             _buttonColumn.BeginLocalizedFit();
             FitPauseButton(_resume, "pause.resume");
             FitPauseButton(_save, "pause.save");
+            FitPauseButton(_settings, "menu.settings");
             FitPauseButton(_mainMenu, "pause.main_menu");
             _buttonColumn.EndLocalizedFit();
         }

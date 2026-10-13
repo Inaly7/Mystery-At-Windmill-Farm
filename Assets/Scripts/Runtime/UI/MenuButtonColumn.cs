@@ -37,6 +37,7 @@ namespace EggRescue
 
         readonly List<Slot> _slots = new List<Slot>();
         readonly Dictionary<int, AuthoredButton> _authored = new Dictionary<int, AuthoredButton>();
+        readonly Dictionary<int, Vector3> _authoredScale = new Dictionary<int, Vector3>();
         bool _previewing;
 
         sealed class AuthoredButton
@@ -55,7 +56,7 @@ namespace EggRescue
 
         void OnDisable()
         {
-            if (_previewing) Restore();
+            Restore();
             _previewing = false;
         }
 
@@ -193,12 +194,14 @@ namespace EggRescue
                 var rt = button.transform as RectTransform;
                 var height = rt != null ? rt.sizeDelta.y : 64f;
                 if (height < 1f && rt != null) height = rt.rect.height;
+                var baseScale = AuthoredScale(button);
+                button.transform.localScale = baseScale;
                 _slots.Add(new Slot
                 {
                     Motion = motion,
                     Rect = rt,
                     Rest = rt != null ? rt.anchoredPosition : Vector2.zero,
-                    BaseScale = button.transform.localScale,
+                    BaseScale = baseScale,
                     Height = height > 1f ? height : 64f
                 });
             }
@@ -271,6 +274,39 @@ namespace EggRescue
         public void EndLocalizedFit()
         {
             Rebuild();
+        }
+
+        public void Include(Button button)
+        {
+            if (button == null) return;
+            if (buttons != null)
+            {
+                for (var i = 0; i < buttons.Length; i++)
+                {
+                    if (buttons[i] == button) return;
+                }
+            }
+            var count = buttons != null ? buttons.Length : 0;
+            var next = new Button[count + 1];
+            for (var i = 0; i < count; i++) next[i] = buttons[i];
+            next[count] = button;
+            buttons = next;
+        }
+
+        public void Refresh()
+        {
+            Rebuild();
+        }
+
+        Vector3 AuthoredScale(Button button)
+        {
+            var id = button.GetInstanceID();
+            Vector3 scale;
+            if (_authoredScale.TryGetValue(id, out scale)) return scale;
+            scale = button.transform.localScale;
+            if (scale.sqrMagnitude < 0.01f) scale = Vector3.one;
+            _authoredScale[id] = scale;
+            return scale;
         }
 
         static float Measure(TMP_Text label, string text)
