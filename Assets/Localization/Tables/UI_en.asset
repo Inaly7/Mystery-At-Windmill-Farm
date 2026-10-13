@@ -115,19 +115,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 946855959
-    m_Localized: Shufen
+    m_Localized: "Mabel"
     m_Metadata:
       m_Items: []
   - m_Id: 946855960
-    m_Localized: Dahuang
+    m_Localized: "Buster"
     m_Metadata:
       m_Items: []
   - m_Id: 946855961
-    m_Localized: Black Cat
+    m_Localized: "Velvet"
     m_Metadata:
       m_Items: []
   - m_Id: 946855962
-    m_Localized: Sad Frog
+    m_Localized: "Gloom"
     m_Metadata:
       m_Items: []
   - m_Id: 946855963
@@ -135,11 +135,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 946855964
-    m_Localized: Crow
+    m_Localized: "Trinket"
     m_Metadata:
       m_Items: []
   - m_Id: 946855965
-    m_Localized: Chick Detective Crew
+    m_Localized: "Chick Detectives"
     m_Metadata:
       m_Items: []
   - m_Id: 946855966
@@ -147,27 +147,27 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 946855967
-    m_Localized: Aman
+    m_Localized: "Monty"
     m_Metadata:
       m_Items: []
   - m_Id: 946855968
-    m_Localized: Mili
+    m_Localized: "Millet"
     m_Metadata:
       m_Items: []
   - m_Id: 946855969
-    m_Localized: Doudou
+    m_Localized: "Bean"
     m_Metadata:
       m_Items: []
   - m_Id: 946855970
-    m_Localized: Guazi
+    m_Localized: "Pip"
     m_Metadata:
       m_Items: []
   - m_Id: 946855971
-    m_Localized: Boss Mouse
+    m_Localized: "Buck"
     m_Metadata:
       m_Items: []
   - m_Id: 946855972
-    m_Localized: Little Mouse
+    m_Localized: "Gabby"
     m_Metadata:
       m_Items: []
   - m_Id: 946855973
@@ -179,11 +179,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 946855975
-    m_Localized: You
+    m_Localized: "Reed"
     m_Metadata:
       m_Items: []
   - m_Id: 946855976
     m_Localized: The Chicks
+    m_Metadata:
+      m_Items: []
+  - m_Id: 946855977
+    m_Localized: "Reed"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 946855978
+    m_Localized: "Shadow Detective Squad"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 946855979
+    m_Localized: "Walter"
     m_Metadata:
       m_Items: []
   references:

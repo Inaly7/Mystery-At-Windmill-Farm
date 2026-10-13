@@ -82,7 +82,8 @@ namespace EggRescue
         readonly List<DialogueOption> _options = new List<DialogueOption>();
         readonly List<GameObject> _optionButtons = new List<GameObject>();
         readonly Dictionary<string, Sprite> _portraits = new Dictionary<string, Sprite>();
-        static readonly HashSet<string> PlayerPortraitKeys = new HashSet<string> { "正常", "惊讶", "疑惑" };
+        static readonly HashSet<string> PlayerPortraitKeys = new HashSet<string> { "正常", "惊讶", "疑惑", "无奈" };
+        Text _playerNameLabel;
 
 
         public bool IsDialogueActive
@@ -105,6 +106,7 @@ namespace EggRescue
             Instance = this;
             BindMissingUi();
             RebuildPortraitMap();
+            ApplyPlayerName();
             EnsurePanel();
             EnsureNextRest();
             if (dialoguePanel != null) dialoguePanel.SetActive(false);
@@ -566,6 +568,7 @@ namespace EggRescue
             }
             if (!string.IsNullOrEmpty(_speakerSource))
                 ApplyNamePanel(_speakerSource);
+            ApplyPlayerName();
             for (var i = 0; i < _optionButtons.Count && i < _options.Count; i++)
             {
                 if (_optionButtons[i] == null) continue;
@@ -591,8 +594,17 @@ namespace EggRescue
 
         void SetPlayerNamePanel(bool playerSpeaking)
         {
+            if (playerSpeaking) ApplyPlayerName();
             RevealName(playerNamePanel, playerSpeaking);
             RevealName(npcNamePanel, !playerSpeaking);
+        }
+
+        void ApplyPlayerName()
+        {
+            if (_playerNameLabel == null && playerNamePanel != null)
+                _playerNameLabel = FindText(playerNamePanel.transform, "playerName");
+            if (_playerNameLabel != null)
+                _playerNameLabel.text = GameLocale.Name("玩家");
         }
 
         string ResolvePlayerPortrait(DialogueNode data)
@@ -623,10 +635,15 @@ namespace EggRescue
             {
                 HideImage(npcSprite);
                 if (playerSprite == null) { SetEmotionMarks(null); return false; }
-                var changed = _softKey != "玩家";
-                _softKey = "玩家";
+                var key = spriteKey;
+                if (string.IsNullOrEmpty(key) || !PlayerPortraitKeys.Contains(key)) key = "正常";
+                Sprite portrait;
+                if (_portraits.TryGetValue(key, out portrait) && portrait != null)
+                    playerSprite.sprite = portrait;
+                var changed = _softKey != "玩家:" + key;
+                _softKey = "玩家:" + key;
                 playerSprite.gameObject.SetActive(true);
-                SetEmotionMarks(spriteKey);
+                SetEmotionMarks(null);
                 SoftReveal(playerSprite, changed);
                 return true;
             }

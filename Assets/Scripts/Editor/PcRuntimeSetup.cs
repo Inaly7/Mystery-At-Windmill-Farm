@@ -106,14 +106,14 @@ namespace EggRescue.Editor
             };
             var folders = new[]
             {
-                "Assets/Res/Model/TouXiang_LiHui/Hen",
-                "Assets/Res/Model/TouXiang_LiHui/Dog",
-                "Assets/Res/Model/TouXiang_LiHui/Frog",
-                "Assets/Res/Model/TouXiang_LiHui/Mouse",
-                "Assets/Res/Model/TouXiang_LiHui/Chicken",
-                "Assets/Res/Model/TouXiang_LiHui/WuYa",
-                "Assets/Res/Model/TouXiang_LiHui/Cat",
-                "Assets/Res/Model/TouXiang_LiHui/Snail"
+                "Assets/Res/Sprites/DialoguePortrait/Hen",
+                "Assets/Res/Sprites/DialoguePortrait/Dog",
+                "Assets/Res/Sprites/DialoguePortrait/Frog",
+                "Assets/Res/Sprites/DialoguePortrait/Mouse",
+                "Assets/Res/Sprites/DialoguePortrait/Chicken",
+                "Assets/Res/Sprites/DialoguePortrait/WuYa",
+                "Assets/Res/Sprites/DialoguePortrait/Cat",
+                "Assets/Res/Sprites/DialoguePortrait/Snail"
             };
             var sprites = new Sprite[keys.Length];
             for (var i = 0; i < keys.Length; i++)

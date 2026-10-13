@@ -46,6 +46,7 @@ namespace EggRescue
 
         public static string Name(string source, bool english)
         {
+            if (source == "玩家") source = "芦笛";
             if (!english || string.IsNullOrEmpty(source)) return source;
             EnsureLoaded();
             string value;

@@ -183,6 +183,18 @@ MonoBehaviour:
     m_Key: "name.\u5C0F\u9E21\u4EEC"
     m_Metadata:
       m_Items: []
+  - m_Id: 946855977
+    m_Key: "name.\u82A6\u7B1B"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 946855978
+    m_Key: "name.\u6697\u5F71\u4FA6\u63A2\u56E2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 946855979
+    m_Key: "name.\u519C\u573A\u4E3B"
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -216,7 +216,7 @@ DialogueConfig[n] = {
     Type = "Normal" | "Question",
     DocTag = "1-A#3",              -- 语义 ID，调试日志用
     NpcName = "大黄" | "玩家" | "描述",
-    NpcSprite = "守望" | "疑惑" | "",  -- TouXiang_LiHui PNG 文件名（无扩展名）；描述/大树留 ""；玩家见 §5.1.1
+    NpcSprite = "守望" | "疑惑" | "",  -- DialoguePortrait PNG 文件名（无扩展名）；描述/大树留 ""；玩家见 §5.1.1
     Dialogue = "...",
     Next = <int | -1>,
 
@@ -245,7 +245,7 @@ DialogueConfig[n] = {
 | `entry#barn2` | 入口 dispatcher |
 | `NGPlus` | 轮播池入口 |
 
-### 5.1.1 NpcSprite 立绘 key（`TouXiang_LiHui` 文件名）
+### 5.1.1 NpcSprite 立绘 key（`Assets/Res/Sprites/DialoguePortrait` 文件名）
 
 | 角色 | 中立 | 特殊 |
 |------|------|------|
@@ -258,19 +258,20 @@ DialogueConfig[n] = {
 | 黑猫 | `高傲` | `审视`、`炸毛` |
 | 大树 | `""` | — |
 | 闪电蜗牛 | `待机` | `闪电蜗牛` |
-| **玩家** | `正常`（默认） | `疑惑`、`惊讶` |
+| **玩家（芦笛）** | `正常`（默认） | `疑惑`、`惊讶`；可选 `无奈` |
 
 树状 md 写 `角色·立绘名：台词`；`doc_to_lua` 导出为 `NpcSprite`。NPC 空则回退 `NPCData.avatarPath`。
 
-#### 玩家表情选用（`Assets/Res/Model/TouXiang_LiHui/Player/`）
+#### 玩家表情选用（`Assets/Res/Sprites/DialoguePortrait/Duck/`）
 
-| key | 运行时表现 | 含义 |
-|-----|------------|------|
-| `正常` | UI 上的固定立绘，无符号 | **默认**；陈述、答应、汇报、短附和 |
-| `疑惑` | 同一立绘 + `playerQuestion` | **求信息的提问** |
-| `惊讶` | 同一立绘 + `playerExclamation` | **震惊 / 不可思议 / 情绪爆发** |
+| key | 文件 | 含义 |
+|-----|------|------|
+| `正常` | `正常 1.png` | **默认**；陈述、答应、汇报、短附和 |
+| `疑惑` | `疑惑 1.png` | **求信息的提问**（立绘自带问号） |
+| `惊讶` | `惊讶 1.png` | **震惊 / 不可思议 / 情绪爆发**（立绘自带叹号） |
+| `无奈` | `无奈.png` | 台词显式写 `NpcSprite = "无奈"` 时使用；自动分类不会选它 |
 
-运行时**不改**玩家 `Image.sprite`（沿用场景/UI 上已放好的立绘）；`疑惑`/`惊讶` 只开关 Inspector 绑定的 `playerExclamation` / `playerQuestion`。
+玩家说话时换成上表对应的绿头鸭立绘。名字显示为芦笛，英文为 Reed。
 
 `NpcName = "玩家"` 时 `NpcSprite` 填上表之一；空字符串运行时视为 `正常`。
 

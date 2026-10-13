@@ -231,7 +231,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5C0F\u706B\u4EBA"
+  m_Text: "\u82A6\u7B1B"
 --- !u!1 &1565963070176201204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,6 +1117,10 @@ MonoBehaviour:
   - {fileID: 653447336, guid: ea0940fc996a84023aadcd5526e130f1, type: 3}
   - {fileID: -792172305, guid: 022569898babd4e42b1e7a7c988fdb76, type: 3}
   - {fileID: -1753796012, guid: 920ba8ad7a87f43db8b217e53a71663f, type: 3}
+  - {fileID: -1052357938, guid: c4a8e1b27d6f4a0e9b3c5d7f1e204839, type: 3}
+  - {fileID: -918895922, guid: d5b9f2c38e704b1f0c4d6e8a2f315940, type: 3}
+  - {fileID: -1832800048, guid: e6c0a3d49f815c200d5e7f9b30426a51, type: 3}
+  - {fileID: -861123950, guid: f7d1b4e50a926d311e6f80ac41537b62, type: 3}
   portraitKeys:
   - "\u5B88\u671B"
   - "\u62A4\u96CF"
@@ -1141,6 +1145,10 @@ MonoBehaviour:
   - "\u70B8\u6BDB"
   - "\u5F85\u673A"
   - "\u95EA\u7535\u8717\u725B"
+  - "\u6B63\u5E38"
+  - "\u60CA\u8BB6"
+  - "\u7591\u60D1"
+  - "\u65E0\u5948"
 --- !u!1 &8970362166947979574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,7 +1217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ef99492dc6d3934b9bc162796de8aa0, type: 3}
+  m_Sprite: {fileID: -1052357938, guid: c4a8e1b27d6f4a0e9b3c5d7f1e204839, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

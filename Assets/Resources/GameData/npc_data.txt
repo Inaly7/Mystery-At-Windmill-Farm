@@ -26,7 +26,7 @@
     {
       "id": "NPC_005",
       "name": "\u5927\u9EC4",
-      "avatarPath": "Assets/Res/Model/TouXiang_LiHui/Dog/\u9189\u5012.png",
+      "avatarPath": "Assets/Res/Sprites/DialoguePortrait/Dog/\u9189\u5012.png",
       "currentBranchId": 1,
       "isFolded": true,
       "storyGraphs": [
@@ -41,7 +41,7 @@
     {
       "id": "NPC_488",
       "name": "\u6DD1\u82AC",
-      "avatarPath": "Assets/Res/Model/TouXiang_LiHui/Hen/\u5B88\u671B.png",
+      "avatarPath": "Assets/Res/Sprites/DialoguePortrait/Hen/\u5B88\u671B.png",
       "currentBranchId": 1,
       "isFolded": true,
       "storyGraphs": [
@@ -71,7 +71,7 @@
     {
       "id": "NPC_009",
       "name": "\u5C0F\u9E21\u4FA6\u63A2\u56E2",
-      "avatarPath": "Assets/Res/Model/TouXiang_LiHui/Chicken/\u88C5\u9177.png",
+      "avatarPath": "Assets/Res/Sprites/DialoguePortrait/Chicken/\u88C5\u9177.png",
       "currentBranchId": 1,
       "isFolded": false,
       "storyGraphs": [
@@ -86,7 +86,7 @@
     {
       "id": "NPC_010",
       "name": "\u9ED1\u732B",
-      "avatarPath": "Assets/Res/Model/TouXiang_LiHui/Cat/\u9AD8\u50B2.png",
+      "avatarPath": "Assets/Res/Sprites/DialoguePortrait/Cat/\u9AD8\u50B2.png",
       "currentBranchId": 1,
       "isFolded": true,
       "storyGraphs": [
@@ -116,7 +116,7 @@
     {
       "id": "NPC_012",
       "name": "\u60B2\u4F24\u86D9",
-      "avatarPath": "Assets/Res/Model/TouXiang_LiHui/Frog/\u4E27.png",
+      "avatarPath": "Assets/Res/Sprites/DialoguePortrait/Frog/\u4E27.png",
       "currentBranchId": 1,
       "isFolded": false,
       "storyGraphs": [
@@ -131,7 +131,7 @@
     {
       "id": "NPC_013",
       "name": "\u95EA\u7535\u8717\u725B",
-      "avatarPath": "Assets/Res/Model/TouXiang_LiHui/Snail/\u5F85\u673A.png",
+      "avatarPath": "Assets/Res/Sprites/DialoguePortrait/Snail/\u5F85\u673A.png",
       "currentBranchId": 1,
       "isFolded": false,
       "storyGraphs": [
@@ -146,7 +146,7 @@
     {
       "id": "NPC_014",
       "name": "\u4E4C\u9E26",
-      "avatarPath": "Assets/Res/Model/TouXiang_LiHui/WuYa/\u5F97\u610F.png",
+      "avatarPath": "Assets/Res/Sprites/DialoguePortrait/WuYa/\u5F97\u610F.png",
       "currentBranchId": 1,
       "isFolded": false,
       "storyGraphs": [
@@ -161,7 +161,7 @@
     {
       "id": "NPC_015",
       "name": "\u8001\u9F20\u5144\u5F1F",
-      "avatarPath": "Assets/Res/Model/TouXiang_LiHui/Mouse/\u515C\u552E.png",
+      "avatarPath": "Assets/Res/Sprites/DialoguePortrait/Mouse/\u515C\u552E.png",
       "currentBranchId": 1,
       "isFolded": false,
       "storyGraphs": [

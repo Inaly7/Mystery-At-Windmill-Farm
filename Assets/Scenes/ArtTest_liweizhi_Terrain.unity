@@ -32193,7 +32193,7 @@ PrefabInstance:
     - target: {fileID: 4136908877248892788, guid: 2236b56158b834d9091fe389580ff74d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5ef99492dc6d3934b9bc162796de8aa0, type: 3}
+      objectReference: {fileID: -1052357938, guid: c4a8e1b27d6f4a0e9b3c5d7f1e204839, type: 3}
     - target: {fileID: 7959200209734937574, guid: 2236b56158b834d9091fe389580ff74d, type: 3}
       propertyPath: ParaLuaBindingData.Array.size
       value: 38

@@ -29,7 +29,7 @@ local NPCData = {
         {
             id = "NPC_005",
             name = "大黄",
-            avatarPath = "Assets/Res/Model/TouXiang_LiHui/Dog/醉倒.png",
+            avatarPath = "Assets/Res/Sprites/DialoguePortrait/Dog/醉倒.png",
             currentBranchId = 1,
             isFolded = true,
             storyGraphs = {
@@ -45,7 +45,7 @@ local NPCData = {
         {
             id = "NPC_488",
             name = "淑芬",
-            avatarPath = "Assets/Res/Model/TouXiang_LiHui/Hen/守望.png",
+            avatarPath = "Assets/Res/Sprites/DialoguePortrait/Hen/守望.png",
             currentBranchId = 1,
             isFolded = true,
             storyGraphs = {
@@ -77,7 +77,7 @@ local NPCData = {
         {
             id = "NPC_009",
             name = "小鸡侦探团",
-            avatarPath = "Assets/Res/Model/TouXiang_LiHui/Chicken/装酷.png",
+            avatarPath = "Assets/Res/Sprites/DialoguePortrait/Chicken/装酷.png",
             currentBranchId = 1,
             isFolded = false,
             storyGraphs = {
@@ -93,7 +93,7 @@ local NPCData = {
         {
             id = "NPC_010",
             name = "黑猫",
-            avatarPath = "Assets/Res/Model/TouXiang_LiHui/Cat/高傲.png",
+            avatarPath = "Assets/Res/Sprites/DialoguePortrait/Cat/高傲.png",
             currentBranchId = 1,
             isFolded = true,
             storyGraphs = {
@@ -125,7 +125,7 @@ local NPCData = {
         {
             id = "NPC_012",
             name = "悲伤蛙",
-            avatarPath = "Assets/Res/Model/TouXiang_LiHui/Frog/丧.png",
+            avatarPath = "Assets/Res/Sprites/DialoguePortrait/Frog/丧.png",
             currentBranchId = 1,
             isFolded = false,
             storyGraphs = {
@@ -141,7 +141,7 @@ local NPCData = {
         {
             id = "NPC_013",
             name = "闪电蜗牛",
-            avatarPath = "Assets/Res/Model/TouXiang_LiHui/Snail/待机.png",
+            avatarPath = "Assets/Res/Sprites/DialoguePortrait/Snail/待机.png",
             currentBranchId = 1,
             isFolded = false,
             storyGraphs = {
@@ -157,7 +157,7 @@ local NPCData = {
         {
             id = "NPC_014",
             name = "乌鸦",
-            avatarPath = "Assets/Res/Model/TouXiang_LiHui/WuYa/得意.png",
+            avatarPath = "Assets/Res/Sprites/DialoguePortrait/WuYa/得意.png",
             currentBranchId = 1,
             isFolded = false,
             storyGraphs = {
@@ -173,7 +173,7 @@ local NPCData = {
         {
             id = "NPC_015",
             name = "老鼠兄弟",
-            avatarPath = "Assets/Res/Model/TouXiang_LiHui/Mouse/兜售.png",
+            avatarPath = "Assets/Res/Sprites/DialoguePortrait/Mouse/兜售.png",
             currentBranchId = 1,
             isFolded = false,
             storyGraphs = {

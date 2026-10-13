@@ -114,6 +114,8 @@ namespace EggRescue
 
         public static string Name(string source)
         {
+            // Keep the dialogue/portrait actor key stable; localize its display name only.
+            if (source == "玩家") source = "芦笛";
             if (string.IsNullOrEmpty(source) || !IsEnglish) return source;
             var fromTable = FromTable(_ui, "name." + source);
             if (!string.IsNullOrEmpty(fromTable)) return fromTable;

@@ -184,19 +184,19 @@
   "names": [
     {
       "zh": "淑芬",
-      "en": "Shufen"
+      "en": "Mabel"
     },
     {
       "zh": "大黄",
-      "en": "Dahuang"
+      "en": "Buster"
     },
     {
       "zh": "黑猫",
-      "en": "Black Cat"
+      "en": "Velvet"
     },
     {
       "zh": "悲伤蛙",
-      "en": "Sad Frog"
+      "en": "Gloom"
     },
     {
       "zh": "闪电蜗牛",
@@ -204,11 +204,11 @@
     },
     {
       "zh": "乌鸦",
-      "en": "Crow"
+      "en": "Trinket"
     },
     {
       "zh": "小鸡侦探团",
-      "en": "Chick Detective Crew"
+      "en": "Chick Detectives"
     },
     {
       "zh": "老鼠兄弟",
@@ -216,27 +216,27 @@
     },
     {
       "zh": "阿满",
-      "en": "Aman"
+      "en": "Monty"
     },
     {
       "zh": "米粒",
-      "en": "Mili"
+      "en": "Millet"
     },
     {
       "zh": "豆豆",
-      "en": "Doudou"
+      "en": "Bean"
     },
     {
       "zh": "瓜子",
-      "en": "Guazi"
+      "en": "Pip"
     },
     {
       "zh": "鼠哥",
-      "en": "Boss Mouse"
+      "en": "Buck"
     },
     {
       "zh": "鼠弟",
-      "en": "Little Mouse"
+      "en": "Gabby"
     },
     {
       "zh": "大树",
@@ -248,11 +248,23 @@
     },
     {
       "zh": "玩家",
-      "en": "You"
+      "en": "Reed"
     },
     {
       "zh": "小鸡们",
       "en": "The Chicks"
+    },
+    {
+      "zh": "芦笛",
+      "en": "Reed"
+    },
+    {
+      "zh": "暗影侦探团",
+      "en": "Shadow Detective Squad"
+    },
+    {
+      "zh": "农场主",
+      "en": "Walter"
     }
   ],
   "lines": [
@@ -270,31 +282,31 @@
     },
     {
       "zh": "淑芬的蛋不见了。你看到过什么吗？",
-      "en": "Shufen's egg is gone. Did you see anything?"
+      "en": "Mabel's egg is gone. Did you see anything?"
     },
     {
       "zh": "（大黄的耳朵动了一下，目光慢慢聚过来）",
-      "en": "(Dahuang's ear twitches. His eyes slowly come into focus)"
+      "en": "(Buster's ear twitches. His eyes slowly come into focus)"
     },
     {
       "zh": "蛋……乌鸦……叼走了。",
-      "en": "The egg… the crow… carried it off."
+      "en": "The egg… Trinket… carried it off."
     },
     {
       "zh": "乌鸦？",
-      "en": "The crow?"
+      "en": "Trinket?"
     },
     {
       "zh": "嗯……乌鸦往谷仓屋顶飞了。我追了，跳不上去，就咬到一嘴空气。",
-      "en": "Mm… the crow flew to the barn roof. I chased it, couldn't jump up, and bit a mouthful of air."
+      "en": "Mm… Trinket flew to the barn roof. I chased it, couldn't jump up, and bit a mouthful of air."
     },
     {
       "zh": "（大黄把脑袋重新压回前爪上，声音低下去）",
-      "en": "(Dahuang lowers his head back onto his paws. His voice drops)"
+      "en": "(Buster lowers his head back onto his paws. His voice drops)"
     },
     {
       "zh": "我失职了……没护住淑芬的蛋。",
-      "en": "I failed… I didn't protect Shufen's egg."
+      "en": "I failed… I didn't protect Mabel's egg."
     },
     {
       "zh": "你身下压着一架短木梯，能先挪一下吗？",
@@ -302,7 +314,7 @@
     },
     {
       "zh": "（大黄迷迷糊糊蹬了下腿，短梯反而被压得更实）",
-      "en": "(Dahuang drowsily kicks. The ladder gets pinned even harder)"
+      "en": "(Buster drowsily kicks. The ladder gets pinned even harder)"
     },
     {
       "zh": "……别推……",
@@ -314,11 +326,11 @@
     },
     {
       "zh": "大黄，先喝点这个。",
-      "en": "Dahuang, drink this first."
+      "en": "Buster, drink this first."
     },
     {
       "zh": "大黄，醒醒。",
-      "en": "Dahuang, wake up."
+      "en": "Buster, wake up."
     },
     {
       "zh": "我等会回来。",
@@ -326,11 +338,11 @@
     },
     {
       "zh": "（大黄眯着眼凑近闻了闻，探出舌头慢慢吮着喝，中途顿了顿，又埋头接着喝）",
-      "en": "(Dahuang squints, leans in to sniff, sticks out his tongue and drinks slowly. He pauses, then buries his head and keeps drinking)"
+      "en": "(Buster squints, leans in to sniff, sticks out his tongue and drinks slowly. He pauses, then buries his head and keeps drinking)"
     },
     {
       "zh": "（片刻后，大黄猛地甩了下脑袋——湿树叶从额头飞出去）",
-      "en": "(A moment later Dahuang flings his head — the wet leaf flies off his forehead)"
+      "en": "(A moment later Buster flings his head — the wet leaf flies off his forehead)"
     },
     {
       "zh": "呕——",
@@ -338,7 +350,7 @@
     },
     {
       "zh": "（大黄使劲眨眼，目光开始聚焦）",
-      "en": "(Dahuang blinks hard. His eyes start to focus)"
+      "en": "(Buster blinks hard. His eyes start to focus)"
     },
     {
       "zh": "（四肢从梯子上撑起来，摇摇晃晃站稳）",
@@ -350,7 +362,7 @@
     },
     {
       "zh": "（大黄哼了一声，把头埋进前爪里）",
-      "en": "(Dahuang huffs and buries his head in his paws)"
+      "en": "(Buster huffs and buries his head in his paws)"
     },
     {
       "zh": "嗝……别吵……",
@@ -386,7 +398,7 @@
     },
     {
       "zh": "大黄，梯子能借我吗？入口那道小围墙，我得翻过去。",
-      "en": "Dahuang, can I borrow the ladder? I have to get over that little wall by the entrance."
+      "en": "Buster, can I borrow the ladder? I have to get over that little wall by the entrance."
     },
     {
       "zh": "梯子？",
@@ -394,7 +406,7 @@
     },
     {
       "zh": "（大黄扭头看向身侧那架侧倒的木梯）",
-      "en": "(Dahuang turns and looks at the fallen ladder beside him)"
+      "en": "(Buster turns and looks at the fallen ladder beside him)"
     },
     {
       "zh": "哦。对哦。拿去吧。",
@@ -402,7 +414,7 @@
     },
     {
       "zh": "（大黄用前爪把木梯往这边推了推）",
-      "en": "(Dahuang pushes the ladder this way with a paw)"
+      "en": "(Buster pushes the ladder this way with a paw)"
     },
     {
       "zh": "架稳了再翻。别摔着。",
@@ -418,7 +430,7 @@
     },
     {
       "zh": "（大黄皱起眉头，努力回想）",
-      "en": "(Dahuang frowns, trying to remember)"
+      "en": "(Buster frowns, trying to remember)"
     },
     {
       "zh": "前两天好像瞥见两个灰乎乎的小东西窜过去，太快了，没看清。",
@@ -430,11 +442,11 @@
     },
     {
       "zh": "大黄，你看这个——是不是你那天追的蛋？",
-      "en": "Dahuang, look at this — is this the egg you chased that day?"
+      "en": "Buster, look at this — is this the egg you chased that day?"
     },
     {
       "zh": "（大黄低头凑近，仔细盯着摊开的笔记本）",
-      "en": "(Dahuang lowers his head and stares at the open notebook)"
+      "en": "(Buster lowers his head and stares at the open notebook)"
     },
     {
       "zh": "这是……什么？",
@@ -442,7 +454,7 @@
     },
     {
       "zh": "（大黄眼睛睁大，头伸得更近）",
-      "en": "(Dahuang's eyes go wide. He leans closer)"
+      "en": "(Buster's eyes go wide. He leans closer)"
     },
     {
       "zh": "一块石头？",
@@ -450,23 +462,23 @@
     },
     {
       "zh": "（大黄抬起脑袋，僵在那里）",
-      "en": "(Dahuang lifts his head and freezes)"
+      "en": "(Buster lifts his head and freezes)"
     },
     {
       "zh": "……跟乌鸦叼走那玩意儿，形状差不多。",
-      "en": "…It's about the same shape as the thing the crow carried off."
+      "en": "…It's about the same shape as the thing Trinket carried off."
     },
     {
       "zh": "乌鸦一直守着这块石头，说是他的部落图腾宝石。",
-      "en": "The crow has been guarding this rock. He says it's his tribe's totem gem."
+      "en": "Trinket has been guarding this rock. He says it's his tribe's totem gem."
     },
     {
       "zh": "（大黄盯着笔记本，一动不动）",
-      "en": "(Dahuang stares at the notebook, not moving)"
+      "en": "(Buster stares at the notebook, not moving)"
     },
     {
       "zh": "所以乌鸦叼走的……不是淑芬的蛋？",
-      "en": "So what the crow took… wasn't Shufen's egg?"
+      "en": "So what Trinket took… wasn't Mabel's egg?"
     },
     {
       "zh": "……我——",
@@ -482,11 +494,11 @@
     },
     {
       "zh": "淑芬的蛋一定还在！",
-      "en": "Shufen's egg must still be out there!"
+      "en": "Mabel's egg must still be out there!"
     },
     {
       "zh": "（大黄一个激灵，深吸一口气）",
-      "en": "(Dahuang jolts and takes a deep breath)"
+      "en": "(Buster jolts and takes a deep breath)"
     },
     {
       "zh": "（在某个方向停下来，神情郑重）",
@@ -498,7 +510,7 @@
     },
     {
       "zh": "（大黄在红顶屋外站定，尾巴轻轻绷着）",
-      "en": "(Dahuang stops outside the red-roof house, tail held tight)"
+      "en": "(Buster stops outside the red-roof house, tail held tight)"
     },
     {
       "zh": "就是这儿。",
@@ -534,7 +546,7 @@
     },
     {
       "zh": "（大黄愣了一下，猛地用爪子拍了下自己脑门）",
-      "en": "(Dahuang blinks, then smacks his forehead with a paw)"
+      "en": "(Buster blinks, then smacks his forehead with a paw)"
     },
     {
       "zh": "哎哟！我这狗脑子，准是酒还没醒透！",
@@ -566,7 +578,7 @@
     },
     {
       "zh": "大黄，你认识那只黑猫很久了吗？",
-      "en": "Dahuang, have you known that black cat a long time?"
+      "en": "Buster, have you known that black cat a long time?"
     },
     {
       "zh": "挺久的。他刚来的时候……比我一只爪子还小。",
@@ -574,7 +586,7 @@
     },
     {
       "zh": "（大黄往下看了看自己的爪子）",
-      "en": "(Dahuang looks down at his own paw)"
+      "en": "(Buster looks down at his own paw)"
     },
     {
       "zh": "那会儿什么都不懂，连怎么爬树都不会。我教过他一次。",
@@ -598,7 +610,7 @@
     },
     {
       "zh": "（大黄挠挠耳朵）",
-      "en": "(Dahuang scratches an ear)"
+      "en": "(Buster scratches an ear)"
     },
     {
       "zh": "我后来提过一次，他说从来没进过我狗窝、那种地方。",
@@ -606,7 +618,7 @@
     },
     {
       "zh": "（大黄看着黑猫蹲着的方向）",
-      "en": "(Dahuang looks toward where the black cat is crouched)"
+      "en": "(Buster looks toward where Velvet is crouched)"
     },
     {
       "zh": "他还在。",
@@ -622,7 +634,7 @@
     },
     {
       "zh": "（大黄若无其事地往旁边挪了半步）",
-      "en": "(Dahuang casually shifts half a step aside)"
+      "en": "(Buster casually shifts half a step aside)"
     },
     {
       "zh": "他在听呢。就是不想让人看出来。",
@@ -630,7 +642,7 @@
     },
     {
       "zh": "（大黄坐在橡树旁，望向红顶屋方向）",
-      "en": "(Dahuang sits by the oak, looking toward the red-roof house)"
+      "en": "(Buster sits by the oak, looking toward the red-roof house)"
     },
     {
       "zh": "我守着。",
@@ -638,7 +650,7 @@
     },
     {
       "zh": "（大黄仰头看向红顶屋屋顶，尾巴轻轻摇着）",
-      "en": "(Dahuang looks up at the red roof, tail swaying gently)"
+      "en": "(Buster looks up at the red roof, tail swaying gently)"
     },
     {
       "zh": "加油。我守在这儿等着。",
@@ -650,15 +662,15 @@
     },
     {
       "zh": "大黄，那块石头最后怎么了？",
-      "en": "Dahuang, what happened to that rock in the end?"
+      "en": "Buster, what happened to that rock in the end?"
     },
     {
       "zh": "还在乌鸦那儿。我问过，它说是部落图腾宝石，了不得。",
-      "en": "Still with the crow. I asked. It says it's a tribal totem gem. A big deal."
+      "en": "Still with Trinket. I asked. It says it's a tribal totem gem. A big deal."
     },
     {
       "zh": "（大黄挠了挠耳朵）",
-      "en": "(Dahuang scratches an ear)"
+      "en": "(Buster scratches an ear)"
     },
     {
       "zh": "……随它去吧。",
@@ -678,7 +690,7 @@
     },
     {
       "zh": "大黄，以后还会有蛋失踪吗？",
-      "en": "Dahuang, will another egg go missing?"
+      "en": "Buster, will another egg go missing?"
     },
     {
       "zh": "不会了。",
@@ -686,7 +698,7 @@
     },
     {
       "zh": "（大黄低头看了看项圈，抬头）",
-      "en": "(Dahuang looks down at his collar, then up)"
+      "en": "(Buster looks down at his collar, then up)"
     },
     {
       "zh": "我的鼻子好用着呢。",
@@ -750,7 +762,7 @@
     },
     {
       "zh": "（大黄压低声音）",
-      "en": "(Dahuang lowers his voice)"
+      "en": "(Buster lowers his voice)"
     },
     {
       "zh": "你跟大树说话了？",
@@ -762,7 +774,7 @@
     },
     {
       "zh": "（黑猫深吸一口气，抬爪梳了两下乱毛，没梳平，更烦）",
-      "en": "(The black cat takes a deep breath, licks twice at the messy fur, fails, and gets more annoyed)"
+      "en": "(Velvet takes a deep breath, licks twice at the messy fur, fails, and gets more annoyed)"
     },
     {
       "zh": "那个该死的两脚兽！",
@@ -794,7 +806,7 @@
     },
     {
       "zh": "（黑猫视线漫不经心扫过大黄）",
-      "en": "(The black cat's gaze drifts idly over Dahuang)"
+      "en": "(Velvet's gaze drifts idly over Buster)"
     },
     {
       "zh": "……那只鸟叫你地毯呢。",
@@ -822,7 +834,7 @@
     },
     {
       "zh": "（黑猫视线缓缓滑过来，停住）",
-      "en": "(The black cat's gaze slides over and stops)"
+      "en": "(Velvet's gaze slides over and stops)"
     },
     {
       "zh": "……你又是谁？",
@@ -830,7 +842,7 @@
     },
     {
       "zh": "我是侦探，在调查淑芬的蛋失踪案。",
-      "en": "I'm the detective, investigating Shufen's missing egg."
+      "en": "I'm the detective, investigating Mabel's missing egg."
     },
     {
       "zh": "鸡的事，和本喵有什么关系。",
@@ -838,7 +850,7 @@
     },
     {
       "zh": "（黑猫在橡树根旁蹲下，尾巴慢慢扫地，没挪窝）",
-      "en": "(The black cat crouches by the oak roots, tail slowly sweeping the ground, not moving)"
+      "en": "(Velvet crouches by the oak roots, tail slowly sweeping the ground, not moving)"
     },
     {
       "zh": "……",
@@ -886,7 +898,7 @@
     },
     {
       "zh": "淑芬今天早上醒来，蛋不见了。",
-      "en": "Shufen woke up this morning and the egg was gone."
+      "en": "Mabel woke up this morning and the egg was gone."
     },
     {
       "zh": "……然后呢。",
@@ -906,7 +918,7 @@
     },
     {
       "zh": "大黄的鼻子刚恢复，",
-      "en": "Dahuang's nose just came back,"
+      "en": "Buster's nose just came back,"
     },
     {
       "zh": "那只蠢狗的鼻子，在这件事上倒是有用。",
@@ -914,7 +926,7 @@
     },
     {
       "zh": "还有昨晚悲伤蛙看见了什么——",
-      "en": "And what the sad frog saw last night—"
+      "en": "And what Gloom saw last night—"
     },
     {
       "zh": "高大的两脚兽，带着冰冷的容器，",
@@ -926,7 +938,7 @@
     },
     {
       "zh": "（黑猫没作声，眼珠子慢慢转）",
-      "en": "(The black cat says nothing. His eyes turn slowly)"
+      "en": "(Velvet says nothing. His eyes turn slowly)"
     },
     {
       "zh": "但「冰冷的容器」和「生命之源」——对得上什么，你继续说。",
@@ -966,7 +978,7 @@
     },
     {
       "zh": "（黑猫视线落在来人身上，停了一秒）",
-      "en": "(The black cat's gaze lands on the visitor and holds for a second)"
+      "en": "(Velvet's gaze lands on the visitor and holds for a second)"
     },
     {
       "zh": "蛤蟆说的冰冷容器——就是这只桶。",
@@ -974,11 +986,11 @@
     },
     {
       "zh": "水桶刚装过池塘水，正好对上悲伤蛙说的「生命之源」。",
-      "en": "The bucket just held pond water. That matches what the sad frog called the \"source of life.\""
+      "en": "The bucket just held pond water. That matches what Gloom called the \"source of life.\""
     },
     {
       "zh": "（黑猫尾巴慢了下来，不再扫地，只是压着）",
-      "en": "(The black cat's tail slows, stops sweeping, and just presses down)"
+      "en": "(Velvet's tail slows, stops sweeping, and just presses down)"
     },
     {
       "zh": "门前的雨靴脚印，夜里朝鸡窝方向。",
@@ -986,7 +998,7 @@
     },
     {
       "zh": "（黑猫停住）",
-      "en": "(The black cat stops)"
+      "en": "(Velvet stops)"
     },
     {
       "zh": "脚印朝鸡窝去。是夜里留下的。",
@@ -1050,7 +1062,7 @@
     },
     {
       "zh": "（黑猫骤然抬眼，定住）",
-      "en": "(The black cat's eyes snap up and lock)"
+      "en": "(Velvet's eyes snap up and lock)"
     },
     {
       "zh": "……你怎么知道那个。",
@@ -1074,7 +1086,7 @@
     },
     {
       "zh": "（黑猫视线往红顶屋墙缝一飘，很快收回；尾巴尖弹了一下）",
-      "en": "(The black cat's gaze flicks to a crack in the red-roof wall, then back. The tip of his tail flicks)"
+      "en": "(Velvet's gaze flicks to a crack in the red-roof wall, then back. The tip of his tail flicks)"
     },
     {
       "zh": "跟老鼠有关系吗？",
@@ -1090,7 +1102,7 @@
     },
     {
       "zh": "（黑猫眯眼打量来人，好一会儿没吭声）",
-      "en": "(The black cat squints at the visitor and says nothing for a while)"
+      "en": "(Velvet squints at the visitor and says nothing for a while)"
     },
     {
       "zh": "去找老鼠。",
@@ -1102,7 +1114,7 @@
     },
     {
       "zh": "（黑猫眼皮动了一下，仍蹲着）",
-      "en": "(The black cat's eyelid moves. He stays crouched)"
+      "en": "(Velvet's eyelid moves. He stays crouched)"
     },
     {
       "zh": "……说。",
@@ -1114,7 +1126,7 @@
     },
     {
       "zh": "（黑猫耳朵竖起来，尾巴尖不受控地弹了一下）",
-      "en": "(The black cat's ears stand up. The tip of his tail flicks, out of his control)"
+      "en": "(Velvet's ears stand up. The tip of his tail flicks, out of his control)"
     },
     {
       "zh": "在哪。",
@@ -1130,7 +1142,7 @@
     },
     {
       "zh": "（黑猫往前倾了半寸，瞳孔放大，又立刻坐正）",
-      "en": "(The black cat leans forward half an inch, pupils wide, then sits up straight at once)"
+      "en": "(Velvet leans forward half an inch, pupils wide, then sits up straight at once)"
     },
     {
       "zh": "我当面讨，他不肯给。",
@@ -1142,7 +1154,7 @@
     },
     {
       "zh": "（黑猫顿住，胡须压平，一秒后又摆回傲慢脸）",
-      "en": "(The black cat pauses, whiskers flat, then puts the arrogant face back on a second later)"
+      "en": "(Velvet pauses, whiskers flat, then puts the arrogant face back on a second later)"
     },
     {
       "zh": "怎么落到蛤蟆手里——本喵也不知道。",
@@ -1162,7 +1174,7 @@
     },
     {
       "zh": "（黑猫耳朵竖起来，尾巴拍了两下——立刻压住）",
-      "en": "(The black cat's ears stand up. His tail thumps twice — then he pins it)"
+      "en": "(Velvet's ears stand up. His tail thumps twice — then he pins it)"
     },
     {
       "zh": "……哼。",
@@ -1198,7 +1210,7 @@
     },
     {
       "zh": "大黄，别说了……",
-      "en": "Dahuang, stop talking…"
+      "en": "Buster, stop talking…"
     },
     {
       "zh": "你可是被那个两脚兽当面骗了一手啊！",
@@ -1218,11 +1230,11 @@
     },
     {
       "zh": "（黑猫的尾巴猛地弹了一下，然后静止）",
-      "en": "(The black cat's tail snaps once, then goes still)"
+      "en": "(Velvet's tail snaps once, then goes still)"
     },
     {
       "zh": "（非常缓慢地，从蹲位站起来；用眼神冻住大黄——大黄讪讪地把头转开）",
-      "en": "(Very slowly, he rises from the crouch. His eyes freeze Dahuang — Dahuang sheepishly turns his head away)"
+      "en": "(Very slowly, he rises from the crouch. His eyes freeze Buster — Buster sheepishly turns his head away)"
     },
     {
       "zh": "本喵不是因为那只发疯母鸡。",
@@ -1258,7 +1270,7 @@
     },
     {
       "zh": "（黑猫利落地钻进猫门）",
-      "en": "(The black cat slips neatly through the cat door)"
+      "en": "(Velvet slips neatly through the cat door)"
     },
     {
       "zh": "（片刻后，红屋顶阁楼的窗子被从内推开，传来一声清脆的啪嗒）",
@@ -1270,15 +1282,15 @@
     },
     {
       "zh": "（黑猫停顿，舔了一下爪子）",
-      "en": "(The black cat pauses and licks a paw)"
+      "en": "(Velvet pauses and licks a paw)"
     },
     {
       "zh": "嗯。今早在窗台上看见的——乌鸦往下俯冲，爪里那块白石头，晨光一照就闪。",
-      "en": "Mm. Saw it on the windowsill this morning — the crow dove, and that white rock in his claws flashed in the morning light."
+      "en": "Mm. Saw it on the windowsill this morning — Trinket dove, and that white rock in his claws flashed in the morning light."
     },
     {
       "zh": "（黑猫瞥了大黄一眼）",
-      "en": "(The black cat glances at Dahuang)"
+      "en": "(Velvet glances at Buster)"
     },
     {
       "zh": "任何不瞎的都看得出来不是蛋。",
@@ -1302,7 +1314,7 @@
     },
     {
       "zh": "（黑猫偏头，嘴角微扬）",
-      "en": "(The black cat tilts his head, the corner of his mouth lifting)"
+      "en": "(Velvet tilts his head, the corner of his mouth lifting)"
     },
     {
       "zh": "本喵在树上不是说过吗？",
@@ -1318,7 +1330,7 @@
     },
     {
       "zh": "那句话是在说乌鸦和我？！",
-      "en": "That line was about the crow and me?!"
+      "en": "That line was about Trinket and me?!"
     },
     {
       "zh": "你以为本喵是在骂大树吗。",
@@ -1330,7 +1342,7 @@
     },
     {
       "zh": "（黑猫睨过来一眼）",
-      "en": "(The black cat gives a sideways look)"
+      "en": "(Velvet gives a sideways look)"
     },
     {
       "zh": "……这才反应过来？",
@@ -1406,7 +1418,7 @@
     },
     {
       "zh": "本喵暂时替淑芬看着。",
-      "en": "This cat is watching it for Shufen for now."
+      "en": "This cat is watching it for Mabel for now."
     },
     {
       "zh": "就这样。",
@@ -1482,7 +1494,7 @@
     },
     {
       "zh": "屋顶那块白石头是它们自己画的，乌鸦大前天就叼走了。弟弟昨晚才不见——它们叫我去池塘问青蛙。",
-      "en": "The white rock on the roof is one they drew themselves. The crow took it the day before yesterday. Their little brother only vanished last night — they told me to ask the frog at the pond."
+      "en": "The white rock on the roof is one they drew themselves. Trinket took it the day before yesterday. Their little brother only vanished last night — they told me to ask the frog at the pond."
     },
     {
       "zh": "我可不让你蹭我狗窝。",
@@ -1594,7 +1606,7 @@
     },
     {
       "zh": "你是说乌鸦吗？",
-      "en": "You mean the crow?"
+      "en": "You mean Trinket?"
     },
     {
       "zh": "本树不指名道姓。",
@@ -1682,7 +1694,7 @@
     },
     {
       "zh": "（算盘轻敲了一下鼠弟的脑袋）",
-      "en": "(An abacus lightly taps Little Mouse's head)"
+      "en": "(An abacus lightly taps Gabby's head)"
     },
     {
       "zh": "……嗯。",
@@ -1714,7 +1726,7 @@
     },
     {
       "zh": "黑猫叫我来找你……",
-      "en": "The black cat told me to come find you…"
+      "en": "Velvet told me to come find you…"
     },
     {
       "zh": "八块奶酪碎，给你。",
@@ -1738,7 +1750,7 @@
     },
     {
       "zh": "（两只老鼠同时往墙缝里缩了半个身子，鼠哥先探出头来）",
-      "en": "(Both mice shrink half a body into the crack. Boss Mouse pokes his head out first)"
+      "en": "(Both mice shrink half a body into the crack. Buck pokes his head out first)"
     },
     {
       "zh": "……猫天生不对付老鼠，正常。",
@@ -1758,11 +1770,11 @@
     },
     {
       "zh": "（鼠哥往大橡树方向扫了一眼，后半句话咽回去，缩进墙缝）",
-      "en": "(Boss Mouse glances toward the oak, swallows the rest, and shrinks into the crack)"
+      "en": "(Buck glances toward the oak, swallows the rest, and shrinks into the crack)"
     },
     {
       "zh": "（鼠哥停了一拍，算盘没动。鼠弟刚想开口）",
-      "en": "(Boss Mouse waits a beat. The abacus doesn't move. Little Mouse is about to speak)"
+      "en": "(Buck waits a beat. The abacus doesn't move. Gabby is about to speak)"
     },
     {
       "zh": "我来说。",
@@ -1770,7 +1782,7 @@
     },
     {
       "zh": "（鼠哥清了清嗓子，顿了一下）",
-      "en": "(Boss Mouse clears his throat and pauses)"
+      "en": "(Buck clears his throat and pauses)"
     },
     {
       "zh": "哦，那件东西啊……",
@@ -1826,11 +1838,11 @@
     },
     {
       "zh": "（鼠哥把账本合上，算盘没响）",
-      "en": "(Boss Mouse closes the ledger. The abacus stays quiet)"
+      "en": "(Buck closes the ledger. The abacus stays quiet)"
     },
     {
       "zh": "（鼠弟还想说什么，生生咽了回去）",
-      "en": "(Little Mouse still wants to speak, and swallows it)"
+      "en": "(Gabby still wants to speak, and swallows it)"
     },
     {
       "zh": "没有钱，什么都没有。",
@@ -1846,7 +1858,7 @@
     },
     {
       "zh": "（鼠哥往墙缝深处探了一下，回来时爪子上空空的）",
-      "en": "(Boss Mouse reaches deep into the crack and comes back with empty paws)"
+      "en": "(Buck reaches deep into the crack and comes back with empty paws)"
     },
     {
       "zh": "……稍微有个情况。",
@@ -1874,7 +1886,7 @@
     },
     {
       "zh": "（鼠哥把账本翻了一页，算盘没停）",
-      "en": "(Boss Mouse turns a page. The abacus doesn't stop)"
+      "en": "(Buck turns a page. The abacus doesn't stop)"
     },
     {
       "zh": "往池塘那边找，就是了。",
@@ -1882,7 +1894,7 @@
     },
     {
       "zh": "（鼠弟探出头来，压低声音）",
-      "en": "(Little Mouse pokes his head out and lowers his voice)"
+      "en": "(Gabby pokes his head out and lowers his voice)"
     },
     {
       "zh": "哥，这单大，要不要……",
@@ -1894,7 +1906,7 @@
     },
     {
       "zh": "（鼠弟往鼠哥身后一缩，半张脸都不露了）",
-      "en": "(Little Mouse shrinks behind Boss Mouse until half his face is gone)"
+      "en": "(Gabby shrinks behind Buck until half his face is gone)"
     },
     {
       "zh": "鱼我已经从池塘拿回来了。",
@@ -1902,7 +1914,7 @@
     },
     {
       "zh": "（鼠哥算盘从爪上滑下去，没接稳）",
-      "en": "(Boss Mouse's abacus slips off his paw. He doesn't catch it)"
+      "en": "(Buck's abacus slips off his paw. He doesn't catch it)"
     },
     {
       "zh": "（压声）哥——",
@@ -1914,11 +1926,11 @@
     },
     {
       "zh": "黑猫那边要是问起来，我怎么说，你们掂量。",
-      "en": "If the black cat asks, what I say is for you two to weigh."
+      "en": "If Velvet asks, what I say is for you two to weigh."
     },
     {
       "zh": "（沉默。鼠哥把账本按在墙缝里，很久没动）",
-      "en": "(Silence. Boss Mouse presses the ledger into the crack and doesn't move for a long time)"
+      "en": "(Silence. Buck presses the ledger into the crack and doesn't move for a long time)"
     },
     {
       "zh": "……行。这笔算我们办砸了。",
@@ -1938,11 +1950,11 @@
     },
     {
       "zh": "（鼠弟把嘴闭紧；墙缝里再没有算盘声）",
-      "en": "(Little Mouse shuts his mouth. No more abacus sounds in the crack)"
+      "en": "(Gabby shuts his mouth. No more abacus sounds in the crack)"
     },
     {
       "zh": "（鼠弟探出头来）",
-      "en": "(Little Mouse pokes his head out)"
+      "en": "(Gabby pokes his head out)"
     },
     {
       "zh": "算了。",
@@ -1962,11 +1974,11 @@
     },
     {
       "zh": "（鼠哥接过奶酪，算盘响了三声）",
-      "en": "(Boss Mouse takes the cheese. The abacus clicks three times)"
+      "en": "(Buck takes the cheese. The abacus clicks three times)"
     },
     {
       "zh": "（鼠哥把奶酪收进账本夹层，算盘轻敲一下）",
-      "en": "(Boss Mouse tucks the cheese into the ledger. The abacus taps once)"
+      "en": "(Buck tucks the cheese into the ledger. The abacus taps once)"
     },
     {
       "zh": "付清这八块，后面那批贵的现在也开卖了。",
@@ -1982,7 +1994,7 @@
     },
     {
       "zh": "（鼠弟探出头来，没忍住）",
-      "en": "(Little Mouse pokes his head out and can't help himself)"
+      "en": "(Gabby pokes his head out and can't help himself)"
     },
     {
       "zh": "就那个整天坐池塘边叹气的？我知道它！",
@@ -1990,7 +2002,7 @@
     },
     {
       "zh": "（鼠哥把账本翻到某一页，停了一下）",
-      "en": "(Boss Mouse turns the ledger to a page and stops)"
+      "en": "(Buck turns the ledger to a page and stops)"
     },
     {
       "zh": "这本来是要收你钱的。",
@@ -2006,7 +2018,7 @@
     },
     {
       "zh": "（鼠哥把账本合上，算盘在指尖转了一圈）",
-      "en": "(Boss Mouse closes the ledger and spins the abacus on a fingertip)"
+      "en": "(Buck closes the ledger and spins the abacus on a fingertip)"
     },
     {
       "zh": "那怎么办？",
@@ -2022,7 +2034,7 @@
     },
     {
       "zh": "（鼠弟压低声音）",
-      "en": "(Little Mouse lowers his voice)"
+      "en": "(Gabby lowers his voice)"
     },
     {
       "zh": "哥……你真的去排过名？",
@@ -2034,7 +2046,7 @@
     },
     {
       "zh": "（鼠哥递了个眼神：快去）",
-      "en": "(Boss Mouse gives a look: go)"
+      "en": "(Buck gives a look: go)"
     },
     {
       "zh": "你看看这是什么。",
@@ -2046,7 +2058,7 @@
     },
     {
       "zh": "八块是吧？要不我把鱼和你刚才那句话一起带给黑猫，让它亲自来付？",
-      "en": "Eight, right? Or I take the fish and that line of yours to the black cat and let him come pay in person?"
+      "en": "Eight, right? Or I take the fish and that line of yours to Velvet and let him come pay in person?"
     },
     {
       "zh": "不用。",
@@ -2066,7 +2078,7 @@
     },
     {
       "zh": "农场那条狗，大黄，见过吗？",
-      "en": "The dog on the farm, Dahuang. Seen him?"
+      "en": "The dog on the farm, Buster. Seen him?"
     },
     {
       "zh": "它的项圈是镀银的！",
@@ -2078,7 +2090,7 @@
     },
     {
       "zh": "（鼠弟憋笑，没憋住）",
-      "en": "(Little Mouse tries not to laugh, and fails)"
+      "en": "(Gabby tries not to laugh, and fails)"
     },
     {
       "zh": "这个农场的钱花得太奇妙了……",
@@ -2110,7 +2122,7 @@
     },
     {
       "zh": "鸡舍那只最大的母鸡，淑芬，认识吗？",
-      "en": "The biggest hen in the coop, Shufen. Know her?"
+      "en": "The biggest hen in the coop, Mabel. Know her?"
     },
     {
       "zh": "十年前是隔壁村的斗鸡冠军！红顶屋的主人花了大价钱把她买回来。",
@@ -2154,7 +2166,7 @@
     },
     {
       "zh": "（鼠哥郑重地点了点头）",
-      "en": "(Boss Mouse nods solemnly)"
+      "en": "(Buck nods solemnly)"
     },
     {
       "zh": "红顶屋床底下有本书。",
@@ -2170,11 +2182,11 @@
     },
     {
       "zh": "他每次进鸡舍对淑芬说'好孩子'——那是产后护理第三招！！",
-      "en": "Every time he goes into the coop and tells Shufen \"good girl\" — that's move three of postpartum care!!"
+      "en": "Every time he goes into the coop and tells Mabel \"good girl\" — that's move three of postpartum care!!"
     },
     {
       "zh": "（鼠哥没再往下说）",
-      "en": "(Boss Mouse doesn't go on)"
+      "en": "(Buck doesn't go on)"
     },
     {
       "zh": "那棵大橡树，仔细看了没？",
@@ -2202,7 +2214,7 @@
     },
     {
       "zh": "那条狗大黄，偶尔偷喝红顶屋那边的发酵苹果渣。",
-      "en": "That dog Dahuang sometimes sneaks the fermented apple mash from the red-roof house."
+      "en": "That dog Buster sometimes sneaks the fermented apple mash from the red-roof house."
     },
     {
       "zh": "昨晚又喝大了，整晚趴在谷仓墙根出不来——",
@@ -2214,7 +2226,7 @@
     },
     {
       "zh": "大黄平时特别馋那个——",
-      "en": "Dahuang is especially greedy for that—"
+      "en": "Buster is especially greedy for that—"
     },
     {
       "zh": "我们亲眼看见的。",
@@ -2266,7 +2278,7 @@
     },
     {
       "zh": "前天下午，黑猫自己爬上了谷仓屋顶。",
-      "en": "The afternoon before last, the black cat climbed the barn roof by himself."
+      "en": "The afternoon before last, Velvet climbed the barn roof by himself."
     },
     {
       "zh": "没多大会儿，又下来了，什么也没说！！",
@@ -2294,7 +2306,7 @@
     },
     {
       "zh": "（鼠弟捂住嘴，停下来）",
-      "en": "(Little Mouse covers his mouth and stops)"
+      "en": "(Gabby covers his mouth and stops)"
     },
     {
       "zh": "……那天看见它们推了个泥糊糊的圆东西路过谷仓，",
@@ -2306,7 +2318,7 @@
     },
     {
       "zh": "谷仓顶的乌鸦，前天早上从鸡舍门口草丛边捡了个东西。",
-      "en": "The crow on the barn roof picked something up from the grass by the coop door the morning before last."
+      "en": "Trinket on the barn roof picked something up from the grass by the coop door the morning before last."
     },
     {
       "zh": "白白的！亮亮的！大大的！",
@@ -2382,7 +2394,7 @@
     },
     {
       "zh": "（鼠弟绘声绘色演示）",
-      "en": "(Little Mouse demonstrates with full sound effects)"
+      "en": "(Gabby demonstrates with full sound effects)"
     },
     {
       "zh": "味道是发酵苹果渣和醉狗口气。",
@@ -2394,7 +2406,7 @@
     },
     {
       "zh": "那不是水怪，是大黄打的呼噜！！",
-      "en": "That wasn't a swamp monster. It was Dahuang snoring!!"
+      "en": "That wasn't a swamp monster. It was Buster snoring!!"
     },
     {
       "zh": "小鸡说的水怪低吼……",
@@ -2414,7 +2426,7 @@
     },
     {
       "zh": "黑猫在篱笆边，和它自己的影子，咬耳朵。",
-      "en": "The black cat, by the fence, whispering to his own shadow."
+      "en": "Velvet, by the fence, whispering to his own shadow."
     },
     {
       "zh": "……咬什么？",
@@ -2430,7 +2442,7 @@
     },
     {
       "zh": "（鼠弟重重点头，硬把后半句咽回去）",
-      "en": "(Little Mouse nods hard and swallows the rest)"
+      "en": "(Gabby nods hard and swallows the rest)"
     },
     {
       "zh": "这面墙南段，以前住着另一家卖情报的，跟我们一个行当。",
@@ -2454,7 +2466,7 @@
     },
     {
       "zh": "（鼠哥扬了扬算盘，嘴角翘得老高）",
-      "en": "(Boss Mouse lifts the abacus, mouth crooked high)"
+      "en": "(Buck lifts the abacus, mouth crooked high)"
     },
     {
       "zh": "昨晚深夜，我们亲眼看见的——",
@@ -2494,7 +2506,7 @@
     },
     {
       "zh": "淑芬以前这么干过，管用。",
-      "en": "Shufen did this before. It works."
+      "en": "Mabel did this before. It works."
     },
     {
       "zh": "太好玩了，随口编的。",
@@ -2554,7 +2566,7 @@
     },
     {
       "zh": "这个气味……说不定正是大黄需要的。",
-      "en": "This smell… might be exactly what Dahuang needs."
+      "en": "This smell… might be exactly what Buster needs."
     },
     {
       "zh": "缺个东西垫垫脚。",
@@ -2586,7 +2598,7 @@
     },
     {
       "zh": "那是什么东西的反光——乌鸦在这里摆了什么亮晶晶的东西？",
-      "en": "What is that reflection — what shiny thing did the crow put here?"
+      "en": "What is that reflection — what shiny thing did Trinket put here?"
     },
     {
       "zh": "一颗天然白色圆石，表面用木炭画着歪歪的爱心，背面还有一张笔画稚嫩的鬼脸。",
@@ -2654,7 +2666,7 @@
     },
     {
       "zh": "这是大黄住的地方。",
-      "en": "This is where Dahuang lives."
+      "en": "This is where Buster lives."
     },
     {
       "zh": "一只旧木桶，桶底粘着干掉的谷物渣，闻起来有股淡淡酸味。",
@@ -2742,7 +2754,7 @@
     },
     {
       "zh": "黑猫常在这里守着……院子里的动静，他看得一清二楚。",
-      "en": "The black cat often keeps watch here… he sees everything that happens in the yard."
+      "en": "Velvet often keeps watch here… he sees everything that happens in the yard."
     },
     {
       "zh": "红顶屋窗帘拉得很严，只从缝里漏出一线暖黄的光。",
@@ -2758,7 +2770,7 @@
     },
     {
       "zh": "黑猫的毛。",
-      "en": "The black cat's fur."
+      "en": "Velvet's fur."
     },
     {
       "zh": "又是这种黑色细毛……乌鸦真的长毛吗？",
@@ -3306,7 +3318,7 @@
     },
     {
       "zh": "大黄喝多了，怎么叫醒？",
-      "en": "Dahuang drank too much. How do I wake him?"
+      "en": "Buster drank too much. How do I wake him?"
     },
     {
       "zh": "那只乌鸦，你觉得它知道什么吗？",
@@ -3414,7 +3426,7 @@
     },
     {
       "zh": "大黄好像喝多了，有什么办法把他叫醒吗？",
-      "en": "Dahuang seems to have drunk too much. Any way to wake him?"
+      "en": "Buster seems to have drunk too much. Any way to wake him?"
     },
     {
       "zh": "那条蠢狗又喝多了？",
@@ -3494,7 +3506,7 @@
     },
     {
       "zh": "那几个小崽子！阿满！你带他们干什么好事了！？",
-      "en": "Those little brats! Aman! What have you been getting them into!?"
+      "en": "Those little brats! Monty! What have you been getting them into!?"
     },
     {
       "zh": "让我逮到，一个个都得打一顿！",
@@ -3550,7 +3562,7 @@
     },
     {
       "zh": "淑芬，那只乌鸦叼的原来是石头。",
-      "en": "Shufen, what the crow took was a rock."
+      "en": "Mabel, what Trinket took was a rock."
     },
     {
       "zh": "……闹成这样了。",
@@ -3570,7 +3582,7 @@
     },
     {
       "zh": "（淑芬蹲在窝边；一只刚出壳的小鸡正往她翅膀下拱）",
-      "en": "(Shufen crouches by the nest. A just-hatched chick is burrowing under her wing)"
+      "en": "(Mabel crouches by the nest. A just-hatched chick is burrowing under her wing)"
     },
     {
       "zh": "你都不敢相信——他居然自己回来了。",
@@ -3674,7 +3686,7 @@
     },
     {
       "zh": "——乌鸦？叼走了什么？你倒是说完啊……",
-      "en": "—The crow? Carried what off? Finish the sentence…"
+      "en": "—Trinket? Carried what off? Finish the sentence…"
     },
     {
       "zh": "白……",
@@ -3722,7 +3734,7 @@
     },
     {
       "zh": "主人？！被主人怎么了？！不指望你了，去找黑猫开门！",
-      "en": "The owner?! The owner did what?! I'm not counting on you. Go get the black cat to open the door!"
+      "en": "The owner?! The owner did what?! I'm not counting on you. Go get Velvet to open the door!"
     },
     {
       "zh": "真……蛋……被……主……人……",
@@ -3794,7 +3806,7 @@
     },
     {
       "zh": "我是侦探。我来找淑芬的蛋。",
-      "en": "I'm the detective. I came for Shufen's egg."
+      "en": "I'm the detective. I came for Mabel's egg."
     },
     {
       "zh": "蛋？",
@@ -3802,7 +3814,7 @@
     },
     {
       "zh": "（乌鸦歪头，眼珠子贼亮地转了一圈）",
-      "en": "(The crow cocks his head. His eyes turn, bright and sly)"
+      "en": "(Trinket cocks his head. His eyes turn, bright and sly)"
     },
     {
       "zh": "本王这儿只有神灵宝石。",
@@ -3814,7 +3826,7 @@
     },
     {
       "zh": "大黄说，你把淑芬的蛋叼走了。",
-      "en": "Dahuang says you carried off Shufen's egg."
+      "en": "Buster says you carried off Mabel's egg."
     },
     {
       "zh": "那条跳跃能力为零的地毯？",
@@ -3834,7 +3846,7 @@
     },
     {
       "zh": "（乌鸦得意地扬起下巴）",
-      "en": "(The crow lifts his chin, pleased)"
+      "en": "(Trinket lifts his chin, pleased)"
     },
     {
       "zh": "然后他就怂了，一声不吭下去了。嫉妒，肯定是嫉妒。",
@@ -3850,7 +3862,7 @@
     },
     {
       "zh": "（乌鸦翅尖张开，挡住白石头）",
-      "en": "(The crow's wingtip opens and blocks the white rock)"
+      "en": "(Trinket's wingtip opens and blocks the white rock)"
     },
     {
       "zh": "拿？想都别想。",
@@ -3886,7 +3898,7 @@
     },
     {
       "zh": "（乌鸦翅膀死死盖住白石头，只故意露出爱心那一面）",
-      "en": "(The crow's wing clamps the white rock, deliberately showing only the heart)"
+      "en": "(Trinket's wing clamps the white rock, deliberately showing only the heart)"
     },
     {
       "zh": "里头充满神秘力量！",
@@ -3962,7 +3974,7 @@
     },
     {
       "zh": "（乌鸦用翅尖敲了敲白石头）",
-      "en": "(The crow taps the white rock with a wingtip)"
+      "en": "(Trinket taps the white rock with a wingtip)"
     },
     {
       "zh": "案子还没破。",
@@ -3978,7 +3990,7 @@
     },
     {
       "zh": "（乌鸦蹲在巢边，比平时安静）",
-      "en": "(The crow crouches at the edge of the nest, quieter than usual)"
+      "en": "(Trinket crouches at the edge of the nest, quieter than usual)"
     },
     {
       "zh": "案子破了。",
@@ -4006,11 +4018,11 @@
     },
     {
       "zh": "（乌鸦别过脸，翅尖把白石头往身下按了按）",
-      "en": "(The crow turns his face away and presses the white rock down with a wingtip)"
+      "en": "(Trinket turns his face away and presses the white rock down with a wingtip)"
     },
     {
       "zh": "黑猫呢？你们和好了吗？",
-      "en": "And the black cat? Did you two make up?"
+      "en": "And Velvet? Did you two make up?"
     },
     {
       "zh": "那只黑毛？！昨天凌晨四点又来本王阵法边缘晃。",
@@ -4034,7 +4046,7 @@
     },
     {
       "zh": "（乌鸦用翅膀盖住白石头，低下头）",
-      "en": "(The crow covers the white rock with a wing and lowers his head)"
+      "en": "(Trinket covers the white rock with a wing and lowers his head)"
     },
     {
       "zh": "都是本王亲自设计的考题！",
@@ -4062,15 +4074,15 @@
     },
     {
       "zh": "（阿满往前挪了半步，又停住）",
-      "en": "(Aman shifts half a step forward, then stops)"
+      "en": "(Monty shifts half a step forward, then stops)"
     },
     {
       "zh": "淑芬的蛋不见了，你们知道吗？",
-      "en": "Shufen's egg is gone. Do you know?"
+      "en": "Mabel's egg is gone. Do you know?"
     },
     {
       "zh": "（阿满墨镜滑到喙尖）",
-      "en": "(Aman's sunglasses slide to the tip of his beak)"
+      "en": "(Monty's sunglasses slide to the tip of his beak)"
     },
     {
       "zh": "（极小声）弟弟……",
@@ -4078,15 +4090,15 @@
     },
     {
       "zh": "（急）瓜子！别乱叫！",
-      "en": "(Urgent) Guazi! Don't yell!"
+      "en": "(Urgent) Pip! Don't yell!"
     },
     {
       "zh": "（阿满把墨镜顶回去）",
-      "en": "(Aman pushes the sunglasses back up)"
+      "en": "(Monty pushes the sunglasses back up)"
     },
     {
       "zh": "我们……暗影侦探团……也在查这案子。",
-      "en": "We… the Shadow Detective Crew… are also on this case."
+      "en": "We… the Shadow Detective Squad… are also on this case."
     },
     {
       "zh": "事情不小。你最好别乱插手。",
@@ -4098,7 +4110,7 @@
     },
     {
       "zh": "（豆豆拽了拽阿满翅膀）",
-      "en": "(Doudou tugs Aman's wing)"
+      "en": "(Bean tugs Monty's wing)"
     },
     {
       "zh": "内部情报。不能对外说。",
@@ -4110,7 +4122,7 @@
     },
     {
       "zh": "（米粒和豆豆对视一眼）",
-      "en": "(Mili and Doudou look at each other)"
+      "en": "(Millet and Bean look at each other)"
     },
     {
       "zh": "……我们忙着呢。真的。",
@@ -4122,7 +4134,7 @@
     },
     {
       "zh": "（瓜子低着头，喙动了动，没出声）",
-      "en": "(Guazi keeps his head down. His beak moves. No sound)"
+      "en": "(Pip keeps his head down. His beak moves. No sound)"
     },
     {
       "zh": "……还有什么事吗？",
@@ -4138,7 +4150,7 @@
     },
     {
       "zh": "大黄宿醉那样，怎么叫醒？",
-      "en": "Dahuang's that hungover. How do I wake him?"
+      "en": "Buster's that hungover. How do I wake him?"
     },
     {
       "zh": "这玩意儿，你们怎么解释？",
@@ -4146,7 +4158,7 @@
     },
     {
       "zh": "我准备上谷仓顶找乌鸦。",
-      "en": "I'm going up to the barn roof to find the crow."
+      "en": "I'm going up to the barn roof to find Trinket."
     },
     {
       "zh": "没事，走了。",
@@ -4158,7 +4170,7 @@
     },
     {
       "zh": "（阿满脖子一缩）",
-      "en": "(Aman shrinks his neck)"
+      "en": "(Monty shrinks his neck)"
     },
     {
       "zh": "……那是……",
@@ -4186,7 +4198,7 @@
     },
     {
       "zh": "（阿满朝池塘方向猛点头）",
-      "en": "(Aman nods hard toward the pond)"
+      "en": "(Monty nods hard toward the pond)"
     },
     {
       "zh": "三个脑袋！浑身绿色！",
@@ -4222,7 +4234,7 @@
     },
     {
       "zh": "（阿满墨镜歪了，顾不上扶）",
-      "en": "(Aman's sunglasses are crooked. He doesn't bother to fix them)"
+      "en": "(Monty's sunglasses are crooked. He doesn't bother to fix them)"
     },
     {
       "zh": "（……）",
@@ -4234,7 +4246,7 @@
     },
     {
       "zh": "（阿满皱眉）",
-      "en": "(Aman frowns)"
+      "en": "(Monty frowns)"
     },
     {
       "zh": "谷仓角落？不在我们巡逻范围。",
@@ -4254,19 +4266,19 @@
     },
     {
       "zh": "大黄宿醉成那样，有什么法子叫醒他吗？",
-      "en": "Dahuang's that hungover. Any way to wake him?"
+      "en": "Buster's that hungover. Any way to wake him?"
     },
     {
       "zh": "（豆豆蹦了一下，墨镜歪了）",
-      "en": "(Doudou bounces. His sunglasses go crooked)"
+      "en": "(Bean bounces. His sunglasses go crooked)"
     },
     {
       "zh": "大黄叔叔？他还在那儿躺着？！",
-      "en": "Uncle Dahuang? He's still lying there?!"
+      "en": "Uncle Buster? He's still lying there?!"
     },
     {
       "zh": "（阿满按住豆豆）",
-      "en": "(Aman holds Doudou down)"
+      "en": "(Monty holds Bean down)"
     },
     {
       "zh": "有办法吗？",
@@ -4274,7 +4286,7 @@
     },
     {
       "zh": "（阿满压低声音，翅膀尖抖了一下）",
-      "en": "(Aman lowers his voice. A wingtip shakes)"
+      "en": "(Monty lowers his voice. A wingtip shakes)"
     },
     {
       "zh": "鸡舍水槽边，有老谷物泡的水。他爱喝。灌下去就醒。……拿去，算侦探团对前辈的关照。",
@@ -4290,7 +4302,7 @@
     },
     {
       "zh": "大黄说——乌鸦把蛋叼上屋顶了。",
-      "en": "Dahuang said — the crow carried the egg up to the roof."
+      "en": "Buster said — Trinket carried the egg up to the roof."
     },
     {
       "zh": "……屋顶？",
@@ -4302,11 +4314,11 @@
     },
     {
       "zh": "乌鸦还守在上面。我得上去看看。",
-      "en": "The crow is still up there guarding it. I have to go look."
+      "en": "Trinket is still up there guarding it. I have to go look."
     },
     {
       "zh": "（阿满跟另外三只对视一眼；豆豆嘴张了张，没出声）",
-      "en": "(Aman looks at the other three. Doudou's mouth opens, and nothing comes out)"
+      "en": "(Monty looks at the other three. Bean's mouth opens, and nothing comes out)"
     },
     {
       "zh": "（极小声）会不会是……",
@@ -4314,7 +4326,7 @@
     },
     {
       "zh": "（急）瓜子！",
-      "en": "(Urgent) Guazi!"
+      "en": "(Urgent) Pip!"
     },
     {
       "zh": "（风从鸡舍边吹过）",
@@ -4326,7 +4338,7 @@
     },
     {
       "zh": "（阿满想扶墨镜，又僵住）",
-      "en": "(Aman starts to fix his sunglasses and freezes)"
+      "en": "(Monty starts to fix his sunglasses and freezes)"
     },
     {
       "zh": "（四只小鸡一起闭嘴了）",
@@ -4334,7 +4346,7 @@
     },
     {
       "zh": "你们猜，我千辛万苦爬上去，在乌鸦那儿找到什么了？",
-      "en": "Guess what I found, after all that climbing, up there with the crow?"
+      "en": "Guess what I found, after all that climbing, up there with Trinket?"
     },
     {
       "zh": "（四只小鸡对视，谁也不说话）",
@@ -4362,7 +4374,7 @@
     },
     {
       "zh": "那不是老妈的蛋……乌鸦叼走的是假的……",
-      "en": "That isn't Mom's egg… what the crow took was a fake…"
+      "en": "That isn't Mom's egg… what Trinket took was a fake…"
     },
     {
       "zh": "（哭）那弟弟呢——弟弟到底在哪——",
@@ -4370,7 +4382,7 @@
     },
     {
       "zh": "（阿满翅膀捂住脸）",
-      "en": "(Aman covers his face with a wing)"
+      "en": "(Monty covers his face with a wing)"
     },
     {
       "zh": "呜呜呜——我招了！！",
@@ -4426,11 +4438,11 @@
     },
     {
       "zh": "（小声）后来……被乌鸦叼走了。",
-      "en": "(Quiet) Later… the crow carried it off."
+      "en": "(Quiet) Later… Trinket carried it off."
     },
     {
       "zh": "那大黄说乌鸦叼蛋上屋顶——？",
-      "en": "Then when Dahuang said the crow carried an egg to the roof—?"
+      "en": "Then when Buster said Trinket carried an egg to the roof—?"
     },
     {
       "zh": "（四只小鸡对视）",
@@ -4438,11 +4450,11 @@
     },
     {
       "zh": "大黄叔叔喝了两天酒，日子都搅糊涂了……",
-      "en": "Uncle Dahuang drank for two days. He mixed the days up…"
+      "en": "Uncle Buster drank for two days. He mixed the days up…"
     },
     {
       "zh": "（哭）乌鸦叼走的是我们画的假石头——大前天的事！",
-      "en": "(Crying) What the crow carried off was the fake rock we drew — that was the day before yesterday!"
+      "en": "(Crying) What Trinket carried off was the fake rock we drew — that was the day before yesterday!"
     },
     {
       "zh": "昨晚有动静吗？",
@@ -4462,7 +4474,7 @@
     },
     {
       "zh": "（阿满瘫坐）",
-      "en": "(Aman slumps)"
+      "en": "(Monty slumps)"
     },
     {
       "zh": "……以后再也不偷弟弟出去踢球了。",
@@ -4486,7 +4498,7 @@
     },
     {
       "zh": "淑芬还在哭。",
-      "en": "Shufen is still crying."
+      "en": "Mabel is still crying."
     },
     {
       "zh": "……我们知道。",
@@ -4522,7 +4534,7 @@
     },
     {
       "zh": "（阿满点了一下头）",
-      "en": "(Aman nods once)"
+      "en": "(Monty nods once)"
     },
     {
       "zh": "后悔吗？",
@@ -4538,7 +4550,7 @@
     },
     {
       "zh": "（哑）暗影侦探团……搞砸了。",
-      "en": "(Hoarse) The Shadow Detective Crew… messed it up."
+      "en": "(Hoarse) The Shadow Detective Squad… messed it up."
     },
     {
       "zh": "我……再也不乱喊水怪了。",
@@ -4550,7 +4562,7 @@
     },
     {
       "zh": "（四只小鸡坐在鸡舍门口；阿满墨镜搁在脚边）",
-      "en": "(The four chicks sit at the coop door. Aman's sunglasses are by his feet)"
+      "en": "(The four chicks sit at the coop door. Monty's sunglasses are by his feet)"
     },
     {
       "zh": "告诉你们一个好消息——弟弟出壳了。",
@@ -4570,7 +4582,7 @@
     },
     {
       "zh": "（豆豆扭头，翅膀蹭眼睛）",
-      "en": "(Doudou turns his head and rubs his eyes with a wing)"
+      "en": "(Bean turns his head and rubs his eyes with a wing)"
     },
     {
       "zh": "我没哭。",
@@ -4594,7 +4606,7 @@
     },
     {
       "zh": "（豆豆翅膀一举）",
-      "en": "(Doudou throws a wing up)"
+      "en": "(Bean throws a wing up)"
     },
     {
       "zh": "要算！！非得找他们算！！",
@@ -4606,11 +4618,11 @@
     },
     {
       "zh": "（阿满重新戴上墨镜）",
-      "en": "(Aman puts the sunglasses back on)"
+      "en": "(Monty puts the sunglasses back on)"
     },
     {
       "zh": "暗影侦探团自有安排。",
-      "en": "The Shadow Detective Crew has its own arrangements."
+      "en": "The Shadow Detective Squad has its own arrangements."
     },
     {
       "zh": "（小声）他们编得也太过分了……",
@@ -4618,11 +4630,11 @@
     },
     {
       "zh": "（压声）豆豆，听见了。",
-      "en": "(Low) Doudou, heard you."
+      "en": "(Low) Bean, heard you."
     },
     {
       "zh": "（豆豆用力点头；米粒、瓜子也跟着点）",
-      "en": "(Doudou nods hard. Mili and Guazi nod too)"
+      "en": "(Bean nods hard. Millet and Pip nod too)"
     },
     {
       "zh": "（四只小鸡排成一列，墨镜戴正了）",
@@ -4646,7 +4658,7 @@
     },
     {
       "zh": "（压声）豆豆！！",
-      "en": "(Low) Doudou!!"
+      "en": "(Low) Bean!!"
     },
     {
       "zh": "新案子？",
@@ -4658,7 +4670,7 @@
     },
     {
       "zh": "（瓜子盯着鸡舍里）",
-      "en": "(Guazi stares into the coop)"
+      "en": "(Pip stares into the coop)"
     },
     {
       "zh": "看什么？",
@@ -4694,7 +4706,7 @@
     },
     {
       "zh": "黑猫让我来问——你们这两天到底发生了什么？我在乌鸦那儿看见一块白石头，跟你们有关吧。",
-      "en": "The black cat sent me to ask — what actually happened to you these two days? I saw a white rock with the crow. It has to do with you, doesn't it."
+      "en": "Velvet sent me to ask — what actually happened to you these two days? I saw a white rock with Trinket. It has to do with you, doesn't it."
     },
     {
       "zh": "（四只小鸡僵住）",
@@ -4746,7 +4758,7 @@
     },
     {
       "zh": "（压声）瓜子！别说了！",
-      "en": "(Low) Guazi! Stop talking!"
+      "en": "(Low) Pip! Stop talking!"
     },
     {
       "zh": "（压声）那要是有人来问，咱们怎么说？",
@@ -4774,7 +4786,7 @@
     },
     {
       "zh": "大黄的项圈是镀银的。",
-      "en": "Dahuang's collar is silver-plated."
+      "en": "Buster's collar is silver-plated."
     },
     {
       "zh": "青蛙年轻时是这片水域的第一情圣。",
@@ -4782,7 +4794,7 @@
     },
     {
       "zh": "淑芬十年前是隔壁村的斗鸡冠军。",
-      "en": "Ten years ago Shufen was the next village's cockfighting champion."
+      "en": "Ten years ago Mabel was the next village's cockfighting champion."
     },
     {
       "zh": "Flash 是隔壁农场派来的商业间谍，画了三年地图了。",
@@ -4798,7 +4810,7 @@
     },
     {
       "zh": "上次大黄偷喝主人的发酵苹果渣，是淑芬用谷物泡水叫醒的。",
-      "en": "Last time Dahuang stole the owner's fermented apple mash, Shufen woke him with grain-soaked water."
+      "en": "Last time Buster stole the owner's fermented apple mash, Mabel woke him with grain-soaked water."
     },
     {
       "zh": "主人这几天常趴窗看鸡舍方向——看完又不进去。",
@@ -4810,7 +4822,7 @@
     },
     {
       "zh": "黑猫前天下午自己爬上过谷仓顶",
-      "en": "The afternoon before last, the black cat climbed the barn roof by himself"
+      "en": "The afternoon before last, Velvet climbed the barn roof by himself"
     },
     {
       "zh": "水怪是老鼠兄弟随口编的。",
@@ -4818,7 +4830,7 @@
     },
     {
       "zh": "乌鸦前天早上从鸡舍门口草丛搞了个东西回屋顶。",
-      "en": "The morning before last, the crow took something from the grass by the coop door back to the roof."
+      "en": "The morning before last, Trinket took something from the grass by the coop door back to the roof."
     },
     {
       "zh": "昨晚红顶屋里亮黄灯，墙里嗡嗡响——像有个不会落山的小太阳。",
@@ -4830,11 +4842,11 @@
     },
     {
       "zh": "昨晚那阵'水怪低吼'其实是大黄打的呼噜。",
-      "en": "That 'swamp monster growl' last night was actually Dahuang snoring."
+      "en": "That 'swamp monster growl' last night was actually Buster snoring."
     },
     {
       "zh": "黑猫昨晚在篱笆边和自己的影子咬耳朵。",
-      "en": "Last night the black cat whispered to his own shadow by the fence."
+      "en": "Last night Velvet whispered to his own shadow by the fence."
     },
     {
       "zh": "以前还有一家卖情报的，被老鼠兄弟搞垮了。",

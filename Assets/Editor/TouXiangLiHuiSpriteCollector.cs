@@ -6,15 +6,15 @@ using UnityEditor;
 using UnityEngine;
 
 /// <summary>
-/// Wire TouXiang_LiHui sprites into NpcDialogueManager.Sprites (scene YAML patch).
-/// Auto-runs once after script reload if Sprites array is incomplete.
+/// Legacy Douyin binding for dialogue portraits. Current portraits live on DialogueManager.
+/// Auto-runs only when that old Sprites block is still present.
 /// </summary>
 [InitializeOnLoad]
 public static class TouXiangLiHuiSpriteCollector
 {
     private const string ScenePath = "Assets/Scenes/Mechanics_Code.unity";
     private const string PrefabPath = "Assets/Prefabs/DialogueManager.prefab";
-    private const string PortraitRoot = "Assets/Res/Model/TouXiang_LiHui";
+    private const string PortraitRoot = "Assets/Res/Sprites/DialoguePortrait";
     private const int ExpectedSpriteCount = 21;
 
     static TouXiangLiHuiSpriteCollector()
@@ -31,6 +31,11 @@ public static class TouXiangLiHuiSpriteCollector
     public static void BatchWirePortraitSprites()
     {
         WirePortraitSprites(showDialog: false);
+    }
+
+    private static bool HasLegacySpriteBlock(string yaml)
+    {
+        return Regex.IsMatch(yaml, @"varName: Sprites\s+Data:", RegexOptions.Singleline);
     }
 
     private static bool HasValidPortraitGuids(string yaml)
@@ -69,13 +74,15 @@ public static class TouXiangLiHuiSpriteCollector
         }
 
         string prefabFull = Path.Combine(Directory.GetCurrentDirectory(), PrefabPath);
-        if (File.Exists(prefabFull))
+        if (!File.Exists(prefabFull))
         {
-            string yaml = File.ReadAllText(prefabFull);
-            if (HasValidPortraitGuids(yaml))
-            {
-                return;
-            }
+            return;
+        }
+
+        string yaml = File.ReadAllText(prefabFull);
+        if (!HasLegacySpriteBlock(yaml) || HasValidPortraitGuids(yaml))
+        {
+            return;
         }
 
         WirePortraitSprites(showDialog: false);
@@ -90,6 +97,7 @@ public static class TouXiangLiHuiSpriteCollector
             return;
         }
 
+        var wrote = false;
         string prefabFull = Path.Combine(Directory.GetCurrentDirectory(), PrefabPath);
         if (File.Exists(prefabFull))
         {
@@ -99,6 +107,7 @@ public static class TouXiangLiHuiSpriteCollector
             {
                 File.WriteAllText(prefabFull, patched);
                 AssetDatabase.ImportAsset(PrefabPath);
+                wrote = true;
             }
         }
 
@@ -106,15 +115,28 @@ public static class TouXiangLiHuiSpriteCollector
         if (File.Exists(sceneFull))
         {
             string sceneYaml = File.ReadAllText(sceneFull);
-            if (!HasValidPortraitGuids(sceneYaml))
+            if (HasLegacySpriteBlock(sceneYaml) && !HasValidPortraitGuids(sceneYaml))
             {
                 string patched = PatchSpritesBlock(sceneYaml, portraits);
                 if (patched != null)
                 {
                     File.WriteAllText(sceneFull, patched);
                     AssetDatabase.ImportAsset(ScenePath);
+                    wrote = true;
                 }
             }
+        }
+
+        if (!wrote)
+        {
+            if (showDialog)
+            {
+                EditorUtility.DisplayDialog(
+                    "Dialogue Portrait Sprites",
+                    "立绘在 " + PortraitRoot + "。当前预制体没有旧的 Sprites 绑定，玩家与 NPC 立绘由 DialogueManager 引用。",
+                    "OK");
+            }
+            return;
         }
 
         string msg = $"已写入 {portraits.Count} 张立绘（Prefab + 必要时 Scene）";
@@ -133,7 +155,13 @@ public static class TouXiangLiHuiSpriteCollector
         foreach (string guid in guids.OrderBy(AssetDatabase.GUIDToAssetPath))
         {
             string path = AssetDatabase.GUIDToAssetPath(guid);
-            if (!path.EndsWith(".png", System.StringComparison.OrdinalIgnoreCase))
+            var normalized = path.Replace('\\', '/');
+            if (!normalized.EndsWith(".png", System.StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            if (normalized.IndexOf("/Player/", System.StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 continue;
             }

@@ -47,7 +47,7 @@ namespace EggRescue.Editor
             }
             foreach (var pair in LocaleCatalog.NameEntries())
             {
-                Write(ui, "name." + pair.Key, pair.Key, pair.Value);
+                Write(ui, "name." + pair.Key, LocaleCatalog.Name(pair.Key, false), pair.Value);
                 count++;
             }
             foreach (var pair in LocaleCatalog.LineEntries())

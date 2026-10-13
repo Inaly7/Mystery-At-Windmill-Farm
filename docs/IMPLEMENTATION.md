@@ -2,7 +2,7 @@
 
 > **用途**：代码侧技术地图，供开发者和 AI 快速理解「怎么跑」。  
 > **策划文档**：玩法 / 叙事 / 变量语义见 [`MissingEggDoc-main/`](../MissingEggDoc-main/README.md)。  
-> **引擎**：团结引擎 1.10.1。目标发布平台为 **Steam**，支持设备为 **PC**。玩家化身为一只**绿头鸭**。  
+> **引擎**：团结引擎 1.10.1。目标发布平台为 **Steam**，支持设备为 **PC**。玩家化身为一只名叫芦笛（Reed）的**绿头鸭**。
 > **玩家入口 Scene**：`Assets/Scenes/StartMenu.unity`（Build Settings 第一项）。**游戏 Scene**：`Assets/Scenes/Mechanics_Code.unity`（Addressables 分组 `Mechanics_Code` 仅为抖音初版发布入口）。  
 > **初版**：曾上线抖音小火人世界，约五万人游玩并获得大量好评。初版使用 Lua 编写逻辑并存储数据。当前运行逻辑为 **C#**，运行时数据为 **JSON**。  
 > **遗留**：`ArtTest_MRL.unity` 为早期美术白盒场景。Lua + 抖音 SDK 仍在仓库中作对照，**新逻辑只写 C#**。
@@ -32,6 +32,8 @@ C# 运行时入口：`GameBootstrap`（Play 后自动生成，不依赖抖音注
 数据转换脚本：[`MissingEggDoc-main/scripts/lua_to_json.py`](../MissingEggDoc-main/scripts/lua_to_json.py)（需 Python）与 [`MissingEggDoc-main/scripts/LuaToJson/`](../MissingEggDoc-main/scripts/LuaToJson/)（dotnet）。
 
 ### 1.2 语言与 Steam
+
+角色中英文名以 [`06-角色与关系网`](../MissingEggDoc-main/docs/06-角色与关系网.md) 的命名节为准。主角显示为「芦笛 / Reed」；Lua、JSON、立绘与分支使用的内部说话方标识仍为 `玩家`，由 `GameLocale.Name` / `LocaleCatalog.Name` 转换显示名。英文对白源文件、`catalog.json` 与 `Assets/Localization/Tables/` 的已导入表须同步；重新导入时 `LocalizationSetup` 同样写入主角的中文显示名。
 
 游戏内语言码只有 `zh-Hans` 和 `en`。Steam 用另一套名字（`schinese`、`english`），对照在 `SteamLocaleMap`。
 

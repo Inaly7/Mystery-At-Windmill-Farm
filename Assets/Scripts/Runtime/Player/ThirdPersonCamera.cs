@@ -11,21 +11,21 @@ namespace EggRescue
         [SerializeField] float mouseSensitivity = 2.2f;
         [SerializeField] float minPitch = -35f;
         [SerializeField] float maxPitch = 55f;
-        [Tooltip("?????????(?)??? 0 = ???????????????????")]
-        [SerializeField] float positionSmoothTime = 0f;
         [SerializeField] float maxDropBelowPivot = 0.1f;
         [SerializeField] float collisionRadius = 0.3f;
         [SerializeField] float collisionSkin = 0.08f;
-        [SerializeField] float minimumArmDistance = 0.9f;
-        [SerializeField] float avoidanceMoveSpeed = 4f;
-        [SerializeField] float avoidanceTurnSpeed = 180f;
+        [Tooltip("Maximum speed when restoring camera distance after an obstruction.")]
+        [SerializeField] float avoidanceMoveSpeed = 2f;
+        [SerializeField] float collisionRecoveryTime = 0.3f;
+        [SerializeField] float collisionRecoveryDelay = 0.15f;
+        [SerializeField] float collisionDistanceDeadZone = 0.04f;
 
         float _yaw;
         float _pitch = 8f;
         bool _snap;
-        bool _avoiding;
-        Vector3 _previousPivot;
-        Vector3 _posVelocity;
+        float _armDistance;
+        float _armVelocity;
+        float _recoveryWait;
         static RaycastHit[] Hits = new RaycastHit[24];
         static Collider[] Overlaps = new Collider[24];
         Renderer[] _playerRenderers;
@@ -61,11 +61,9 @@ namespace EggRescue
             if (target == null) return;
             var rot = Quaternion.Euler(_pitch, _yaw, 0f);
             var position = AvoidGeometry(target.position, target.position + rot * offset);
-            transform.SetPositionAndRotation(position, CameraRotation(target.position, position, rot));
+            transform.SetPositionAndRotation(position, rot);
             UpdatePlayerVisibility();
-            _posVelocity = Vector3.zero;
-            _previousPivot = target.position;
-            _avoiding = false;
+            ResetArm(target.position, position);
             _snap = true;
         }
 
@@ -115,84 +113,92 @@ namespace EggRescue
             if (_snap)
             {
                 var desired = AvoidGeometry(pivot, pivot + rot * offset);
-                transform.SetPositionAndRotation(desired, CameraRotation(pivot, desired, rot));
-                _posVelocity = Vector3.zero;
-                _previousPivot = pivot;
+                transform.SetPositionAndRotation(desired, rot);
+                ResetArm(pivot, desired);
                 _snap = false;
                 UpdatePlayerVisibility();
                 return;
             }
 
-            var wasAvoiding = _avoiding;
             var position = ResolvePosition(pivot, pivot + rot * offset, Time.deltaTime);
-            var rotation = CameraRotation(pivot, position, rot);
-            if (_avoiding || wasAvoiding)
-                rotation = Quaternion.RotateTowards(transform.rotation, rotation,
-                    Mathf.Max(1f, avoidanceTurnSpeed) * Time.deltaTime);
-            transform.SetPositionAndRotation(position, rotation);
+            // Collision changes distance only. The mouse owns orientation even when
+            // the arm collapses; looking back at a nearby pivot would amplify tiny
+            // positional corrections into large involuntary camera rotations.
+            transform.SetPositionAndRotation(position, rot);
             UpdatePlayerVisibility();
         }
 
         Vector3 ResolvePosition(Vector3 pivot, Vector3 wanted, float deltaTime)
         {
-            var desired = AvoidGeometry(pivot, wanted);
-            if ((desired - wanted).sqrMagnitude > 0.0001f) _avoiding = true;
-
-            // Follow player translation immediately; limit only the change in camera arm.
-            var followed = transform.position + pivot - _previousPivot;
-            _previousPivot = pivot;
-            var candidate = desired;
-            if (_avoiding)
+            wanted.y = Mathf.Max(wanted.y, pivot.y - maxDropBelowPivot);
+            var arm = wanted - pivot;
+            var length = arm.magnitude;
+            if (length < 0.001f)
             {
-                candidate = Vector3.MoveTowards(followed, desired,
-                    Mathf.Max(0.1f, avoidanceMoveSpeed) * Mathf.Max(0f, deltaTime));
-                _posVelocity = Vector3.zero;
+                ResetArm(pivot, pivot);
+                return pivot;
             }
-            else if (positionSmoothTime > 0f)
-                candidate = Vector3.SmoothDamp(transform.position, desired, ref _posVelocity,
-                    positionSmoothTime, Mathf.Infinity, deltaTime);
-
-            // Sweep the actual movement, not a second elevated-arm search. Running that
-            // search on an interpolated point could select an entirely different viewpoint.
-            var radius = CollisionRadius();
-            if (!WorldOverlap(transform.position, radius))
-                candidate = SolveArm(transform.position, candidate, false);
-            else
-                candidate = desired; // Geometry moved into the camera: recover immediately.
-
-            if ((candidate - wanted).sqrMagnitude < 0.0001f) _avoiding = false;
-            return candidate;
-        }
-
-        Vector3 AvoidGeometry(Vector3 pivot, Vector3 desired)
-        {
-            var position = SolveArm(pivot, desired);
-            if (Vector3.Distance(pivot, position) >= minimumArmDistance) return position;
-
-            // A wall can leave no space behind the player. Try a higher viewpoint
-            // before accepting an arm short enough to enter the character.
-            var delta = desired - pivot;
-            var length = Mathf.Max(minimumArmDistance, delta.magnitude);
-            var direction = delta.sqrMagnitude > 0.000001f ? delta.normalized : Vector3.back;
-            for (var i = 1; i <= 6; i++)
+            var desired = AvoidGeometry(pivot, wanted);
+            var safeDistance = Mathf.Min(length, Vector3.Distance(pivot, desired));
+            deltaTime = Mathf.Max(0f, deltaTime);
+            if (safeDistance < _armDistance)
             {
-                var elevated = Vector3.Slerp(direction, Vector3.up, i / 6f).normalized;
-                var candidate = SolveArm(pivot, pivot + elevated * length);
-                if (Vector3.Distance(pivot, candidate) >= minimumArmDistance
-                    && !WorldOverlap(candidate, collisionRadius)) return candidate;
+                // Retraction is a safety constraint. Smoothing through a new wall
+                // would clip it; only the outward recovery may lag behind.
+                _armDistance = safeDistance;
+                _armVelocity = 0f;
+                _recoveryWait = Mathf.Max(0f, collisionRecoveryDelay);
+            }
+            else if (safeDistance < length - 0.001f
+                && safeDistance - _armDistance <= Mathf.Max(0f, collisionDistanceDeadZone))
+            {
+                // Hold a conservative distance at seams and moving collider edges.
+                _recoveryWait = Mathf.Max(0f, collisionRecoveryDelay);
+                _armVelocity = 0f;
+            }
+            else
+            {
+                var recoveryDelta = Mathf.Max(0f, deltaTime - _recoveryWait);
+                _recoveryWait = Mathf.Max(0f, _recoveryWait - deltaTime);
+                if (recoveryDelta > 0f)
+                    _armDistance = Mathf.SmoothDamp(_armDistance, safeDistance, ref _armVelocity,
+                        Mathf.Max(0.01f, collisionRecoveryTime), Mathf.Max(0.1f, avoidanceMoveSpeed), recoveryDelta);
+            }
+            _armDistance = Mathf.Clamp(_armDistance, 0f, safeDistance);
+            // Resolve from today's player position rather than sweeping from the old
+            // world position, which can strand the camera above a roof during a fall.
+            var direction = arm / length;
+            var position = pivot + direction * _armDistance;
+            var radius = CollisionRadius();
+            if (WorldOverlap(position, radius))
+            {
+                // The pivot sphere may graze a wall while the arm points away from it.
+                // A cast can allow the far endpoint even though our shorter, recovering
+                // arm is still overlapped. Escape only as far as necessary on this ray.
+                var step = Mathf.Max(0.02f, radius * 0.25f);
+                while (_armDistance < safeDistance && WorldOverlap(position, radius))
+                {
+                    _armDistance = Mathf.Min(safeDistance, _armDistance + step);
+                    position = pivot + direction * _armDistance;
+                }
+                _armVelocity = 0f;
+                _recoveryWait = Mathf.Max(0f, collisionRecoveryDelay);
             }
             return position;
         }
 
-        Quaternion CameraRotation(Vector3 pivot, Vector3 position, Quaternion orbit)
+        Vector3 AvoidGeometry(Vector3 pivot, Vector3 desired)
         {
-            var focus = pivot + orbit * new Vector3(offset.x, offset.y, 0f);
-            var direction = focus - position;
-            // Retain the orbit's right axis at the overhead pole, where world-up is
-            // parallel to the viewing direction and LookRotation can flip abruptly.
-            var up = Vector3.Cross(direction, orbit * Vector3.right);
-            if (up.sqrMagnitude < 0.000001f) up = orbit * Vector3.up;
-            return direction.sqrMagnitude > 0.000001f ? Quaternion.LookRotation(direction, up) : orbit;
+            // Never search for an overhead or sideways view. In tight spaces the
+            // existing proximity fade keeps the player visible at a short distance.
+            return SolveArm(pivot, desired);
+        }
+
+        void ResetArm(Vector3 pivot, Vector3 position)
+        {
+            _armDistance = Vector3.Distance(pivot, position);
+            _armVelocity = 0f;
+            _recoveryWait = 0f;
         }
 
         float CollisionRadius()

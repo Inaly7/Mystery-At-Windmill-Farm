@@ -31,32 +31,31 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961603
-    m_Localized: Shufen's egg is gone. Did you see anything?
+    m_Localized: "Mabel's egg is gone. Did you see anything?"
     m_Metadata:
       m_Items: []
   - m_Id: 279961604
-    m_Localized: (Dahuang's ear twitches. His eyes slowly come into focus)
+    m_Localized: "(Buster's ear twitches. His eyes slowly come into focus)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961605
-    m_Localized: "The egg\u2026 the crow\u2026 carried it off."
+    m_Localized: "The egg… Trinket… carried it off."
     m_Metadata:
       m_Items: []
   - m_Id: 279961606
-    m_Localized: The crow?
+    m_Localized: "Trinket?"
     m_Metadata:
       m_Items: []
   - m_Id: 279961607
-    m_Localized: "Mm\u2026 the crow flew to the barn roof. I chased it, couldn't
-      jump up, and bit a mouthful of air."
+    m_Localized: "Mm… Trinket flew to the barn roof. I chased it, couldn't jump up, and bit a mouthful of air."
     m_Metadata:
       m_Items: []
   - m_Id: 279961608
-    m_Localized: (Dahuang lowers his head back onto his paws. His voice drops)
+    m_Localized: "(Buster lowers his head back onto his paws. His voice drops)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961609
-    m_Localized: "I failed\u2026 I didn't protect Shufen's egg."
+    m_Localized: "I failed… I didn't protect Mabel's egg."
     m_Metadata:
       m_Items: []
   - m_Id: 279961610
@@ -64,7 +63,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961611
-    m_Localized: (Dahuang drowsily kicks. The ladder gets pinned even harder)
+    m_Localized: "(Buster drowsily kicks. The ladder gets pinned even harder)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961612
@@ -76,11 +75,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961614
-    m_Localized: Dahuang, drink this first.
+    m_Localized: "Buster, drink this first."
     m_Metadata:
       m_Items: []
   - m_Id: 279961615
-    m_Localized: Dahuang, wake up.
+    m_Localized: "Buster, wake up."
     m_Metadata:
       m_Items: []
   - m_Id: 279961616
@@ -88,13 +87,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961617
-    m_Localized: (Dahuang squints, leans in to sniff, sticks out his tongue and drinks
-      slowly. He pauses, then buries his head and keeps drinking)
+    m_Localized: "(Buster squints, leans in to sniff, sticks out his tongue and drinks slowly. He pauses, then buries his head and keeps drinking)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961618
-    m_Localized: "(A moment later Dahuang flings his head \u2014 the wet leaf flies
-      off his forehead)"
+    m_Localized: "(A moment later Buster flings his head — the wet leaf flies off his forehead)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961619
@@ -102,7 +99,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961620
-    m_Localized: (Dahuang blinks hard. His eyes start to focus)
+    m_Localized: "(Buster blinks hard. His eyes start to focus)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961621
@@ -114,7 +111,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961623
-    m_Localized: (Dahuang huffs and buries his head in his paws)
+    m_Localized: "(Buster huffs and buries his head in his paws)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961624
@@ -151,8 +148,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961632
-    m_Localized: Dahuang, can I borrow the ladder? I have to get over that little
-      wall by the entrance.
+    m_Localized: "Buster, can I borrow the ladder? I have to get over that little wall by the entrance."
     m_Metadata:
       m_Items: []
   - m_Id: 279961633
@@ -160,7 +156,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961634
-    m_Localized: (Dahuang turns and looks at the fallen ladder beside him)
+    m_Localized: "(Buster turns and looks at the fallen ladder beside him)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961635
@@ -168,7 +164,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961636
-    m_Localized: (Dahuang pushes the ladder this way with a paw)
+    m_Localized: "(Buster pushes the ladder this way with a paw)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961637
@@ -185,7 +181,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961640
-    m_Localized: (Dahuang frowns, trying to remember)
+    m_Localized: "(Buster frowns, trying to remember)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961641
@@ -198,11 +194,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961643
-    m_Localized: "Dahuang, look at this \u2014 is this the egg you chased that day?"
+    m_Localized: "Buster, look at this — is this the egg you chased that day?"
     m_Metadata:
       m_Items: []
   - m_Id: 279961644
-    m_Localized: (Dahuang lowers his head and stares at the open notebook)
+    m_Localized: "(Buster lowers his head and stares at the open notebook)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961645
@@ -210,7 +206,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961646
-    m_Localized: (Dahuang's eyes go wide. He leans closer)
+    m_Localized: "(Buster's eyes go wide. He leans closer)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961647
@@ -218,24 +214,23 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961648
-    m_Localized: (Dahuang lifts his head and freezes)
+    m_Localized: "(Buster lifts his head and freezes)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961649
-    m_Localized: "\u2026It's about the same shape as the thing the crow carried off."
+    m_Localized: "…It's about the same shape as the thing Trinket carried off."
     m_Metadata:
       m_Items: []
   - m_Id: 279961650
-    m_Localized: The crow has been guarding this rock. He says it's his tribe's totem
-      gem.
+    m_Localized: "Trinket has been guarding this rock. He says it's his tribe's totem gem."
     m_Metadata:
       m_Items: []
   - m_Id: 279961651
-    m_Localized: (Dahuang stares at the notebook, not moving)
+    m_Localized: "(Buster stares at the notebook, not moving)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961652
-    m_Localized: "So what the crow took\u2026 wasn't Shufen's egg?"
+    m_Localized: "So what Trinket took… wasn't Mabel's egg?"
     m_Metadata:
       m_Items: []
   - m_Id: 279961653
@@ -251,11 +246,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961656
-    m_Localized: Shufen's egg must still be out there!
+    m_Localized: "Mabel's egg must still be out there!"
     m_Metadata:
       m_Items: []
   - m_Id: 279961657
-    m_Localized: (Dahuang jolts and takes a deep breath)
+    m_Localized: "(Buster jolts and takes a deep breath)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961658
@@ -268,7 +263,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961660
-    m_Localized: (Dahuang stops outside the red-roof house, tail held tight)
+    m_Localized: "(Buster stops outside the red-roof house, tail held tight)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961661
@@ -305,7 +300,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961669
-    m_Localized: (Dahuang blinks, then smacks his forehead with a paw)
+    m_Localized: "(Buster blinks, then smacks his forehead with a paw)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961670
@@ -337,7 +332,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961677
-    m_Localized: Dahuang, have you known that black cat a long time?
+    m_Localized: "Buster, have you known that black cat a long time?"
     m_Metadata:
       m_Items: []
   - m_Id: 279961678
@@ -346,7 +341,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961679
-    m_Localized: (Dahuang looks down at his own paw)
+    m_Localized: "(Buster looks down at his own paw)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961680
@@ -371,7 +366,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961685
-    m_Localized: (Dahuang scratches an ear)
+    m_Localized: "(Buster scratches an ear)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961686
@@ -380,7 +375,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961687
-    m_Localized: (Dahuang looks toward where the black cat is crouched)
+    m_Localized: "(Buster looks toward where Velvet is crouched)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961688
@@ -397,7 +392,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961691
-    m_Localized: (Dahuang casually shifts half a step aside)
+    m_Localized: "(Buster casually shifts half a step aside)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961692
@@ -405,7 +400,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961693
-    m_Localized: (Dahuang sits by the oak, looking toward the red-roof house)
+    m_Localized: "(Buster sits by the oak, looking toward the red-roof house)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961694
@@ -413,7 +408,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961695
-    m_Localized: (Dahuang looks up at the red roof, tail swaying gently)
+    m_Localized: "(Buster looks up at the red roof, tail swaying gently)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961696
@@ -425,16 +420,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961698
-    m_Localized: Dahuang, what happened to that rock in the end?
+    m_Localized: "Buster, what happened to that rock in the end?"
     m_Metadata:
       m_Items: []
   - m_Id: 279961699
-    m_Localized: Still with the crow. I asked. It says it's a tribal totem gem. A
-      big deal.
+    m_Localized: "Still with Trinket. I asked. It says it's a tribal totem gem. A big deal."
     m_Metadata:
       m_Items: []
   - m_Id: 279961700
-    m_Localized: (Dahuang scratches an ear)
+    m_Localized: "(Buster scratches an ear)"
     m_Metadata:
       m_Items: []
   - m_Id: 279961701
@@ -454,7 +448,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961705
-    m_Localized: Dahuang, will another egg go missing?
+    m_Localized: "Buster, will another egg go missing?"
     m_Metadata:
       m_Items: []
   - m_Id: 279961706
@@ -462,7 +456,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 279961707
-    m_Localized: (Dahuang looks down at his collar, then up)
+    m_Localized: "(Buster looks down at his collar, then up)"
     m_Metadata:
       m_Items: []
   - m_Id: 284155904
@@ -528,7 +522,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155919
-    m_Localized: (Dahuang lowers his voice)
+    m_Localized: "(Buster lowers his voice)"
     m_Metadata:
       m_Items: []
   - m_Id: 284155920
@@ -540,8 +534,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155922
-    m_Localized: (The black cat takes a deep breath, licks twice at the messy fur,
-      fails, and gets more annoyed)
+    m_Localized: "(Velvet takes a deep breath, licks twice at the messy fur, fails, and gets more annoyed)"
     m_Metadata:
       m_Items: []
   - m_Id: 284155923
@@ -573,7 +566,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155930
-    m_Localized: (The black cat's gaze drifts idly over Dahuang)
+    m_Localized: "(Velvet's gaze drifts idly over Buster)"
     m_Metadata:
       m_Items: []
   - m_Id: 284155931
@@ -602,7 +595,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155937
-    m_Localized: (The black cat's gaze slides over and stops)
+    m_Localized: "(Velvet's gaze slides over and stops)"
     m_Metadata:
       m_Items: []
   - m_Id: 284155938
@@ -610,7 +603,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155939
-    m_Localized: I'm the detective, investigating Shufen's missing egg.
+    m_Localized: "I'm the detective, investigating Mabel's missing egg."
     m_Metadata:
       m_Items: []
   - m_Id: 284155940
@@ -618,8 +611,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155941
-    m_Localized: (The black cat crouches by the oak roots, tail slowly sweeping the
-      ground, not moving)
+    m_Localized: "(Velvet crouches by the oak roots, tail slowly sweeping the ground, not moving)"
     m_Metadata:
       m_Items: []
   - m_Id: 284155942
@@ -667,7 +659,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155953
-    m_Localized: Shufen woke up this morning and the egg was gone.
+    m_Localized: "Mabel woke up this morning and the egg was gone."
     m_Metadata:
       m_Items: []
   - m_Id: 284155954
@@ -688,7 +680,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155958
-    m_Localized: Dahuang's nose just came back,
+    m_Localized: "Buster's nose just came back,"
     m_Metadata:
       m_Items: []
   - m_Id: 284155959
@@ -696,7 +688,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155960
-    m_Localized: "And what the sad frog saw last night\u2014"
+    m_Localized: "And what Gloom saw last night—"
     m_Metadata:
       m_Items: []
   - m_Id: 284155961
@@ -708,7 +700,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155963
-    m_Localized: (The black cat says nothing. His eyes turn slowly)
+    m_Localized: "(Velvet says nothing. His eyes turn slowly)"
     m_Metadata:
       m_Items: []
   - m_Id: 284155964
@@ -750,7 +742,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155973
-    m_Localized: (The black cat's gaze lands on the visitor and holds for a second)
+    m_Localized: "(Velvet's gaze lands on the visitor and holds for a second)"
     m_Metadata:
       m_Items: []
   - m_Id: 284155974
@@ -758,12 +750,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155975
-    m_Localized: The bucket just held pond water. That matches what the sad frog
-      called the "source of life."
+    m_Localized: "The bucket just held pond water. That matches what Gloom called the \"source of life.\""
     m_Metadata:
       m_Items: []
   - m_Id: 284155976
-    m_Localized: (The black cat's tail slows, stops sweeping, and just presses down)
+    m_Localized: "(Velvet's tail slows, stops sweeping, and just presses down)"
     m_Metadata:
       m_Items: []
   - m_Id: 284155977
@@ -772,7 +763,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155978
-    m_Localized: (The black cat stops)
+    m_Localized: "(Velvet stops)"
     m_Metadata:
       m_Items: []
   - m_Id: 284155979
@@ -837,7 +828,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284155994
-    m_Localized: (The black cat's eyes snap up and lock)
+    m_Localized: "(Velvet's eyes snap up and lock)"
     m_Metadata:
       m_Items: []
   - m_Id: 284155995
@@ -861,8 +852,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156000
-    m_Localized: (The black cat's gaze flicks to a crack in the red-roof wall, then
-      back. The tip of his tail flicks)
+    m_Localized: "(Velvet's gaze flicks to a crack in the red-roof wall, then back. The tip of his tail flicks)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156001
@@ -878,7 +868,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156004
-    m_Localized: (The black cat squints at the visitor and says nothing for a while)
+    m_Localized: "(Velvet squints at the visitor and says nothing for a while)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156005
@@ -890,7 +880,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156007
-    m_Localized: (The black cat's eyelid moves. He stays crouched)
+    m_Localized: "(Velvet's eyelid moves. He stays crouched)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156008
@@ -902,8 +892,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156010
-    m_Localized: (The black cat's ears stand up. The tip of his tail flicks, out
-      of his control)
+    m_Localized: "(Velvet's ears stand up. The tip of his tail flicks, out of his control)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156011
@@ -919,8 +908,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156014
-    m_Localized: (The black cat leans forward half an inch, pupils wide, then sits
-      up straight at once)
+    m_Localized: "(Velvet leans forward half an inch, pupils wide, then sits up straight at once)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156015
@@ -932,8 +920,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156017
-    m_Localized: (The black cat pauses, whiskers flat, then puts the arrogant face
-      back on a second later)
+    m_Localized: "(Velvet pauses, whiskers flat, then puts the arrogant face back on a second later)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156018
@@ -953,8 +940,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156022
-    m_Localized: "(The black cat's ears stand up. His tail thumps twice \u2014 then
-      he pins it)"
+    m_Localized: "(Velvet's ears stand up. His tail thumps twice — then he pins it)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156023
@@ -991,7 +977,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156031
-    m_Localized: "Dahuang, stop talking\u2026"
+    m_Localized: "Buster, stop talking…"
     m_Metadata:
       m_Items: []
   - m_Id: 284156032
@@ -1013,12 +999,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156036
-    m_Localized: (The black cat's tail snaps once, then goes still)
+    m_Localized: "(Velvet's tail snaps once, then goes still)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156037
-    m_Localized: "(Very slowly, he rises from the crouch. His eyes freeze Dahuang
-      \u2014 Dahuang sheepishly turns his head away)"
+    m_Localized: "(Very slowly, he rises from the crouch. His eyes freeze Buster — Buster sheepishly turns his head away)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156038
@@ -1057,7 +1042,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156046
-    m_Localized: (The black cat slips neatly through the cat door)
+    m_Localized: "(Velvet slips neatly through the cat door)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156047
@@ -1071,16 +1056,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156049
-    m_Localized: (The black cat pauses and licks a paw)
+    m_Localized: "(Velvet pauses and licks a paw)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156050
-    m_Localized: "Mm. Saw it on the windowsill this morning \u2014 the crow dove,
-      and that white rock in his claws flashed in the morning light."
+    m_Localized: "Mm. Saw it on the windowsill this morning — Trinket dove, and that white rock in his claws flashed in the morning light."
     m_Metadata:
       m_Items: []
   - m_Id: 284156051
-    m_Localized: (The black cat glances at Dahuang)
+    m_Localized: "(Velvet glances at Buster)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156052
@@ -1104,7 +1088,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156057
-    m_Localized: (The black cat tilts his head, the corner of his mouth lifting)
+    m_Localized: "(Velvet tilts his head, the corner of his mouth lifting)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156058
@@ -1120,7 +1104,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156061
-    m_Localized: That line was about the crow and me?!
+    m_Localized: "That line was about Trinket and me?!"
     m_Metadata:
       m_Items: []
   - m_Id: 284156062
@@ -1133,7 +1117,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156064
-    m_Localized: (The black cat gives a sideways look)
+    m_Localized: "(Velvet gives a sideways look)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156065
@@ -1212,7 +1196,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156083
-    m_Localized: This cat is watching it for Shufen for now.
+    m_Localized: "This cat is watching it for Mabel for now."
     m_Metadata:
       m_Items: []
   - m_Id: 284156084
@@ -1293,9 +1277,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156102
-    m_Localized: "The white rock on the roof is one they drew themselves. The crow
-      took it the day before yesterday. Their little brother only vanished last night
-      \u2014 they told me to ask the frog at the pond."
+    m_Localized: "The white rock on the roof is one they drew themselves. Trinket took it the day before yesterday. Their little brother only vanished last night — they told me to ask the frog at the pond."
     m_Metadata:
       m_Items: []
   - m_Id: 284156103
@@ -1409,7 +1391,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156130
-    m_Localized: You mean the crow?
+    m_Localized: "You mean Trinket?"
     m_Metadata:
       m_Items: []
   - m_Id: 284156131
@@ -1498,7 +1480,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156152
-    m_Localized: (An abacus lightly taps Little Mouse's head)
+    m_Localized: "(An abacus lightly taps Gabby's head)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156153
@@ -1531,7 +1513,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156160
-    m_Localized: "The black cat told me to come find you\u2026"
+    m_Localized: "Velvet told me to come find you…"
     m_Metadata:
       m_Items: []
   - m_Id: 284156161
@@ -1555,8 +1537,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156166
-    m_Localized: (Both mice shrink half a body into the crack. Boss Mouse pokes his
-      head out first)
+    m_Localized: "(Both mice shrink half a body into the crack. Buck pokes his head out first)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156167
@@ -1576,13 +1557,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156171
-    m_Localized: (Boss Mouse glances toward the oak, swallows the rest, and shrinks
-      into the crack)
+    m_Localized: "(Buck glances toward the oak, swallows the rest, and shrinks into the crack)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156172
-    m_Localized: (Boss Mouse waits a beat. The abacus doesn't move. Little Mouse
-      is about to speak)
+    m_Localized: "(Buck waits a beat. The abacus doesn't move. Gabby is about to speak)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156173
@@ -1590,7 +1569,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156174
-    m_Localized: (Boss Mouse clears his throat and pauses)
+    m_Localized: "(Buck clears his throat and pauses)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156175
@@ -1647,11 +1626,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156188
-    m_Localized: (Boss Mouse closes the ledger. The abacus stays quiet)
+    m_Localized: "(Buck closes the ledger. The abacus stays quiet)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156189
-    m_Localized: (Little Mouse still wants to speak, and swallows it)
+    m_Localized: "(Gabby still wants to speak, and swallows it)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156190
@@ -1667,8 +1646,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156193
-    m_Localized: (Boss Mouse reaches deep into the crack and comes back with empty
-      paws)
+    m_Localized: "(Buck reaches deep into the crack and comes back with empty paws)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156194
@@ -1697,7 +1675,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156200
-    m_Localized: (Boss Mouse turns a page. The abacus doesn't stop)
+    m_Localized: "(Buck turns a page. The abacus doesn't stop)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156201
@@ -1705,7 +1683,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156202
-    m_Localized: (Little Mouse pokes his head out and lowers his voice)
+    m_Localized: "(Gabby pokes his head out and lowers his voice)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156203
@@ -1718,7 +1696,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156205
-    m_Localized: (Little Mouse shrinks behind Boss Mouse until half his face is gone)
+    m_Localized: "(Gabby shrinks behind Buck until half his face is gone)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156206
@@ -1726,7 +1704,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156207
-    m_Localized: (Boss Mouse's abacus slips off his paw. He doesn't catch it)
+    m_Localized: "(Buck's abacus slips off his paw. He doesn't catch it)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156208
@@ -1738,12 +1716,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156210
-    m_Localized: If the black cat asks, what I say is for you two to weigh.
+    m_Localized: "If Velvet asks, what I say is for you two to weigh."
     m_Metadata:
       m_Items: []
   - m_Id: 284156211
-    m_Localized: (Silence. Boss Mouse presses the ledger into the crack and doesn't
-      move for a long time)
+    m_Localized: "(Silence. Buck presses the ledger into the crack and doesn't move for a long time)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156212
@@ -1764,11 +1741,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156216
-    m_Localized: (Little Mouse shuts his mouth. No more abacus sounds in the crack)
+    m_Localized: "(Gabby shuts his mouth. No more abacus sounds in the crack)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156217
-    m_Localized: (Little Mouse pokes his head out)
+    m_Localized: "(Gabby pokes his head out)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156218
@@ -1788,11 +1765,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156222
-    m_Localized: (Boss Mouse takes the cheese. The abacus clicks three times)
+    m_Localized: "(Buck takes the cheese. The abacus clicks three times)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156223
-    m_Localized: (Boss Mouse tucks the cheese into the ledger. The abacus taps once)
+    m_Localized: "(Buck tucks the cheese into the ledger. The abacus taps once)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156224
@@ -1809,7 +1786,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156227
-    m_Localized: (Little Mouse pokes his head out and can't help himself)
+    m_Localized: "(Gabby pokes his head out and can't help himself)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156228
@@ -1817,7 +1794,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156229
-    m_Localized: (Boss Mouse turns the ledger to a page and stops)
+    m_Localized: "(Buck turns the ledger to a page and stops)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156230
@@ -1833,7 +1810,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156233
-    m_Localized: (Boss Mouse closes the ledger and spins the abacus on a fingertip)
+    m_Localized: "(Buck closes the ledger and spins the abacus on a fingertip)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156234
@@ -1850,7 +1827,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156237
-    m_Localized: (Little Mouse lowers his voice)
+    m_Localized: "(Gabby lowers his voice)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156238
@@ -1862,7 +1839,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156240
-    m_Localized: '(Boss Mouse gives a look: go)'
+    m_Localized: "(Buck gives a look: go)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156241
@@ -1874,8 +1851,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156243
-    m_Localized: Eight, right? Or I take the fish and that line of yours to the black
-      cat and let him come pay in person?
+    m_Localized: "Eight, right? Or I take the fish and that line of yours to Velvet and let him come pay in person?"
     m_Metadata:
       m_Items: []
   - m_Id: 284156244
@@ -1896,7 +1872,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156248
-    m_Localized: The dog on the farm, Dahuang. Seen him?
+    m_Localized: "The dog on the farm, Buster. Seen him?"
     m_Metadata:
       m_Items: []
   - m_Id: 284156249
@@ -1909,7 +1885,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156251
-    m_Localized: (Little Mouse tries not to laugh, and fails)
+    m_Localized: "(Gabby tries not to laugh, and fails)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156252
@@ -1942,7 +1918,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156259
-    m_Localized: The biggest hen in the coop, Shufen. Know her?
+    m_Localized: "The biggest hen in the coop, Mabel. Know her?"
     m_Metadata:
       m_Items: []
   - m_Id: 284156260
@@ -1987,7 +1963,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156270
-    m_Localized: (Boss Mouse nods solemnly)
+    m_Localized: "(Buck nods solemnly)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156271
@@ -2004,12 +1980,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156274
-    m_Localized: "Every time he goes into the coop and tells Shufen \"good girl\"
-      \u2014 that's move three of postpartum care!!"
+    m_Localized: "Every time he goes into the coop and tells Mabel \"good girl\" — that's move three of postpartum care!!"
     m_Metadata:
       m_Items: []
   - m_Id: 284156275
-    m_Localized: (Boss Mouse doesn't go on)
+    m_Localized: "(Buck doesn't go on)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156276
@@ -2038,8 +2013,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156282
-    m_Localized: That dog Dahuang sometimes sneaks the fermented apple mash from
-      the red-roof house.
+    m_Localized: "That dog Buster sometimes sneaks the fermented apple mash from the red-roof house."
     m_Metadata:
       m_Items: []
   - m_Id: 284156283
@@ -2053,7 +2027,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156285
-    m_Localized: "Dahuang is especially greedy for that\u2014"
+    m_Localized: "Buster is especially greedy for that—"
     m_Metadata:
       m_Items: []
   - m_Id: 284156286
@@ -2108,8 +2082,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156298
-    m_Localized: The afternoon before last, the black cat climbed the barn roof by
-      himself.
+    m_Localized: "The afternoon before last, Velvet climbed the barn roof by himself."
     m_Metadata:
       m_Items: []
   - m_Id: 284156299
@@ -2138,7 +2111,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156305
-    m_Localized: (Little Mouse covers his mouth and stops)
+    m_Localized: "(Gabby covers his mouth and stops)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156306
@@ -2151,8 +2124,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156308
-    m_Localized: The crow on the barn roof picked something up from the grass by
-      the coop door the morning before last.
+    m_Localized: "Trinket on the barn roof picked something up from the grass by the coop door the morning before last."
     m_Metadata:
       m_Items: []
   - m_Id: 284156309
@@ -2230,7 +2202,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156327
-    m_Localized: (Little Mouse demonstrates with full sound effects)
+    m_Localized: "(Gabby demonstrates with full sound effects)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156328
@@ -2242,7 +2214,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156330
-    m_Localized: That wasn't a swamp monster. It was Dahuang snoring!!
+    m_Localized: "That wasn't a swamp monster. It was Buster snoring!!"
     m_Metadata:
       m_Items: []
   - m_Id: 284156331
@@ -2262,7 +2234,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156335
-    m_Localized: The black cat, by the fence, whispering to his own shadow.
+    m_Localized: "Velvet, by the fence, whispering to his own shadow."
     m_Metadata:
       m_Items: []
   - m_Id: 284156336
@@ -2278,7 +2250,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156339
-    m_Localized: (Little Mouse nods hard and swallows the rest)
+    m_Localized: "(Gabby nods hard and swallows the rest)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156340
@@ -2303,7 +2275,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156345
-    m_Localized: (Boss Mouse lifts the abacus, mouth crooked high)
+    m_Localized: "(Buck lifts the abacus, mouth crooked high)"
     m_Metadata:
       m_Items: []
   - m_Id: 284156346
@@ -2343,7 +2315,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156355
-    m_Localized: Shufen did this before. It works.
+    m_Localized: "Mabel did this before. It works."
     m_Metadata:
       m_Items: []
   - m_Id: 284156356
@@ -2408,7 +2380,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156370
-    m_Localized: "This smell\u2026 might be exactly what Dahuang needs."
+    m_Localized: "This smell… might be exactly what Buster needs."
     m_Metadata:
       m_Items: []
   - m_Id: 284156371
@@ -2443,8 +2415,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156378
-    m_Localized: "What is that reflection \u2014 what shiny thing did the crow put
-      here?"
+    m_Localized: "What is that reflection — what shiny thing did Trinket put here?"
     m_Metadata:
       m_Items: []
   - m_Id: 284156379
@@ -2517,7 +2488,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156395
-    m_Localized: This is where Dahuang lives.
+    m_Localized: "This is where Buster lives."
     m_Metadata:
       m_Items: []
   - m_Id: 284156396
@@ -2617,8 +2588,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156417
-    m_Localized: "The black cat often keeps watch here\u2026 he sees everything that
-      happens in the yard."
+    m_Localized: "Velvet often keeps watch here… he sees everything that happens in the yard."
     m_Metadata:
       m_Items: []
   - m_Id: 284156418
@@ -2636,7 +2606,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284156421
-    m_Localized: The black cat's fur.
+    m_Localized: "Velvet's fur."
     m_Metadata:
       m_Items: []
   - m_Id: 284156422
@@ -3198,7 +3168,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350268
-    m_Localized: Dahuang drank too much. How do I wake him?
+    m_Localized: "Buster drank too much. How do I wake him?"
     m_Metadata:
       m_Items: []
   - m_Id: 288350269
@@ -3314,7 +3284,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350295
-    m_Localized: Dahuang seems to have drunk too much. Any way to wake him?
+    m_Localized: "Buster seems to have drunk too much. Any way to wake him?"
     m_Metadata:
       m_Items: []
   - m_Id: 288350296
@@ -3400,7 +3370,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350315
-    m_Localized: Those little brats! Aman! What have you been getting them into!?
+    m_Localized: "Those little brats! Monty! What have you been getting them into!?"
     m_Metadata:
       m_Items: []
   - m_Id: 288350316
@@ -3458,7 +3428,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350329
-    m_Localized: Shufen, what the crow took was a rock.
+    m_Localized: "Mabel, what Trinket took was a rock."
     m_Metadata:
       m_Items: []
   - m_Id: 288350330
@@ -3478,8 +3448,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350334
-    m_Localized: (Shufen crouches by the nest. A just-hatched chick is burrowing
-      under her wing)
+    m_Localized: "(Mabel crouches by the nest. A just-hatched chick is burrowing under her wing)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350335
@@ -3585,7 +3554,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350360
-    m_Localized: "\u2014The crow? Carried what off? Finish the sentence\u2026"
+    m_Localized: "—Trinket? Carried what off? Finish the sentence…"
     m_Metadata:
       m_Items: []
   - m_Id: 288350361
@@ -3633,8 +3602,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350372
-    m_Localized: The owner?! The owner did what?! I'm not counting on you. Go get
-      the black cat to open the door!
+    m_Localized: "The owner?! The owner did what?! I'm not counting on you. Go get Velvet to open the door!"
     m_Metadata:
       m_Items: []
   - m_Id: 288350373
@@ -3707,7 +3675,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350390
-    m_Localized: I'm the detective. I came for Shufen's egg.
+    m_Localized: "I'm the detective. I came for Mabel's egg."
     m_Metadata:
       m_Items: []
   - m_Id: 288350391
@@ -3715,7 +3683,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350392
-    m_Localized: (The crow cocks his head. His eyes turn, bright and sly)
+    m_Localized: "(Trinket cocks his head. His eyes turn, bright and sly)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350393
@@ -3727,7 +3695,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350395
-    m_Localized: Dahuang says you carried off Shufen's egg.
+    m_Localized: "Buster says you carried off Mabel's egg."
     m_Metadata:
       m_Items: []
   - m_Id: 288350396
@@ -3747,7 +3715,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350400
-    m_Localized: (The crow lifts his chin, pleased)
+    m_Localized: "(Trinket lifts his chin, pleased)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350401
@@ -3764,7 +3732,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350404
-    m_Localized: (The crow's wingtip opens and blocks the white rock)
+    m_Localized: "(Trinket's wingtip opens and blocks the white rock)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350405
@@ -3800,8 +3768,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350413
-    m_Localized: (The crow's wing clamps the white rock, deliberately showing only
-      the heart)
+    m_Localized: "(Trinket's wing clamps the white rock, deliberately showing only the heart)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350414
@@ -3878,7 +3845,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350432
-    m_Localized: (The crow taps the white rock with a wingtip)
+    m_Localized: "(Trinket taps the white rock with a wingtip)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350433
@@ -3894,7 +3861,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350436
-    m_Localized: (The crow crouches at the edge of the nest, quieter than usual)
+    m_Localized: "(Trinket crouches at the edge of the nest, quieter than usual)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350437
@@ -3922,12 +3889,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350443
-    m_Localized: (The crow turns his face away and presses the white rock down with
-      a wingtip)
+    m_Localized: "(Trinket turns his face away and presses the white rock down with a wingtip)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350444
-    m_Localized: And the black cat? Did you two make up?
+    m_Localized: "And Velvet? Did you two make up?"
     m_Metadata:
       m_Items: []
   - m_Id: 288350445
@@ -3953,7 +3919,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350450
-    m_Localized: (The crow covers the white rock with a wing and lowers his head)
+    m_Localized: "(Trinket covers the white rock with a wing and lowers his head)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350451
@@ -3982,15 +3948,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350457
-    m_Localized: (Aman shifts half a step forward, then stops)
+    m_Localized: "(Monty shifts half a step forward, then stops)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350458
-    m_Localized: Shufen's egg is gone. Do you know?
+    m_Localized: "Mabel's egg is gone. Do you know?"
     m_Metadata:
       m_Items: []
   - m_Id: 288350459
-    m_Localized: (Aman's sunglasses slide to the tip of his beak)
+    m_Localized: "(Monty's sunglasses slide to the tip of his beak)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350460
@@ -3998,15 +3964,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350461
-    m_Localized: (Urgent) Guazi! Don't yell!
+    m_Localized: "(Urgent) Pip! Don't yell!"
     m_Metadata:
       m_Items: []
   - m_Id: 288350462
-    m_Localized: (Aman pushes the sunglasses back up)
+    m_Localized: "(Monty pushes the sunglasses back up)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350463
-    m_Localized: "We\u2026 the Shadow Detective Crew\u2026 are also on this case."
+    m_Localized: "We… the Shadow Detective Squad… are also on this case."
     m_Metadata:
       m_Items: []
   - m_Id: 288350464
@@ -4018,7 +3984,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350466
-    m_Localized: (Doudou tugs Aman's wing)
+    m_Localized: "(Bean tugs Monty's wing)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350467
@@ -4030,7 +3996,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350469
-    m_Localized: (Mili and Doudou look at each other)
+    m_Localized: "(Millet and Bean look at each other)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350470
@@ -4042,7 +4008,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350472
-    m_Localized: (Guazi keeps his head down. His beak moves. No sound)
+    m_Localized: "(Pip keeps his head down. His beak moves. No sound)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350473
@@ -4058,7 +4024,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350476
-    m_Localized: Dahuang's that hungover. How do I wake him?
+    m_Localized: "Buster's that hungover. How do I wake him?"
     m_Metadata:
       m_Items: []
   - m_Id: 288350477
@@ -4066,7 +4032,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350478
-    m_Localized: I'm going up to the barn roof to find the crow.
+    m_Localized: "I'm going up to the barn roof to find Trinket."
     m_Metadata:
       m_Items: []
   - m_Id: 288350479
@@ -4079,7 +4045,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350481
-    m_Localized: (Aman shrinks his neck)
+    m_Localized: "(Monty shrinks his neck)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350482
@@ -4108,7 +4074,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350488
-    m_Localized: (Aman nods hard toward the pond)
+    m_Localized: "(Monty nods hard toward the pond)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350489
@@ -4144,7 +4110,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350497
-    m_Localized: (Aman's sunglasses are crooked. He doesn't bother to fix them)
+    m_Localized: "(Monty's sunglasses are crooked. He doesn't bother to fix them)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350498
@@ -4156,7 +4122,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350500
-    m_Localized: (Aman frowns)
+    m_Localized: "(Monty frowns)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350501
@@ -4176,19 +4142,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350505
-    m_Localized: Dahuang's that hungover. Any way to wake him?
+    m_Localized: "Buster's that hungover. Any way to wake him?"
     m_Metadata:
       m_Items: []
   - m_Id: 288350506
-    m_Localized: (Doudou bounces. His sunglasses go crooked)
+    m_Localized: "(Bean bounces. His sunglasses go crooked)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350507
-    m_Localized: Uncle Dahuang? He's still lying there?!
+    m_Localized: "Uncle Buster? He's still lying there?!"
     m_Metadata:
       m_Items: []
   - m_Id: 288350508
-    m_Localized: (Aman holds Doudou down)
+    m_Localized: "(Monty holds Bean down)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350509
@@ -4196,7 +4162,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350510
-    m_Localized: (Aman lowers his voice. A wingtip shakes)
+    m_Localized: "(Monty lowers his voice. A wingtip shakes)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350511
@@ -4214,7 +4180,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350514
-    m_Localized: "Dahuang said \u2014 the crow carried the egg up to the roof."
+    m_Localized: "Buster said — Trinket carried the egg up to the roof."
     m_Metadata:
       m_Items: []
   - m_Id: 288350515
@@ -4226,12 +4192,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350517
-    m_Localized: The crow is still up there guarding it. I have to go look.
+    m_Localized: "Trinket is still up there guarding it. I have to go look."
     m_Metadata:
       m_Items: []
   - m_Id: 288350518
-    m_Localized: (Aman looks at the other three. Doudou's mouth opens, and nothing
-      comes out)
+    m_Localized: "(Monty looks at the other three. Bean's mouth opens, and nothing comes out)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350519
@@ -4239,7 +4204,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350520
-    m_Localized: (Urgent) Guazi!
+    m_Localized: "(Urgent) Pip!"
     m_Metadata:
       m_Items: []
   - m_Id: 288350521
@@ -4251,7 +4216,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350523
-    m_Localized: (Aman starts to fix his sunglasses and freezes)
+    m_Localized: "(Monty starts to fix his sunglasses and freezes)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350524
@@ -4259,7 +4224,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350525
-    m_Localized: Guess what I found, after all that climbing, up there with the crow?
+    m_Localized: "Guess what I found, after all that climbing, up there with Trinket?"
     m_Metadata:
       m_Items: []
   - m_Id: 288350526
@@ -4287,7 +4252,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350532
-    m_Localized: "That isn't Mom's egg\u2026 what the crow took was a fake\u2026"
+    m_Localized: "That isn't Mom's egg… what Trinket took was a fake…"
     m_Metadata:
       m_Items: []
   - m_Id: 288350533
@@ -4295,7 +4260,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350534
-    m_Localized: (Aman covers his face with a wing)
+    m_Localized: "(Monty covers his face with a wing)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350535
@@ -4354,11 +4319,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350548
-    m_Localized: "(Quiet) Later\u2026 the crow carried it off."
+    m_Localized: "(Quiet) Later… Trinket carried it off."
     m_Metadata:
       m_Items: []
   - m_Id: 288350549
-    m_Localized: "Then when Dahuang said the crow carried an egg to the roof\u2014?"
+    m_Localized: "Then when Buster said Trinket carried an egg to the roof—?"
     m_Metadata:
       m_Items: []
   - m_Id: 288350550
@@ -4366,12 +4331,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350551
-    m_Localized: "Uncle Dahuang drank for two days. He mixed the days up\u2026"
+    m_Localized: "Uncle Buster drank for two days. He mixed the days up…"
     m_Metadata:
       m_Items: []
   - m_Id: 288350552
-    m_Localized: "(Crying) What the crow carried off was the fake rock we drew \u2014
-      that was the day before yesterday!"
+    m_Localized: "(Crying) What Trinket carried off was the fake rock we drew — that was the day before yesterday!"
     m_Metadata:
       m_Items: []
   - m_Id: 288350553
@@ -4393,7 +4357,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350557
-    m_Localized: (Aman slumps)
+    m_Localized: "(Monty slumps)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350558
@@ -4417,7 +4381,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350563
-    m_Localized: Shufen is still crying.
+    m_Localized: "Mabel is still crying."
     m_Metadata:
       m_Items: []
   - m_Id: 288350564
@@ -4453,7 +4417,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350572
-    m_Localized: (Aman nods once)
+    m_Localized: "(Monty nods once)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350573
@@ -4469,7 +4433,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350576
-    m_Localized: "(Hoarse) The Shadow Detective Crew\u2026 messed it up."
+    m_Localized: "(Hoarse) The Shadow Detective Squad… messed it up."
     m_Metadata:
       m_Items: []
   - m_Id: 288350577
@@ -4481,8 +4445,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350579
-    m_Localized: (The four chicks sit at the coop door. Aman's sunglasses are by
-      his feet)
+    m_Localized: "(The four chicks sit at the coop door. Monty's sunglasses are by his feet)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350580
@@ -4502,7 +4465,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350584
-    m_Localized: (Doudou turns his head and rubs his eyes with a wing)
+    m_Localized: "(Bean turns his head and rubs his eyes with a wing)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350585
@@ -4527,7 +4490,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350590
-    m_Localized: (Doudou throws a wing up)
+    m_Localized: "(Bean throws a wing up)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350591
@@ -4539,11 +4502,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350593
-    m_Localized: (Aman puts the sunglasses back on)
+    m_Localized: "(Monty puts the sunglasses back on)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350594
-    m_Localized: The Shadow Detective Crew has its own arrangements.
+    m_Localized: "The Shadow Detective Squad has its own arrangements."
     m_Metadata:
       m_Items: []
   - m_Id: 288350595
@@ -4551,11 +4514,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350596
-    m_Localized: (Low) Doudou, heard you.
+    m_Localized: "(Low) Bean, heard you."
     m_Metadata:
       m_Items: []
   - m_Id: 288350597
-    m_Localized: (Doudou nods hard. Mili and Guazi nod too)
+    m_Localized: "(Bean nods hard. Millet and Pip nod too)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350598
@@ -4579,7 +4542,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350603
-    m_Localized: (Low) Doudou!!
+    m_Localized: "(Low) Bean!!"
     m_Metadata:
       m_Items: []
   - m_Id: 288350604
@@ -4591,7 +4554,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350606
-    m_Localized: (Guazi stares into the coop)
+    m_Localized: "(Pip stares into the coop)"
     m_Metadata:
       m_Items: []
   - m_Id: 288350607
@@ -4627,9 +4590,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350615
-    m_Localized: "The black cat sent me to ask \u2014 what actually happened to you
-      these two days? I saw a white rock with the crow. It has to do with you, doesn't
-      it."
+    m_Localized: "Velvet sent me to ask — what actually happened to you these two days? I saw a white rock with Trinket. It has to do with you, doesn't it."
     m_Metadata:
       m_Items: []
   - m_Id: 288350616
@@ -4688,7 +4649,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350628
-    m_Localized: (Low) Guazi! Stop talking!
+    m_Localized: "(Low) Pip! Stop talking!"
     m_Metadata:
       m_Items: []
   - m_Id: 288350629
@@ -4718,7 +4679,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350635
-    m_Localized: Dahuang's collar is silver-plated.
+    m_Localized: "Buster's collar is silver-plated."
     m_Metadata:
       m_Items: []
   - m_Id: 288350636
@@ -4726,7 +4687,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350637
-    m_Localized: Ten years ago Shufen was the next village's cockfighting champion.
+    m_Localized: "Ten years ago Mabel was the next village's cockfighting champion."
     m_Metadata:
       m_Items: []
   - m_Id: 288350638
@@ -4744,8 +4705,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350641
-    m_Localized: Last time Dahuang stole the owner's fermented apple mash, Shufen
-      woke him with grain-soaked water.
+    m_Localized: "Last time Buster stole the owner's fermented apple mash, Mabel woke him with grain-soaked water."
     m_Metadata:
       m_Items: []
   - m_Id: 288350642
@@ -4759,8 +4719,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350644
-    m_Localized: The afternoon before last, the black cat climbed the barn roof by
-      himself
+    m_Localized: "The afternoon before last, Velvet climbed the barn roof by himself"
     m_Metadata:
       m_Items: []
   - m_Id: 288350645
@@ -4768,8 +4727,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350646
-    m_Localized: The morning before last, the crow took something from the grass
-      by the coop door back to the roof.
+    m_Localized: "The morning before last, Trinket took something from the grass by the coop door back to the roof."
     m_Metadata:
       m_Items: []
   - m_Id: 288350647
@@ -4783,11 +4741,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 288350649
-    m_Localized: That 'swamp monster growl' last night was actually Dahuang snoring.
+    m_Localized: "That 'swamp monster growl' last night was actually Buster snoring."
     m_Metadata:
       m_Items: []
   - m_Id: 288350650
-    m_Localized: Last night the black cat whispered to his own shadow by the fence.
+    m_Localized: "Last night Velvet whispered to his own shadow by the fence."
     m_Metadata:
       m_Items: []
   - m_Id: 288350651
