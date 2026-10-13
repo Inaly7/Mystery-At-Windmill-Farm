@@ -68,7 +68,9 @@ namespace EggRescue
             if (GetComponent<PlayerWalkDust>() == null)
                 gameObject.AddComponent<PlayerWalkDust>();
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
-            EnsureDebugLabel();
+            var sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+            if (!sceneName.StartsWith("ArtTest"))
+                EnsureDebugLabel();
 #endif
         }
 

@@ -32,6 +32,11 @@ namespace EggRescue
         {
             if (_booted) return;
             _booted = true;
+            if (IsArtWalkScene())
+            {
+                EnsureArtWalk();
+                return;
+            }
             GameSettings.Load();
             GameState.LoadDefaults();
             NpcRegistry.Load();
@@ -53,8 +58,42 @@ namespace EggRescue
 
         void Update()
         {
+            if (IsArtWalkScene())
+            {
+                if (Input.GetKeyDown(KeyCode.Escape))
+                    GameEvents.SetPaused(!GameEvents.Paused);
+                return;
+            }
             if (Input.GetKeyDown(KeyCode.F5)) SaveService.Save();
             if (Input.GetKeyDown(KeyCode.F9)) SaveService.Load();
+        }
+
+        /// <summary>
+        /// 美术预览场景只保留走路和第三人称镜头，方便录视频。
+        /// </summary>
+        static bool IsArtWalkScene()
+        {
+            var name = SceneManager.GetActiveScene().name;
+            return name.StartsWith("ArtTest");
+        }
+
+        void EnsureArtWalk()
+        {
+            GameObject player = null;
+            if (PlayerController.Instance != null)
+                player = PlayerController.Instance.gameObject;
+            else
+            {
+                var existing = FindObjectOfType<PlayerController>();
+                if (existing != null) player = existing.gameObject;
+            }
+            if (player == null)
+                player = SpawnPlayer();
+            player.tag = "Player";
+            player.layer = 2;
+            var interaction = player.GetComponent<PlayerInteraction>();
+            if (interaction != null) interaction.enabled = false;
+            BindCameraToPlayer(player);
         }
 
         void EnsureAudio()
@@ -80,6 +119,16 @@ namespace EggRescue
         void EnsurePlayer()
         {
             if (PlayerController.Instance != null) return;
+            var player = SpawnPlayer();
+            player.tag = "Player";
+            player.layer = 2;
+            BindCameraToPlayer(player);
+            ApplySavedPose(player);
+            CreatePrompt(player.GetComponent<PlayerInteraction>());
+        }
+
+        GameObject SpawnPlayer()
+        {
             Vector3 pos;
             Quaternion rot;
             ResolveSpawn(out pos, out rot);
@@ -104,11 +153,7 @@ namespace EggRescue
                 player.AddComponent<PlayerController>();
             if (player.GetComponent<PlayerInteraction>() == null)
                 player.AddComponent<PlayerInteraction>();
-            player.tag = "Player";
-            player.layer = 2;
-            BindCameraToPlayer(player);
-            ApplySavedPose(player);
-            CreatePrompt(player.GetComponent<PlayerInteraction>());
+            return player;
         }
 
         static void ApplySavedPose(GameObject player)
