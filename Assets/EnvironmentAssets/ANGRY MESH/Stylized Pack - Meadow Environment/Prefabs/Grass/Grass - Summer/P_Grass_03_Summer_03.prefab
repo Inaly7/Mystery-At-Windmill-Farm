@@ -1,16 +1,17 @@
 %YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
+%TAG !u! tag:yousandi.cn,2023:
 --- !u!1 &2084816733196904793
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1703787178733974499}
   - component: {fileID: 5908457454508901522}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: P_Grass_03_Summer_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,35 +51,38 @@ LODGroup:
   m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.35
+  - screenRelativeHeight: 0.5642405
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6823280915251536243}
-  - screenRelativeHeight: 0.1
+  - screenRelativeHeight: 0.29339203
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8217198994521444725}
-  - screenRelativeHeight: 0.05
+  - screenRelativeHeight: 0.15628651
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8804711359248763856}
-  - screenRelativeHeight: 0.02
+  - screenRelativeHeight: 0.06677723
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2611090591520708905}
   m_Enabled: 1
+  m_virtualGeometryAndShadow: 0
+  m_AllMeshesVirtualGeometryDisabled: 1
 --- !u!1 &2148814138013983982
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 3215908201272305468}
   - component: {fileID: 5494860704527173856}
   - component: {fileID: 2611090591520708905}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: SM_Grass_03_03_LOD3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,6 +129,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_virtualGeometry: 0
+  m_ShadingRate: 0
+  m_ForceDisableGRD: 0
+  m_ForceDisableSmallMeshCull: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -150,18 +158,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+  m_MaskInteraction: 0
 --- !u!1 &6746105463532728270
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 6469305134682793531}
   - component: {fileID: 3510137288688905055}
   - component: {fileID: 8217198994521444725}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: SM_Grass_03_03_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,6 +218,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_virtualGeometry: 0
+  m_ShadingRate: 0
+  m_ForceDisableGRD: 0
+  m_ForceDisableSmallMeshCull: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -233,18 +247,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+  m_MaskInteraction: 0
 --- !u!1 &6770220722293154223
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 8471652316687179724}
   - component: {fileID: 4107694189512610008}
   - component: {fileID: 6823280915251536243}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: SM_Grass_03_03_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,6 +307,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_virtualGeometry: 0
+  m_ShadingRate: 0
+  m_ForceDisableGRD: 0
+  m_ForceDisableSmallMeshCull: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -316,18 +336,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+  m_MaskInteraction: 0
 --- !u!1 &7811778772934156101
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1724073079187036202}
   - component: {fileID: 509679998697854769}
   - component: {fileID: 8804711359248763856}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: SM_Grass_03_03_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,6 +396,10 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_virtualGeometry: 0
+  m_ShadingRate: 0
+  m_ForceDisableGRD: 0
+  m_ForceDisableSmallMeshCull: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -399,3 +425,4 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+  m_MaskInteraction: 0
