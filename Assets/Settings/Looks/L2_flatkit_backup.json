@@ -1,0 +1,38 @@
+{
+ "created": "2026-10-27T15:20:00",
+ "note": "已用 git HEAD 校正为真实原值",
+ "materials": {
+  "Assets/Res/Model/CharacterMain/DuckBody.mat": {
+   "keywords": [
+    "DR_CEL_EXTRA_ON",
+    "DR_SPECULAR_ON",
+    "_DETAILMAPBLENDINGMODE_MULTIPLY",
+    "_GRADIENTSPACE_WORLD",
+    "_OUTLINESPACE_SCREEN",
+    "_TEXTUREBLENDINGMODE_MULTIPLY"
+   ],
+   "specEnabled": 1.0,
+   "specColor": [
+    2.0,
+    2.0,
+    2.0
+   ]
+  },
+  "Assets/Res/Model/CharacterMain/DuckWing.mat": {
+   "keywords": [
+    "DR_CEL_EXTRA_ON",
+    "DR_SPECULAR_ON",
+    "_DETAILMAPBLENDINGMODE_MULTIPLY",
+    "_GRADIENTSPACE_WORLD",
+    "_OUTLINESPACE_SCREEN",
+    "_TEXTUREBLENDINGMODE_MULTIPLY"
+   ],
+   "specEnabled": 1.0,
+   "specColor": [
+    2.0,
+    2.0,
+    2.0
+   ]
+  }
+ }
+}

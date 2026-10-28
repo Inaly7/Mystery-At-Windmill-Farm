@@ -1,0 +1,485 @@
+{
+ "created": "2026-10-27T14:56:29",
+ "materials": {
+  "Assets/Res/Model/Characters/Materials/cat/catbody.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/cat/catfront.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/cat/catlight.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/chicken/chickenbody.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/chicken/chickenglass.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/chicken/chickenmouse.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/chicken/chickenwing.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/crow/crow.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/crow/crowdeco.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/crow/crowdecogold.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/crow/crowfeet.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/crow/crowwing.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/dog/dogbelly.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/dog/dogbody.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/dog/dognose.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/dog/dogtongue.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/eye_white.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/eyeblack.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/frog/frogbelly.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/frog/frogbody 1.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/frog/frogbody.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/frog/froghand.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/hen/henbody.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/hen/henbodyeyebrow.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/hen/henbodyfeet.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/hen/henbodynose.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/hen/henbodywing.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/red.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/snail/snailback.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/snail/snailbody.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/Characters/Materials/snail/snailhand.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolugonModkit/Material/Mat_GrondGrass 1.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolugonModkit/Material/Mat_GrondGrass.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolugonModkit/Material/Mat_GroundDirt.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolugonModkit/Material/Mat_RedWood.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolugonModkit/Material/Mat_Roof.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolugonModkit/Material/Mat_RoofBlue.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolugonModkit/Material/Mat_RoofRed.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolugonModkit/Material/Mat_WhiteWall.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolugonModkit/Material/Mat_Wood.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolugonModkit/Material/Mat_WoodWall.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolygonFarm/Materials/Misc/PolygonFarm_Fence.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolygonFarm/Materials/Misc/PolygonFarm_Glass.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolygonFarm/Materials/Misc/PolygonFarm_Water.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolygonFarm/Materials/PolygonFarm_01_A.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolygonFarm/Materials/PolygonFarm_02_A.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolygonFarm/Materials/PolygonFarm_02_AVeryFar.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolygonFarm/Materials/PolygonFarm_03_A.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolygonFarm/Materials/PolygonFarm_04_A.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/PolygonRock/Mat_SmallRock.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Apple.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/BOli.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Barroof.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Bowl.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Brick.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Cheese.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Coin.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/DanKe.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/DaoCao.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/DuanMuTan.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/GouWo 1.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/GouWo.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/HenHouseRoof.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/JiaoYin.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Leaf 1.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Leaf.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/LunZi.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/MaoBoHeYu 1.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/MaoBoHeYu.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Pool.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Roof.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/ShaoJiaoDaoCao.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/ShenSeShouMao.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/ShuiTong.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Stone.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Wall 1.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Wall.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Wood 1.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Wood 2.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Wood 3.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Wood.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/WoodLight.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/YuMaoSuiPian 1.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/YuMaoSuiPian.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/iron 1.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/iron.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/CharacterMain/duck.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Alternate 1.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Alternate.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/FenWei.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/NPC.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/Pot.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/YingSuo.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/Model/WhiteBox/Material/weilan.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/New Material.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  },
+  "Assets/Res/vfx/mats/m_VfxMesh.mat": {
+   "keywords": [],
+   "spec": 1.0,
+   "envr": 1.0
+  }
+ }
+}

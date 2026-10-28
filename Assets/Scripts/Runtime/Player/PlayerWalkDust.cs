@@ -154,6 +154,13 @@ namespace EggRescue
             var go = new GameObject(name);
             go.transform.SetParent(parent, false);
             var ps = go.AddComponent<ParticleSystem>();
+
+            // AddComponent 出来的粒子系统默认已经在播；
+            // 而 main.duration 只允许在"停止且已清空"的状态下改，否则报
+            // "Setting the duration while system is still playing is not supported"。
+            // 所以必须先 Stop(clear)，再做任何配置。
+            ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+
             var main = ps.main;
             main.playOnAwake = false;
             main.loop = false;

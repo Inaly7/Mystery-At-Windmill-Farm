@@ -14,6 +14,7 @@ EditorBuildSettings:
   m_BuildProfiles: []
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: c2a1503215ad44098bfd033198fb11f0, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 4b81f870cc3edc94a9456701866e762d, type: 2}
   m_SlimFeaturesWeixinMiniGame:
     ACLDecompression: 0
     AllocateOverhead: 1

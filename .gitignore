@@ -108,3 +108,17 @@ InitTestScene*.unity*
 # Lua→JSON converter build
 /MissingEggDoc-main/scripts/LuaToJson/bin/
 /MissingEggDoc-main/scripts/LuaToJson/obj/
+
+# OS / tool noise
+.DS_Store
+Thumbs.db
+desktop.ini
+UpgradeLog*.htm
+*.bak
+*.orig
+*.rej
+
+# Unity asset cache (regenerable)
+/[Cc]ache/
+/[Ww]orkspace/
+/[Tt]emp/

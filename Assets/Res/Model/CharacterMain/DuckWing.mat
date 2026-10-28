@@ -13,7 +13,6 @@ Material:
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - DR_CEL_EXTRA_ON
-  - DR_SPECULAR_ON
   - _DETAILMAPBLENDINGMODE_MULTIPLY
   - _GRADIENTSPACE_WORLD
   - _OUTLINESPACE_SCREEN
@@ -104,7 +103,7 @@ Material:
     - _SelfShadingSizeExtra: 0.685
     - _ShadowEdgeSize: 0.05
     - _ShadowEdgeSizeExtra: 0
-    - _SpecularEnabled: 1
+    - _SpecularEnabled: 0
     - _SrcBlend: 1
     - _Surface: 0
     - _TextureBlendingMode: 0
@@ -127,7 +126,7 @@ Material:
     - _DetailMapColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _FlatRimColor: {r: 1, g: 0, b: 0, a: 1}
-    - _FlatSpecularColor: {r: 2, g: 2, b: 2, a: 1}
+    - _FlatSpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0.00812006, b: 1, a: 1}
     - _UnityShadowColor: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
