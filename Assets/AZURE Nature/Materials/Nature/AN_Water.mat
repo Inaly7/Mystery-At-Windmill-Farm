@@ -81,6 +81,21 @@ Material:
     - _Float1: 0
     - _Float2: 0.1
     - _Float3: 0
+    - _FlowAccent: 0.14
+    - _FlowAngle: 47
+    - _FlowFoamScale: 2.5
+    - _FlowFoamSteps: 2
+    - _FlowHeightCurve: 1
+    - _FlowHeightHigh: 10
+    - _FlowHeightLow: 0
+    - _FlowImpactRadius: 4.8
+    - _FlowImpactStrength: 1
+    - _FlowIntensity: 1
+    - _FlowOpenWater: 0.06
+    - _FlowShoreBoost: 1
+    - _FlowShoreWidth: 1.2
+    - _FlowSpeed: 0.54
+    - _FlowStretch: 8
     - _FoamContrast: 0.7
     - _FoamDensity: 0.55
     - _FoamDistance: 0.09
@@ -114,6 +129,8 @@ Material:
     - _Color2: {r: 0.31706125, g: 0.6578038, b: 0.7075472, a: 0}
     - _DepthColor: {r: 0, g: 1, b: 0.9725489, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FlowFoamColor: {r: 1, g: 0.96, b: 0.9, a: 1}
+    - _FlowImpactCenter: {r: 0, g: 0, b: 0, a: 0}
     - _NormalScale: {r: 2, g: 2, b: 0, a: 0}
     - _Vector0: {r: 1, g: 1, b: 1, a: 0}
     - _WaterColor: {r: 1, g: 1, b: 1, a: 0}

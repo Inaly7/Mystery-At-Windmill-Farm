@@ -20,6 +20,23 @@ Shader "Raygeas/AZURE Water"
 		_DepthDistance("Depth Distance", Float) = 0
 		_RefractionScale("Refraction Scale", Range( 0 , 1)) = 0.2
 		_CoastOpacity("Coast Opacity", Range( 0 , 1)) = 0
+		[Header(Rapids)][Space(5)]_FlowAngle("Flow Angle", Range( 0 , 360)) = 0
+		_FlowSpeed("Flow Speed", Range( 0 , 3)) = 0
+		_FlowStretch("Flow Stretch", Range( 1 , 20)) = 8
+		_FlowFoamScale("Foam Scale", Range( 0.1 , 10)) = 2.5
+		_FlowIntensity("Flow Intensity", Range( 0 , 2)) = 1
+		_FlowHeightLow("Calm Height", Float) = 0
+		_FlowHeightHigh("Rapid Height", Float) = 10
+		_FlowHeightCurve("Height Curve", Range( 0.1 , 4)) = 1
+		_FlowShoreBoost("Shore Impact", Range( 0 , 2)) = 1
+		_FlowShoreWidth("Shore Width", Range( 0.05 , 5)) = 1.2
+		_FlowOpenWater("Open Water Foam", Range( 0 , 1)) = 0.08
+		_FlowAccent("Open Water Accent", Range( 0 , 1)) = 0.12
+		_FlowImpactCenter("Impact Center", Vector) = (0,0,0,0)
+		_FlowImpactRadius("Impact Radius", Range( 0 , 30)) = 3
+		_FlowImpactStrength("Impact Strength", Range( 0 , 2)) = 1
+		_FlowFoamSteps("Foam Steps", Range( 1 , 4)) = 2
+		_FlowFoamColor("Foam Color", Color) = (1,0.96,0.9,1)
 
 
 		//_TransmissionShadow( "Transmission Shadow", Range( 0, 1 ) ) = 0.5
@@ -347,6 +364,23 @@ Shader "Raygeas/AZURE Water"
 			float _Smoothness;
 			float _Opacity;
 			float _CoastOpacity;
+			float _FlowAngle;
+			float _FlowSpeed;
+			float _FlowStretch;
+			float _FlowFoamScale;
+			float _FlowIntensity;
+			float _FlowHeightLow;
+			float _FlowHeightHigh;
+			float _FlowHeightCurve;
+			float _FlowShoreBoost;
+			float _FlowShoreWidth;
+			float _FlowOpenWater;
+			float _FlowAccent;
+			float4 _FlowImpactCenter;
+			float _FlowImpactRadius;
+			float _FlowImpactStrength;
+			float _FlowFoamSteps;
+			float4 _FlowFoamColor;
 			#ifdef ASE_TRANSMISSION
 				float _TransmissionShadow;
 			#endif
@@ -681,13 +715,67 @@ Shader "Raygeas/AZURE Water"
 				float clampResult138 = clamp( _FoamContrast , 0.0 , 0.95 );
 				float screenDepth17 = LinearEyeDepth(SHADERGRAPH_SAMPLE_SCENE_DEPTH( ase_screenPosNorm.xy ),_ZBufferParams);
 				float distanceDepth17 = abs( ( screenDepth17 - LinearEyeDepth( ase_screenPosNorm.z,_ZBufferParams ) ) / ( _FoamDistance ) );
-				float Foam183 = saturate( ( pow( saturate( voroi61 ) , ( 1.0 - clampResult138 ) ) + ( 1.0 - distanceDepth17 ) ) );
+				// [CUSTOM-RAPIDS] Ghibli style directional rapids.
+				// Flow speed doubles as the master gate: at 0 the surface falls back to the
+				// original calm look (isotropic boil foam, additive blend).
+				float flowGate = smoothstep( 0.0, 0.03, _FlowSpeed );
+				// Calm height -> rapid height. Pass rapid < calm to invert the ramp,
+				// so a waterfall base / downstream impact can be the turbulent end.
+				float heightSpan = _FlowHeightHigh - _FlowHeightLow;
+				heightSpan = ( abs( heightSpan ) < 0.001 ) ? 0.001 : heightSpan;
+				float heightT = saturate( ( WorldPosition.y - _FlowHeightLow ) / heightSpan );
+				heightT = pow( heightT, max( _FlowHeightCurve, 0.05 ) );
+				float impactDist = length( float2( WorldPosition.x - _FlowImpactCenter.x, WorldPosition.z - _FlowImpactCenter.y ) );
+				float impactT = ( 1.0 - saturate( impactDist / max( _FlowImpactRadius, 0.001 ) ) ) * _FlowImpactStrength;
+				// Shoreline / obstacle foam uses the real water depth in metres and its own
+				// width. It must NOT reuse _FoamDistance: that one is shared with the legacy
+				// foam term and defaults to 0.09, far too narrow to ever show up.
+				// LinearEyeDepth measures distance ALONG the view ray, not vertical depth, so
+				// it inflates by 1/cos as the camera tilts away from straight down. That made
+				// the shoreline band slide around whenever the camera transform changed.
+				// Multiply by the vertical component of the view direction to recover the
+				// true water depth, which is a property of the scene and not of the camera.
+				float viewUp = abs( normalize( WorldViewDirection ).y );
+				float vertScale = max( viewUp, 0.15 );
+				float waterDepth = abs( screenDepth17 - LinearEyeDepth( ase_screenPosNorm.z, _ZBufferParams ) ) * vertScale;
+				float shoreT = ( 1.0 - saturate( waterDepth / max( _FlowShoreWidth, 0.001 ) ) ) * _FlowShoreBoost;
+				// Open water keeps only the base turbulence; shoreline and impact ADD on top,
+				// so rocks actually drive foam instead of being swallowed by max().
+				float turbulence = saturate( max( heightT, impactT ) * _FlowOpenWater + shoreT ) * _FlowIntensity;
+				float flowRad = radians( _FlowAngle );
+				float2 flowDir = float2( sin( flowRad ), cos( flowRad ) );
+				float2 flowSide = float2( -flowDir.y, flowDir.x );
+				float2 planeXZ = float2( WorldPosition.x, WorldPosition.z );
+				float2 flowLocal = float2( dot( planeXZ, flowSide ), dot( planeXZ, flowDir ) );
+				float2 flowUV = float2( flowLocal.x, flowLocal.y / max( _FlowStretch, 0.01 ) ) * _FlowFoamScale;
+				float flowScroll = _TimeParameters.x * _FlowSpeed;
+				flowUV.y -= flowScroll;
+				float2 tmpId = 0;
+				float2 tmpMr = 0;
+				float2 tmpSid = 0;
+				float voronoiSmoothSafe = max( 1.0 - _FoamDensity, 0.02 );
+				float broadFoam = voronoi61( flowUV * 0.30, flowScroll * 0.35, tmpId, tmpMr, voronoiSmoothSafe, tmpSid );
+				float fineFoam = voronoi61( flowUV * 1.70 + float2( 31.7, 11.3 ), flowScroll * 0.90, tmpId, tmpMr, voronoiSmoothSafe, tmpSid );
+				float foamShape = saturate( broadFoam * 0.80 + fineFoam * 0.50 );
+				foamShape = pow( foamShape, 1.0 - clampResult138 );
+				float directedFoam = foamShape * turbulence;
+				float foamSteps = max( floor( _FlowFoamSteps ), 1.0 );
+				directedFoam = floor( directedFoam * foamSteps + 0.5 ) / foamSteps;
+				// Second channel: sparse fine specks drifting with the current, so open water
+				// still reads as flowing without becoming a solid sheet of white. Deliberately
+				// NOT quantised -- the accent has to stay soft or it reads as more foam.
+				directedFoam = saturate( directedFoam + fineFoam * _FlowAccent );
+				float legacyFoam = saturate( ( pow( saturate( voroi61 ) , ( 1.0 - clampResult138 ) ) + ( 1.0 - distanceDepth17 ) ) );
+				float Foam183 = saturate( lerp( legacyFoam, directedFoam, flowGate ) );
+
 				
 				float screenDepth345 = LinearEyeDepth(SHADERGRAPH_SAMPLE_SCENE_DEPTH( ase_screenPosNorm.xy ),_ZBufferParams);
 				float distanceDepth345 = abs( ( screenDepth345 - LinearEyeDepth( ase_screenPosNorm.z,_ZBufferParams ) ) / ( _CoastOpacity ) );
 				
 
-				float3 BaseColor = ( lerpResult323 + Foam183 ).rgb;
+				float3 foamTint = lerp( float3( 1,1,1 ), _FlowFoamColor.rgb, flowGate );
+				float3 BaseColor = ( lerpResult323 + float4( Foam183 * foamTint, 0.0 ) ).rgb;
+
 				float3 Normal = Normal89;
 				float3 Emission = 0;
 				float3 Specular = 0.5;
